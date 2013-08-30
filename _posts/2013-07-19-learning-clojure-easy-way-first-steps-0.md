@@ -1,8 +1,8 @@
 ---
-title: Learning clojure easy way: first steps 0++
+title: "Learning clojure easy way: first steps 0++"
 date: 2013-07-19
 permalink: 2013/07/learning-clojure-easy-way-first-steps-0.html
-
+layout: post
 ---
 
 [The Pragmatic Programmer][1] (which is shamefully put in my all time growing read list) advises us

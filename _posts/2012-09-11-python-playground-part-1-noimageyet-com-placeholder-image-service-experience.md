@@ -1,5 +1,5 @@
 ---
-title: Python playground: Minimum Viable Product experience
+title: "Python playground: Minimum Viable Product experience"
 date: 2012-09-11
 permalink: 2012/09/python-playground-part-1-noimageyet-com-placeholder-image-service-experience.html
 

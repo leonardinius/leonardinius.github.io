@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Announcement: propertyset-storage-toolkit plugin has been released
+title: "Announcement: propertyset-storage-toolkit plugin has been released"
 date: 2010-12-12
 comments: false
 permalink: 2010/12/announcement-propertyset-storage.html
