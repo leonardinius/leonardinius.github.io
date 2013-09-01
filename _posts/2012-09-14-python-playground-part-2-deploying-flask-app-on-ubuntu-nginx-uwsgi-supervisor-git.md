@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Python Playground Part 2: Deploying Flask app on Ubuntu (nginx, uwsgi, supervisor, git)
 date: 2012-09-14
 permalink: 2012/09/python-playground-part-2-deploying-flask-app-on-ubuntu-nginx-uwsgi-supervisor-git.html
