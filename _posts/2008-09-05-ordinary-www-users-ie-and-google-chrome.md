@@ -3,7 +3,7 @@ layout: post
 title: Ordinary WWW users, IE and Google Chrome
 date: 2008-09-05
 comments: false
-page: 2008/09/ordinary-www-users-ie-and-google-chrome.html
+permalink: 2008/09/ordinary-www-users-ie-and-google-chrome.html
 
 ---
 

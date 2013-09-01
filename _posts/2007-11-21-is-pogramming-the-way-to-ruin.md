@@ -3,7 +3,7 @@ layout: post
 title: Is Pogramming the way to ruin?
 date: 2007-11-21
 comments: false
-page: 2007/11/is-pogramming-way-to-ruin.html
+permalink: 2007/11/is-pogramming-way-to-ruin.html
 
 ---
 

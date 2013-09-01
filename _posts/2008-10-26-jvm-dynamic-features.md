@@ -3,7 +3,7 @@ layout: post
 title: JVM dynamic features
 date: 2008-10-26
 comments: false
-page: 2008/10/jvm-dynamic-features.html
+permalink: 2008/10/jvm-dynamic-features.html
 
 ---
 

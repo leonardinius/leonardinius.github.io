@@ -3,7 +3,7 @@ layout: post
 title: Develop-by-design-basis SUCKS
 date: 2008-05-25
 comments: false
-page: 2008/05/develop-by-design-basis-sucks.html
+permalink: 2008/05/develop-by-design-basis-sucks.html
 
 ---
 

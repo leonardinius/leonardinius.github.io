@@ -3,7 +3,7 @@ layout: post
 title: Richfaces. How-to change skin via javascript. Dropdown combo.
 date: 2008-05-28
 comments: false
-page: 2008/05/richfaces-how-to-cahnge-skin-dropdown.html
+permalink: 2008/05/richfaces-how-to-cahnge-skin-dropdown.html
 
 ---
 

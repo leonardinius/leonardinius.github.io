@@ -3,7 +3,7 @@ layout: post
 title: com4j and many many threads
 date: 2007-04-15
 comments: false
-page: 2007/04/com4j-and-many-many-threads.html
+permalink: 2007/04/com4j-and-many-many-threads.html
 
 ---
 

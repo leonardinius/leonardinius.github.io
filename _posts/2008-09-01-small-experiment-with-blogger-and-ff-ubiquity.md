@@ -3,7 +3,7 @@ layout: post
 title: Small Experiment with Blogger and FF Ubiquity
 date: 2008-09-01
 comments: false
-page: 2008/09/small-experiment-with-blogger-and-ff.html
+permalink: 2008/09/small-experiment-with-blogger-and-ff.html
 
 ---
 

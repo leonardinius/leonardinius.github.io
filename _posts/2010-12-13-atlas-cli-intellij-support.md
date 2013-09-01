@@ -3,7 +3,7 @@ layout: post
 title: atlas-cli IntelliJ support
 date: 2010-12-13
 comments: false
-page: 2010/12/atlas-cli-with-intellij-support.html
+permalink: 2010/12/atlas-cli-with-intellij-support.html
 
 ---
 

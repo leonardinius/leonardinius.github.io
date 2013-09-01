@@ -3,7 +3,7 @@ layout: post
 title: Unit tests, What they should be like? (2)
 date: 2009-10-16
 comments: false
-page: 2009/10/xunit-tests-what-they-should-be-like-2.html
+permalink: 2009/10/xunit-tests-what-they-should-be-like-2.html
 
 ---
 

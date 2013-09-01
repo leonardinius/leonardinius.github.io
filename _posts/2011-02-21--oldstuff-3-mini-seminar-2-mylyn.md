@@ -3,7 +3,7 @@ layout: post
 title: #oldstuff - 3. Mini seminar 2  - Mylyn
 date: 2011-02-21
 comments: false
-page: 2011/02/oldstuff-3-mini-seminar-2-mylyn.html
+permalink: 2011/02/oldstuff-3-mini-seminar-2-mylyn.html
 
 ---
 

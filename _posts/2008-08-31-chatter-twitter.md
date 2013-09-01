@@ -3,7 +3,7 @@ layout: post
 title: chatter-twitter
 date: 2008-08-31
 comments: false
-page: 2008/08/chatter-twitter.html
+permalink: 2008/08/chatter-twitter.html
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Release announcement: jira-rest-cli-1.0 (jsr223 powered interactive jira scripting console)
 date: 2011-03-29
 comments: false
-page: 2011/03/release-announcement-jira-rest-cli-05.html
+permalink: 2011/03/release-announcement-jira-rest-cli-05.html
 
 ---
 

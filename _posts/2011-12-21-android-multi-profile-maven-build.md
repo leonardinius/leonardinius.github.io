@@ -3,7 +3,7 @@ layout: post
 title: Android multi-profile maven build
 date: 2011-12-21
 comments: false
-page: 2011/12/android-multi-profile-maven-build.html
+permalink: 2011/12/android-multi-profile-maven-build.html
 
 ---
 

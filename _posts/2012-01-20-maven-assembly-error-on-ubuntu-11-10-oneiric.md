@@ -3,7 +3,7 @@ layout: post
 title: Maven Assembly Error on Ubuntu 11.10 (oneiric)
 date: 2012-01-20
 comments: false
-page: 2012/01/maven-assembly-error-on-ubuntu-1110.html
+permalink: 2012/01/maven-assembly-error-on-ubuntu-1110.html
 
 ---
 

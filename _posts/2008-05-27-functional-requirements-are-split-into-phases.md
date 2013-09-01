@@ -3,7 +3,7 @@ layout: post
 title: Functional requirements are split into phases.
 date: 2008-05-27
 comments: false
-page: 2008/05/functional-requirements-are-split-into.html
+permalink: 2008/05/functional-requirements-are-split-into.html
 
 ---
 

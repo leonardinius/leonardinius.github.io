@@ -3,7 +3,7 @@ layout: post
 title: Atlassian Plugin SDK / maven proxy issues
 date: 2010-11-10
 comments: false
-page: 2010/11/atlassian-plugin-sdk-maven-proxy-issues.html
+permalink: 2010/11/atlassian-plugin-sdk-maven-proxy-issues.html
 
 ---
 

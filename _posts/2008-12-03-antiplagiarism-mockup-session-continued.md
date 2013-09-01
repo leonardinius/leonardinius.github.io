@@ -3,7 +3,7 @@ layout: post
 title: Antiplagiarism mockup session continued
 date: 2008-12-03
 comments: false
-page: 2008/12/antiplagiarism-mockup-session-continued.html
+permalink: 2008/12/antiplagiarism-mockup-session-continued.html
 
 ---
 

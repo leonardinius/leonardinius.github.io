@@ -3,7 +3,7 @@ layout: post
 title: Management killing software
 date: 2007-10-01
 comments: false
-page: 2007/10/management-killing-software.html
+permalink: 2007/10/management-killing-software.html
 
 ---
 

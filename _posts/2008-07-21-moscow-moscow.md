@@ -3,7 +3,7 @@ layout: post
 title: Moscow, Moscow
 date: 2008-07-21
 comments: false
-page: 2008/07/moscow-moscow.html
+permalink: 2008/07/moscow-moscow.html
 
 ---
 

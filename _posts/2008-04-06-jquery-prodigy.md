@@ -3,7 +3,7 @@ layout: post
 title: JQuery prodigy
 date: 2008-04-06
 comments: false
-page: 2008/04/great-12-year-old-boy-talking-about.html
+permalink: 2008/04/great-12-year-old-boy-talking-about.html
 
 ---
 

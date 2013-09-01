@@ -3,7 +3,7 @@ layout: post
 title: Java STM and foreseeing concurency problems
 date: 2008-09-02
 comments: false
-page: 2008/09/java-stm-and-foreseeing-concurency.html
+permalink: 2008/09/java-stm-and-foreseeing-concurency.html
 
 ---
 

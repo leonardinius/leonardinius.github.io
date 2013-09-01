@@ -1,7 +1,7 @@
 ---
 title: Browser Ajax crossdomain issue - Python twisted reverse proxy to rescue.
 date: 2012-07-11
-page: 2012/07/testing-ajax-crossdomain-issue-python-to-rescue
+permalink: 2012/07/testing-ajax-crossdomain-issue-python-to-rescue
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Atlassian Plugin SDK - how to provide optional selenium tests
 date: 2011-02-21
 comments: false
-page: 2011/02/atlassian-plugin-sdk-how-to-provide.html
+permalink: 2011/02/atlassian-plugin-sdk-how-to-provide.html
 
 ---
 

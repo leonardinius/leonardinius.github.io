@@ -3,7 +3,7 @@ layout: post
 title: Anti-Plagiarism development session begun, #1 iteration.
 date: 2008-05-23
 comments: false
-page: 2008/05/anti-plagiarism-development-session.html
+permalink: 2008/05/anti-plagiarism-development-session.html
 
 ---
 

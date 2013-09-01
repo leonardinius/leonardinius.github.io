@@ -3,7 +3,7 @@ layout: post
 title: Automated Tests, Unit tests, Pros (1)
 date: 2009-10-16
 comments: false
-page: 2009/10/automated-tests-xunit-pros-1.html
+permalink: 2009/10/automated-tests-xunit-pros-1.html
 
 ---
 

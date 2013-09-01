@@ -3,7 +3,7 @@ layout: post
 title: #oldstuff - 1. Mini seminar intro
 date: 2011-02-21
 comments: false
-page: 2011/02/oldstuff-1-mini-seminar-intro.html
+permalink: 2011/02/oldstuff-1-mini-seminar-intro.html
 
 ---
 

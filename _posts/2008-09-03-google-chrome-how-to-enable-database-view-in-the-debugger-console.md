@@ -3,7 +3,7 @@ layout: post
 title: Google Chrome: How to enable database view in the Debugger console
 date: 2008-09-03
 comments: false
-page: 2008/09/google-chrome-how-to-enable-database.html
+permalink: 2008/09/google-chrome-how-to-enable-database.html
 
 ---
 

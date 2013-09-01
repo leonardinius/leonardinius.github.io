@@ -3,7 +3,7 @@ layout: post
 title: Jira - let's code update, edit issue operations (CRUD)
 date: 2010-12-19
 comments: false
-page: 2010/12/jira-lets-code-update-edit-issue.html
+permalink: 2010/12/jira-lets-code-update-edit-issue.html
 
 ---
 

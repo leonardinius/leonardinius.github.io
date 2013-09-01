@@ -3,7 +3,7 @@ layout: post
 title: Atlassian SAL Plugin Settings
 date: 2010-12-21
 comments: false
-page: 2010/12/atlassian-sal-plugin-settings.html
+permalink: 2010/12/atlassian-sal-plugin-settings.html
 
 ---
 

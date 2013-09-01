@@ -3,7 +3,7 @@ layout: post
 title: HowTo: Reusing JIRA gadgets on the issue operations
 date: 2011-01-10
 comments: false
-page: 2011/01/howto-reusing-jira-gadgets-on-issue_10.html
+permalink: 2011/01/howto-reusing-jira-gadgets-on-issue_10.html
 
 ---
 

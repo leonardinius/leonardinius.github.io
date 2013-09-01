@@ -3,7 +3,7 @@ layout: post
 title: test syntax highlighter
 date: 2008-09-09
 comments: false
-page: 2008/09/version-encoding-version-com.html
+permalink: 2008/09/version-encoding-version-com.html
 
 ---
 

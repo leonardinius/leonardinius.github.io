@@ -3,7 +3,7 @@ layout: post
 title: Google Best Practices
 date: 2008-07-05
 comments: false
-page: 2008/07/google-best-practices.html
+permalink: 2008/07/google-best-practices.html
 
 ---
 

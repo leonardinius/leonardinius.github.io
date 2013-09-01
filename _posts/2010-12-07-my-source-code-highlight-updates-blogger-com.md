@@ -3,7 +3,7 @@ layout: post
 title: My source code highlight updates - blogger.com
 date: 2010-12-07
 comments: false
-page: 2010/12/my-source-code-highlight-updates.html
+permalink: 2010/12/my-source-code-highlight-updates.html
 
 ---
 

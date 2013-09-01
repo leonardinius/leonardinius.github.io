@@ -3,7 +3,7 @@ layout: post
 title: Clamour and stir around Servlet 3.0 Draft
 date: 2008-06-03
 comments: false
-page: 2008/06/clamour-and-stir-around-servlet-30.html
+permalink: 2008/06/clamour-and-stir-around-servlet-30.html
 
 ---
 

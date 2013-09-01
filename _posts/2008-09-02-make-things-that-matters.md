@@ -3,7 +3,7 @@ layout: post
 title: Make things that matters.
 date: 2008-09-02
 comments: false
-page: 2008/09/make-things-tnat-matters.html
+permalink: 2008/09/make-things-tnat-matters.html
 
 ---
 

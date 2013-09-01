@@ -3,7 +3,7 @@ layout: post
 title: Google preparing Google Chrome launch
 date: 2008-09-02
 comments: false
-page: 2008/09/google-prepairing-google-chrom-launch.html
+permalink: 2008/09/google-prepairing-google-chrom-launch.html
 
 ---
 

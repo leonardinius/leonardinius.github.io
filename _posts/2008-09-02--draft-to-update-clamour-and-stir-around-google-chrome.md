@@ -3,7 +3,7 @@ layout: post
 title: [Draft. To update] Clamour and stir around Google Chrome.
 date: 2008-09-02
 comments: false
-page: 2008/09/draft-to-update-clamour-and-stir-around.html
+permalink: 2008/09/draft-to-update-clamour-and-stir-around.html
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Plagiarism plague
 date: 2008-09-05
 comments: false
-page: 2008/09/plagiarism-plague.html
+permalink: 2008/09/plagiarism-plague.html
 
 ---
 

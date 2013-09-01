@@ -3,7 +3,7 @@ layout: post
 title: Blog host is updated
 date: 2011-07-04
 comments: false
-page: 2011/07/blog-host-is-updated.html
+permalink: 2011/07/blog-host-is-updated.html
 
 ---
 

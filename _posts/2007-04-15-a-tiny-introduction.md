@@ -3,7 +3,7 @@ layout: post
 title: A tiny introduction
 date: 2007-04-15
 comments: false
-page: 2007/04/tiny-introduction.html
+permalink: 2007/04/tiny-introduction.html
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Do you want syntax highlight in Your Google blog?
 date: 2008-09-09
 comments: false
-page: 2008/09/do-you-want-syntax-highlight-in-your.html
+permalink: 2008/09/do-you-want-syntax-highlight-in-your.html
 
 ---
 

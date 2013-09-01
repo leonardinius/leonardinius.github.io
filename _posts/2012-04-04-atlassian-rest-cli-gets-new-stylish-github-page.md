@@ -3,7 +3,7 @@ layout: post
 title: Atlassian Rest Cli gets new stylish github page
 date: 2012-04-04
 comments: false
-page: 2012/04/atlassian-rest-cli-gets-new-stylish.html
+permalink: 2012/04/atlassian-rest-cli-gets-new-stylish.html
 
 ---
 

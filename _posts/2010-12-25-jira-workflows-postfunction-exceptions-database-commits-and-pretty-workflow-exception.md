@@ -3,7 +3,7 @@ layout: post
 title: JIRA workflows -Postfunction exceptions, database commits and Pretty workflow exception
 date: 2010-12-25
 comments: false
-page: 2010/12/jira-workflows-postfunction-exceptions.html
+permalink: 2010/12/jira-workflows-postfunction-exceptions.html
 
 ---
 

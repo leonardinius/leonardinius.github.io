@@ -3,7 +3,7 @@ layout: post
 title: Jira - How to Include JSS and CSS resources on every page
 date: 2010-12-07
 comments: false
-page: 2010/12/jira-how-to-include-jss-and-css.html
+permalink: 2010/12/jira-how-to-include-jss-and-css.html
 
 ---
 

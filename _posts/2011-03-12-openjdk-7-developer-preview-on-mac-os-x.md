@@ -3,7 +3,7 @@ layout: post
 title: OpenJDK 7 - Developer Preview on Mac OS X
 date: 2011-03-12
 comments: false
-page: 2011/03/openjdk-7-developer-preview-on-mac-os-x.html
+permalink: 2011/03/openjdk-7-developer-preview-on-mac-os-x.html
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Awesome label cloud widget for blogspot
 date: 2008-09-24
 comments: false
-page: 2008/09/awesome-label-cloud-widget-for-blogspot.html
+permalink: 2008/09/awesome-label-cloud-widget-for-blogspot.html
 
 ---
 

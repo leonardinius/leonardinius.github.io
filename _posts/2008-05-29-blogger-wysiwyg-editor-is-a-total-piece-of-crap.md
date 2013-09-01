@@ -3,7 +3,7 @@ layout: post
 title: Blogger WYSIWYG editor is a total piece of .. crap
 date: 2008-05-29
 comments: false
-page: 2008/05/blogger-wysiwyg-editor-is-total-piece.html
+permalink: 2008/05/blogger-wysiwyg-editor-is-total-piece.html
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Moving to another blog name
 date: 2008-06-13
 comments: false
-page: 2008/06/moving-to-another-blog-name.html
+permalink: 2008/06/moving-to-another-blog-name.html
 
 ---
 

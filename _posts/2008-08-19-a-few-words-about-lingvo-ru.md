@@ -3,7 +3,7 @@ layout: post
 title: A few words about lingvo.ru
 date: 2008-08-19
 comments: false
-page: 2008/08/few-words-about-lingvoru.html
+permalink: 2008/08/few-words-about-lingvoru.html
 
 ---
 

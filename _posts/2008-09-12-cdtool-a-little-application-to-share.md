@@ -3,7 +3,7 @@ layout: post
 title: CDTool: A little application to share
 date: 2008-09-12
 comments: false
-page: 2008/09/cdtool-little-application-to-share.html
+permalink: 2008/09/cdtool-little-application-to-share.html
 
 ---
 

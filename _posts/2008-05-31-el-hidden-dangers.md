@@ -3,7 +3,7 @@ layout: post
 title: EL hidden dangers
 date: 2008-05-31
 comments: false
-page: 2008/05/el-hidden-dangers.html
+permalink: 2008/05/el-hidden-dangers.html
 
 ---
 

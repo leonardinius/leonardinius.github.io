@@ -3,7 +3,7 @@ layout: post
 title: SSL through MSCAPI nightmare
 date: 2007-09-21
 comments: false
-page: 2007/09/ssl-through-mscapi-nightmare.html
+permalink: 2007/09/ssl-through-mscapi-nightmare.html
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: A few screens from new Eclipse Ganymede
 date: 2008-07-04
 comments: false
-page: 2008/07/few-screens-from-new-eclipse-ganymede.html
+permalink: 2008/07/few-screens-from-new-eclipse-ganymede.html
 
 ---
 

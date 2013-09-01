@@ -3,7 +3,7 @@ layout: post
 title: IT is in storm now.
 date: 2008-01-10
 comments: false
-page: 2008/01/it-is-in-storm-now.html
+permalink: 2008/01/it-is-in-storm-now.html
 
 ---
 

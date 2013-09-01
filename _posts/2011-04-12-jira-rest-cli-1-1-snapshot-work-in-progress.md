@@ -3,7 +3,7 @@ layout: post
 title: jira-rest-cli-1.1-SNAPSHOT work in progress
 date: 2011-04-12
 comments: false
-page: 2011/04/jira-erst-cli-11-snapshot-work-in.html
+permalink: 2011/04/jira-erst-cli-11-snapshot-work-in.html
 
 ---
 

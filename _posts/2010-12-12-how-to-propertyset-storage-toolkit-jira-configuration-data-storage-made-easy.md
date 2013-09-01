@@ -3,7 +3,7 @@ layout: post
 title: HOW-TO: propertyset-storage-toolkit - Jira configuration data storage made easy
 date: 2010-12-12
 comments: false
-page: 2010/12/how-to-propertyset-storage-toolkit-jira.html
+permalink: 2010/12/how-to-propertyset-storage-toolkit-jira.html
 
 ---
 

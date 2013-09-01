@@ -3,7 +3,7 @@ layout: post
 title: Anti-Plag API design
 date: 2008-12-16
 comments: false
-page: 2008/12/api-design.html
+permalink: 2008/12/api-design.html
 
 ---
 
