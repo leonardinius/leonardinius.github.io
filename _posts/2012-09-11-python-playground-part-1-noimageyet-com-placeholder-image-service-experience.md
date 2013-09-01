@@ -10,11 +10,7 @@ layout: post
 > **Update:** 
 >  You also might be interested in [Part 2: Deploying Flask app on Ubuntu (nginx, uwsgi, supervisor, git)](/2012/09/python-playground-part-2-deploying-flask-app-on-ubuntu-nginx-uwsgi-supervisor-git/ "Part 2: Deploying Flask app on Ubuntu (nginx, uwsgi, supervisor, git)")
 
-**Paragraphs**
-
-{{toc}}
-
-## The biggest problem of all: to find  one 
+## The biggest problem of all: to find  one
 During my spare time experiments I eventually desided to train my python muscles on some simple, yet real world problem / service. I tried to choose as simple problem as possible, still not too simple. 
 My requirements were:
 

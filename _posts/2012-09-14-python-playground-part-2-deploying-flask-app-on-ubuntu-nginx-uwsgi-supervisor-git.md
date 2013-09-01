@@ -9,9 +9,6 @@ layout: post
 
 This post will list steps to set up a Flask app in Ubuntu Linux server 12.04 using [nginx](http://nginx.com/), [uWSGI](http://projects.unbit.it/uwsgi/) and [supervisord](http://supervisord.org/). On top of that I will provide installation scripts and deployment scheme using Git SCM.
 
-**Table of contents**
-{{toc}}
-
 ## Credits First ##
 
 This post (and service deployement in live) would not be possible without these awesome resources:
