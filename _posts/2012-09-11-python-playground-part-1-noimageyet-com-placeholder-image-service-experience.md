@@ -2,7 +2,7 @@
 title: "Python playground: Minimum Viable Product experience"
 date: 2012-09-11
 permalink: 2012/09/python-playground-part-1-noimageyet-com-placeholder-image-service-experience.html
-
+layout: post
 ---
 
 > Disclaimer: This is one of the 'My adventures in Python world' stories. This post is first one in NoImageYet.com MVP experience series. 

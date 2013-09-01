@@ -1,5 +1,6 @@
 ---
 title: Moving to new blog platform
+layout: post
 -----
 
 From now on - moving to [https://github.com/bobuk/addmeto.cc](https://github.com/bobuk/addmeto.cc) blog system.
