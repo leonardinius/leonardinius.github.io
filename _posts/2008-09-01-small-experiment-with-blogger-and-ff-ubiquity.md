@@ -1,0 +1,10 @@
+---
+layout: post
+title: Small Experiment with Blogger and FF Ubiquity
+date: 2008-09-01
+comments: false
+page: 2008/09/small-experiment-with-blogger-and-ff.html
+
+---
+
+All we know, that <a href="http://leonardinius.blogspot.com/2008/05/blogger-wysiwyg-editor-is-total-piece.html">Blogger WYSIWYG editor sucks</a>. What about the ned to pass here some well-formattted piece of code. Hmmm. Now I could do it just easily, I think. Thaks <a href="https://wiki.mozilla.org/Labs/Ubiquity/Ubiquity_0.1_User_Tutorial">FF ubiquity</a> in many ways.<br />See code sample below:<br /><br /><div style="padding: 3px; background-color: rgb(34, 34, 34);"><pre><span style="color: rgb(106, 184, 37); font-weight: bold;">function</span> <span style="color: rgb(208, 208, 208);">CodeURL(str)</span> <span style="color: rgb(208, 208, 208);">{</span><br /><span style="color: rgb(153, 153, 153); font-style: italic;">//var word = ""</span><br /><span style="color: rgb(153, 153, 153); font-style: italic;">//for (i=0; i<str.length;></str.length;></span><br /><span style="color: rgb(153, 153, 153); font-style: italic;">//{</span><br /><span style="color: rgb(153, 153, 153); font-style: italic;">// word = word + "%26%23" + str.charCodeAt(i) + "%3B";</span><br /><span style="color: rgb(153, 153, 153); font-style: italic;">//}</span><br /><span style="color: rgb(153, 153, 153); font-style: italic;">//return word;</span><br /><span style="color: rgb(106, 184, 37); font-weight: bold;">return</span> <span style="color: rgb(36, 144, 157);">encodeURIComponent</span><span style="color: rgb(208, 208, 208);">(</span><span style="color: rgb(237, 157, 19);">""</span> <span style="color: rgb(208, 208, 208);">+</span> <span style="color: rgb(208, 208, 208);">str);</span><br /><span style="color: rgb(208, 208, 208);">}</span><br /></pre></div><br /><br />A simple recipe (works fine for me, possibly me only). Ubiquity has <span style="font-style: italic;">syntax-highlight</span> command. So.. Enter your code, exec this command and use Firebug (ha-ha, friendly way to get things right :) to copy html. And then just pass the code here as shown above.
