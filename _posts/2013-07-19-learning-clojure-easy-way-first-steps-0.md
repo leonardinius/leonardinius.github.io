@@ -16,8 +16,8 @@ been frequently told by senior colleagues what one way to learn to is dive deep 
 relevant, not applicable and different from stuff you used to work with.
 
 Most JVM guys dive into Scala or Groovy these days. I really like Groovy, but for obvious reasons don't find
-it *\*too different\** from Java/Ruby vulgaris (both are languages I used to work with in the past). Personally me dont
-buy Scala ideas, I prefer to have small/compact/clear language, which doesn't require having PhD to *\*really get\** it.
+it *too different* from Java/Ruby vulgaris (both are languages I used to work with in the past). Personally me dont
+buy Scala ideas, I prefer to have small/compact/clear language, which doesn't require having PhD to *really get* it.
 It's something I used to like in old plain C, which in some early versions used to have around 30 reserved keywords.
 I believe good business application language should be clear and unambiguous; both the application code and the language
 should be easy to explain to second grade student in matter of minutes.
@@ -32,14 +32,14 @@ little research, read several documentation papers, few tutorials etc... blah bl
 across [4clojure][3] site, which I also highly recommend for everyone looking for small practical exercises to master
 their Clojure Zen.
 
-## My (first (clojure (steps (inc (inc 0))))) - exercises 1..78
-
-**Todo** add comments eventually
-
-<script src="https://gist.github.com/leonardinius/6041689.js"></script>
-
 <!-- Link definition -->
 
 [1]: <http://en.wikipedia.org/wiki/The_Pragmatic_Programmer> "The Pragmatic Programmer"
 [2]: <http://clojure.org/> http://clojure.org/
 [3]: <http://www.4clojure.com/> http://www.4clojure.com/
+
+## My (first (clojure (steps (inc (inc 0))))) - exercises 1..78
+
+**Todo** add comments eventually
+
+<script src="https://gist.github.com/leonardinius/6041689.js"></script>
