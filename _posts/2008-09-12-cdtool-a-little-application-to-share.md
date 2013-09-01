@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CDTool: A little application to share
+title: "CDTool: A little application to share"
 date: 2008-09-12
 comments: false
 permalink: 2008/09/cdtool-little-application-to-share.html
