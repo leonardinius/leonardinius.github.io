@@ -1,7 +1,7 @@
 ---
 title: Learning clojure easy way: first steps 0++
 date: 2013-07-19
-permalink: 2013/07/learning-clojure-easy-way-first-steps-0
+permalink: 2013/07/learning-clojure-easy-way-first-steps-0.html
 
 ---
 

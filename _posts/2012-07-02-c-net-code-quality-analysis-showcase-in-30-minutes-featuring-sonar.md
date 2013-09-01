@@ -1,7 +1,7 @@
 ---
 title: C#/.Net project analysis showcase in 30 minutes (featuring Sonar)
 date: 2012-07-02
-permalink: 2012/07/c-net-code-quality-analysis-showcase-in-30-minutes-featuring-sonar
+permalink: 2012/07/c-net-code-quality-analysis-showcase-in-30-minutes-featuring-sonar.html
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Howto - C# enums with additional attributes (Java enum gaps covered)
 date: 2012-06-30
-permalink: 2012/06/howto-c-enums-with-additional-attributes-java-enum-gaps-covered
+permalink: 2012/06/howto-c-enums-with-additional-attributes-java-enum-gaps-covered.html
 
 ---
 
