@@ -32,14 +32,14 @@ little research, read several documentation papers, few tutorials etc... blah bl
 across [4clojure][3] site, which I also highly recommend for everyone looking for small practical exercises to master
 their Clojure Zen.
 
-<!-- Link definition -->
-
-[1]: <http://en.wikipedia.org/wiki/The_Pragmatic_Programmer> "The Pragmatic Programmer"
-[2]: <http://clojure.org/> http://clojure.org/
-[3]: <http://www.4clojure.com/> http://www.4clojure.com/
 
 ## My (first (clojure (steps (inc (inc 0))))) - exercises 1..78
 
 **Todo** add comments eventually
 
 <script src="https://gist.github.com/leonardinius/6041689.js"></script>
+
+<!-- Link definition -->
+[1]: http://en.wikipedia.org/wiki/The_Pragmatic_Programmer
+[2]: http://clojure.org/
+[3]: http://www.4clojure.com/
