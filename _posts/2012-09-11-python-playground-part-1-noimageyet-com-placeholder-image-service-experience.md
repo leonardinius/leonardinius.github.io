@@ -41,7 +41,7 @@ Quick answer is - rather good than bad. The service itself took ~3-4 evenings (a
 - [Source code on Github](https://github.com/leonardinius/noimage-py "Source code on Github")
 - [https://noimageyet.com/](https://noimageyet.com/ "https://noimageyet.com/") service itself
 
-<a href="https://noimageyet.com/"><img src="/resources/images/2012-09-11_2358_noimageyet_screenshot.png" title="NoImageYet service screenshot" /></a>
+<a href="https://noimageyet.com/"><img src="/img/posts/2012-09-11_2358_noimageyet_screenshot.png" title="NoImageYet service screenshot" /></a>
 
 ## What's next? 
 
