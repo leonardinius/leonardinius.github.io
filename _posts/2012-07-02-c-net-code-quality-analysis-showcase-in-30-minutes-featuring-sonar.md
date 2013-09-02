@@ -232,7 +232,7 @@ NB: It warns us about built-in database usage again. It's something should re-co
 
 - Check Sonar web-interface [http://localhost:9000/](http://localhost:9000/)
 
-![Sonar web-interface](/resources/images/Sonar-30-min-showcase-capture.png)
+![Sonar web-interface](/img/posts/Sonar-30-min-showcase-capture.png)
 
 # Congrats
 

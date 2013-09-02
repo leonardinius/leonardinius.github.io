@@ -43,11 +43,11 @@ ul.posts li {
   line-height: 1.75em;
 }
 
-ul.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
-}
+/*ul.posts span {*/
+  /*color: #aaa;*/
+  /*font-family: Monaco, "Courier New", monospace;*/
+  /*font-size: 80%;*/
+/*}*/
 
 /*****************************************************************************/
 /*
@@ -157,4 +157,48 @@ ul.posts span {
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+
+
+
+
+
+/**/
+/**/
+div#about_images {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    div#about_images {
+        min-height: 100px
+    }
+}
+
+@media (min-width: 767px) {
+    div#about_images {
+        min-height: 125px
+    }
+}
+
+img.contact {
+    padding: 10px;
+    width: 15%;
+}
+
+img.contact.gmail {
+    padding-bottom: 0px;
+}
+
+img.contact.linkedin {
+    padding-bottom: 30px;
+}
+
+ul.posts li {
+    list-style-type: hebrew;
+}
+
+.gist {
+    font-size: 14px;
 }
