@@ -1,6 +1,9 @@
 ---
 title: Moving to new blog platform
 layout: post
+date: 2012-06-14
+comments: false
+permalink: post/2012-06-14/
 -----
 
 From now on - moving to [https://github.com/bobuk/addmeto.cc](https://github.com/bobuk/addmeto.cc) blog system.
