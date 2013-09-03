@@ -2,8 +2,8 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2013-09-02 19:04:49
-categories: jekyll1 update
-tags: tag1 tag2 tag3
+categories: [jekyll2, update2]
+tags: [tag11, tag12, tag13]
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
