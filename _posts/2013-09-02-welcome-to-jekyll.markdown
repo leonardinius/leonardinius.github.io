@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2013-09-02 19:04:49
-categories: jekyll update
+categories: jekyll1 update
 tags: tag1 tag2 tag3
 ---
 
