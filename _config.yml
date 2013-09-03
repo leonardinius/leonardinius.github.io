@@ -4,3 +4,4 @@ pygments: true
 description : "Personal blog and personal opinions by Leonids Maslovs"
 permalink: /:year/:month/:title.html
 safe: false
+plugins: "./_plugins"
