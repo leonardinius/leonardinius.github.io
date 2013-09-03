@@ -2,8 +2,24 @@
 layout: default
 ---
 <h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="post">
-{{ content }}
+    <span class="meta">{{ page.date | date_to_string }}</span>
+    {{ content }}
 </div>
+
+{% if page.tags != empty or  page.categories != empty%}
+<div class="meta">
+    <div>
+    {% if page.tags != empty %}
+    Tags: <code>{{ page.tags | array_to_sentence_string }}</code>.
+    {% endif %}
+    </div>
+
+    <div>
+    {% if page.categories != empty %}
+    Categories: {{ page.categories | category_links }}.
+    {% endif %}
+    </div>
+</div>
+{% endif %}
