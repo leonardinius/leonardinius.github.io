@@ -238,7 +238,5 @@ module Jekyll
 
 end
 
-puts("here")
-
 Liquid::Template.register_filter(Jekyll::CategoryHelper)
 
