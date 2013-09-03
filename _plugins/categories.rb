@@ -196,7 +196,7 @@ module Jekyll
 
 
   # Adds some extra filters used during the category creation process.
-  module Filters
+  module CategoryHelper
 
     # Outputs a list of categories as comma-separated <a> links. This is used
     # to output the category list for each post on a category page.
@@ -219,7 +219,7 @@ module Jekyll
         when 1
           categories[0].to_s
         else
-          "my " + categories.join(', ')
+          categories.join(', ')
       end
     end
 
@@ -234,7 +234,9 @@ module Jekyll
       result += date.strftime('<span class="year">%Y</span> ')
       result
     end
-
   end
 
 end
+
+Liquid::Template.register_filter(Jekyll::CategoryHelper)
+
