@@ -219,7 +219,7 @@ module Jekyll
         when 1
           categories[0].to_s
         else
-          categories.join(', ')
+          "my " + categories.join(', ')
       end
     end
 
