@@ -1,6 +1,12 @@
 name: "Coding paradigm: line by line"
-description : "Personal blog and personal opinions by Leonids Maslovs"
+title: "Coding paradigm: line by line"
+tagline: "Coding paradigm: line by line"
+description: "Personal blog and personal opinions by Leonids Maslovs"
+author:
+  name:       "Leonids Maslovs"
+  email:      "leonids.maslovs@galeoconsulting.com"
+url: http://leonardinius.galeoconsulting.com
 permalink: /:year/:month/:title.html
 markdown: redcarpet
 pygments: true
-
+paginate: 5

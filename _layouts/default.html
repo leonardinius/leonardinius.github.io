@@ -1,40 +1,64 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="description" content="{{ site.description }}" >
-        <meta name="viewport" content="width=device-width">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="{{site.description}}">
+    <meta name="author" content="{{site.author.name}}">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1">
+    <link href="/public/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.tagline }}</title>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/css/hyde.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
 
-        <link rel="shortcut icon" href="img/favicon.png">
-    </head>
-    <body>
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/public/favicon.png">
 
-        <div class="container">
-          <div class="site">
-            <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            </div>
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-                {{ content }}
+    <!-- Start of Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3088662-1']);
+      _gaq.push(['_trackPageview']);
 
-            <div class="footer">
-              <div class="contact">
-                <p>
-                  <a href="http://github.com/leonardinius/">github.com/leonardinius</a><br />
-                  <a href="http://twitter.com/leonardinius/">twitter.com/leonardinius</a><br />
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> <!-- /container -->
+      (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!-- End of Google Analytics -->
+  </head>
+  <body>
 
-    </body>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h2>{{site.name}}</h2>
+        <p class="lead">
+            {{site.description}}
+        </p>
+
+        <div class="colophon">
+          <ul class="colophon-links">
+            <li>
+              <a href="/about.html">About me</a>
+            </li>
+          </ul>
+          <p>Powered by <a href="http://jekyllrb.com/">Jekyll</a>, design <a href="http://andhyde.com/">Hyde</a></p>
+          <p>&copy; 2013. {{ site.author.name }} All rights reserved.</p>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="content container">
+      {{ content }}
+    </div>
+
+  </body>
 </html>

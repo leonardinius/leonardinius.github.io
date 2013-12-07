@@ -1,28 +1,37 @@
 ---
 layout: default
-title: "Coding paradigm: line by line"
 ---
 
-<div id="home">
-    <h1 style="padding-top: 16px;">About me</h1>
-    I like to code and I like the feeling of code lines coming out of my fingertips. I try to build the simplest and most usable solutions to make awesome.
-    I live and work in Riga, Latvia and spend my days making kick ass things at
-    <a href="https://twitter.com/galeoconsulting">@galeoconsulting</a>.
-    <br />
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1>
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-    <div id="about_images">
-        <span>
-        <a href="https://twitter.com/leonardinius"><img class="contact" src="img/about/twitter.png" alt="twitter"/></a>
-        <a href="callto:leonids.maslovs"><img class="contact" src="img/about/skype.png" alt="skype"/></a>
-        <a href="mailto:leonids.maslovs@galeoconsulting.com"><img class="contact gmail" src="img/about/gmail.png" alt="mail"/></a>
-        <a href="http://lv.linkedin.com/in/leonidsmaslovs"><img class="contact linkedin" src="img/about/linked-in.png" alt="linkedin"/></a>
-        <a href="https://github.com/leonardinius"><img class="contact" src="img/about/codercat.png" alt="github"/></a>
-        </span>
-    </div>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date:"%Y-%m-%d" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+    {{ post.content }}
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a href="/page{{paginator.next_page}}" class="older">Older</a>
+  {% else %}
+    <span class="next">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a href="/" class="newer">Newer</a>
+    {% else %}
+      <a href="/page{{paginator.previous_page}}" class="newer">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="previous">Newer</span>
+  {% endif %}
 </div>
