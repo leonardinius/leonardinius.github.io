@@ -10,3 +10,4 @@ permalink: /:year/:month/:title.html
 markdown: redcarpet
 pygments: true
 paginate: 5
+lsi: true
