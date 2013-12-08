@@ -364,3 +364,18 @@ a:hover {
   }
 
 }
+
+/**
+ * leonardinius.galeoconsulting.com changes
+*/
+#about_images {
+    min-height: 125px;
+    text-align: center;
+}
+
+#about_images img {
+    vertical-align: middle;
+    display:inline;
+    padding: 10px;
+    width: 15%;
+}
