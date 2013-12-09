@@ -1,4 +1,4 @@
 leonardinius.github.io
 ======================
 
-Personal website
+Personal blog and personal opinions by Leonids Maslovs http://leonardinius.galeoconsulting.com/
