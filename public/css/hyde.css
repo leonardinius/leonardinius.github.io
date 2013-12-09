@@ -380,3 +380,9 @@ a:hover {
     padding: 10px;
     width: 15%;
 }
+
+.read-more a{
+    text-decoration: overline;
+    padding:  5px;
+    background-color: #f4f4f4;
+}
