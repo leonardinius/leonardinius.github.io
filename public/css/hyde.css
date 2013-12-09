@@ -142,6 +142,7 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
+  background-color: transparent;
 }
 
 /* Quotes */
