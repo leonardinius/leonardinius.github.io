@@ -9,7 +9,7 @@ layout: default
 
   <hr/>
   <strong>NB</strong> if you've found any typos, errors or would like to submit corrections or recommendations: please
-   <a href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path }}">edit on github</a> or
+   <a href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path | cgi_escape }}">edit on github</a> or
    <a href="{{ site.github.repo }}/issues/new?title=Feedback+on+{{ page.title | cgi_escape }}&body={{ page.path | cgi_escape }}">file an issue</a>.
 </div>
 
