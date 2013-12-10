@@ -7,7 +7,7 @@ author:
   email:      "leonids.maslovs@galeoconsulting.com"
 baseurl: ''
 url: http://leonardinius.galeoconsulting.com
-permalink: /:year/:month/:title
+permalink: /:year/:month/:title.html
 markdown: redcarpet
 pygments: true
 paginate: 5
