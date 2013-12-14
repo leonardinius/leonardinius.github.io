@@ -184,21 +184,35 @@ because of end consumer device issues with Json data processing performance).
 
 ## The things I liked most about Play Framework ##
 
+* Low entry
+
+  I believe Play Framework has almost the lowest entry level to Java full-stack web framework I have seen so far. For
+  starters it comes with it's [Typesafe Activator] [24] and multiple [starter templates] [25].
+
+  I do honestly believe you don't have to know a lot /recognize a lot of concepts to start developing Play
+  application. Play's helloworld is really no more different that Java `static void main(String[]args)`. And you
+  don't need to know anything how to bundle things, how to deploy them, WARs or JARs - what's that?
+
+  Saying that I have to note that when you overcome helloworld application level and to move forward,
+  you might start to struggle, since there is no really tons of detailed and qualitative documentation out there. You
+  should have either to have good basic understanding of how things works or where and how to look for solution/help
+  to stay productive.
+
+  So, I think entry level is extremely low, however getting to experienced plateau might be a challenge.
+* Static typing (templates, routes)
+  Almost everything (except
+* JsRoutes
+
+
 ## The things I dislike about Play Framework ##
 
-+ Main goal is to replace, not to accompanion
-* libs
-* play compatability
-* compilation time
-* scala and sbt-weirdness
-* cool stuff - routes nad jsroutes
-* matureness (i-net bank)
-* not so cools stuff - java compatability is weird; modules are not very mature;fight multi-headed dragons (api, binary compatability, sbt ...)
-* nio kinda cool, java shop web-app vs json media-type WS/RPC service
-* windows is second class citizen
-* community is not so bad, however the backward compatability approach etc .. rifing the other horse (not java shop way)
-
-
+The list in the order of dislike:
+* Scala vs Java battle
+* Compatibility
+* Compilation time
+* Sbt-weirdness
+* Module maturity
+* Developer platform support (e.g. Windows)
 
 ## Would I choose Play for my next project ##
 
@@ -218,11 +232,11 @@ nor second one.
 Here is the list of frameworks I might consider to develop my next small experimental project (the list is in the
 order of appeal):
 
-* Vert.x
-* Dropwizard
-* Ninja Web Framework
-* Grails
-* Wicket
+* [Vert.x] [4]
+* [Dropwizard] [5]
+* [Ninja Web Framework] [26]
+* [Grails] [27]
+* [Apache Wicket] [28]
 
 <!-- Link definition -->
 [galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
@@ -249,3 +263,8 @@ order of appeal):
 [21]: http://jackson.codehaus.org/ "Jackson toolkit home page"
 [22]: https://github.com/FasterXML/jackson-dataformat-xml "Jackson JSON support for de-/serializing POJOs as XML"
 [23]: http://blog.codeborne.com/2013/03/online-bank-from-scratch-in-five-months.html "Codeborne: Online Bank in five months"
+[24]: http://typesafe.com/activator "Typesafe Activator"
+[25]: http://typesafe.com/activator/templates "Typesafe Activator Templates"
+[26]: http://www.ninjaframework.org/ "Ninja Web Framework home page"
+[27]: http://grails.org/ "Grails Home Page"
+[28]: https://wicket.apache.org/ "Apache Wicket Home page"
