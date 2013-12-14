@@ -21,19 +21,13 @@
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-    <!-- Start of Google Analytics -->
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-3088662-1']);
-      _gaq.push(['_trackPageview']);
+{% case site.analytics.provider %}
+    {% when "google" %}
+    <!-- Start of {{ site.analytics.provider }} analytics -->
+    {% include google_analytics.html %}
+    <!-- End of {{ site.analytics.provider }} analytics -->
+{% endcase %}
 
-      (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <!-- End of Google Analytics -->
   </head>
   <body>
 
