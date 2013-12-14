@@ -142,17 +142,33 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
 ### V for Vendetta or Scala Templates for Views ###
 
-  sdsd
+  [Play Framework Templates] [18] is the feature I personally found the as one of the most controversial Play
+  Framework features.
+
+  From day zero I hated that it forces me to learn new template programming language (basically Scala subset). Plus,
+  initially I disliked the fact that Play Framework Scala templates are generally much more imperative,
+  than declarative. It reminded me old good PHP scripts with business process logic literally littered around and mixed
+  with visualization.
+
+  I still believe declarative approach should be used as much as possible for application views (encourages
+  business process and logic decoupling from the actual view). However I also Sound scala template reusable blocks,
+  implicit form field decoration (I was able to modify default field html layout with my twitter-bootstrap based
+  field layout) and view composition extremely powerful and flexible.
+
+  At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the
+  same way as PHP does. Openly speaking I myself performed quite a lot model lookups ( -> SQL queries) from
+  auto-generated template views, it was just so simple and easy solution to render dropdown fields. Though,
+  is used properly with certain layering constraints - Scala Templates are extremely convenient and powerful.
 
 ### Media type support ###
+
+
 
 ## The things I liked about Play Framework ##
 
 ## The things I dislike about Play Framework ##
 
 ## Would I choose Play for my next project ##
-
-asas
 
  ```
   controller
@@ -165,16 +181,6 @@ asas
   Websockets, Comet, EventSource
   Extensive NoSQL & Big Data Support
  ```
-
-
-What is playframework
-Reactive manifesto
-History
-Play1 vs play2
-* scala bid
-* springsource ex-ceo bid
-Niche
-Future
 
 How does play! compare to framework x
 =====================================
@@ -221,19 +227,22 @@ scala sucks
 <!-- Link definition -->
 [galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
 [1]:  http://www.playframework.com/ "Play Framework site"
-[2]:  http://www.playframework.com/documentation/2.2.x/PlayConsole "Play Console documentation"
+[2]:  http://www.playframework.com/documentation/2.1.5/PlayConsole "Play Console documentation"
 [3]:  http://netty.io/ "Netty home page"
 [4]:  http://vertx.io/ "Vert.x home page"
 [5]:  http://dropwizard.codahale.com/ "Dropwizard site"
 [6]:  https://github.com/kryptt/play2-native-packager-plugin "sbt play2-native-packager github home"
-[7]:  http://www.playframework.com/documentation/2.2.x/Evolutions "Play evolutions documentation"
-[8]:  http://www.playframework.com/documentation/2.2.x/ScalaAnorm "Scala Anorm and Play integration documentation"
-[9]:  http://www.playframework.com/documentation/2.2.x/JavaEbean "EBean and Play for java developers documentation"
+[7]:  http://www.playframework.com/documentation/2.1.5/Evolutions "Play evolutions documentation"
+[8]:  http://www.playframework.com/documentation/2.1.5/ScalaAnorm "Scala Anorm and Play integration documentation"
+[9]:  http://www.playframework.com/documentation/2.1.5/JavaEbean "EBean and Play for java developers documentation"
 [10]: http://www.avaje.org/ebean/introquery_rawsql.html "EBean RawSql example"
-[11]: http://www.playframework.com/documentation/2.2.x/IDE "Play documentation on Setting up your preferred IDE"
+[11]: http://www.playframework.com/documentation/2.1.5/IDE "Play documentation on Setting up your preferred IDE"
 [12]: https://github.com/dlecan/play2-war-plugin "Play2 War Plugin Github page"
-[13]: http://www.playframework.com/documentation/2.2.x/IDE "Play Java Actions"
+[13]: http://www.playframework.com/documentation/2.1.5/IDE "Play Java Actions"
 [14]: http://typesafe.com/activator/template/play-java-spring "Play Java Spring template"
 [15]: http://typesafe.com/activator/template/play-guice "Play Guice template"
 [16]: http://akka.io/ "Akka home page"
 [17]: http://openjdk.java.net/projects/lambda/ "Project Lambda home page"
+[18]: http://www.playframework.com/documentation/2.1.5/ScalaTemplates "Scala Templates"
+[19]: http://www.playframework.com/documentation/2.1.5/JavaJsonRequests "Java Json Content handling"
+[20]: http://www.playframework.com/documentation/2.1.5/JavaXmlRequests "Java Xml Content handling"
