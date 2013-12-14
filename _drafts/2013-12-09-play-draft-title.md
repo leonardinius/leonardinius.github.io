@@ -156,17 +156,19 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   field layout) and view composition extremely powerful and flexible.
 
   At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the
-  same way as PHP does. Openly speaking I myself performed quite a lot model lookups ( -> SQL queries) from
-  auto-generated template views, it was just so simple and easy solution to render dropdown fields. Though,
-  is used properly with certain layering constraints - Scala Templates are extremely convenient and powerful.
+  same way as PHP does. Openly speaking I myself performed quite a lot model lookups (-> SQL queries) from
+  auto-generated template views, it was just so dead simple and easy to render dropdown fields in Admin Crud
+  interface. Though, is used properly with certain cross-layer constraints - Scala Templates are extremely convenient
+  and powerful.
 
 ### Media type support ###
 
-  Play Framework provides built-in [Json request support] [19] and [Xml content support] [20].
+  Play Framework provides built-in [Json content support] [19] and [Xml content support] [20].
 
   Saying that I must admit that I find Play Framework Json support quite decent (Play Json support is backed by
   popular [Jackson] [21] toolkit). However Xml support ir disappointingly limited comparing to Spring MVC (basically
-  Play just exposes request body as `org.w3c.dom.Document` and you are free to use SAX parser to process it).
+  Play just exposes request body as `org.w3c.dom.Document` and you are free to use SAX parser or whatever else to
+  process it).
 
   During my particular application development I switched to [FasterXML/jackson-dataformat-xml] [22] library,
   for simple, light-weight and more feature-rich XML support. Basically I was able to continue use my Json beans and
@@ -174,11 +176,18 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
   I came to conclusion that Xml is treated as second class citizen in the framework, all the love,
   care and polishing comes to Json. Xml is that poor neighbour which with envy watches Json riding his Bentley in
-  front of his doors ;) To some extent it makes certain sense.
+  front of his doors ;)
 
-  It seems that Play is more interested in modern Web technologies, light-weight micro-services etc... The Xml is
-  undoubtedly dying beast in these areas, it's mostly enterprise legacy. With all new specs addressing json document
+  It seems that Play is betting on modern Web technologies, light-weight micro-services etc... The Xml is undoubtedly
+  dying beast in these areas, it's mostly enterprise legacy. With all new specs addressing json document
   constraints, schemas and data validation rules - it's not too long until Json replaces Xml completely.
+
+  But still, until that most of us still will be forced to struggle with Xml time to time (in my particular case it
+  was because of end consumer device issues with Json data processing performance).
+
+----
+
+So far I have summed up most of main Play Framework for Java components. Now I
 
 ## The things I liked about Play Framework ##
 
