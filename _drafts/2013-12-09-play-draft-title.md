@@ -224,12 +224,66 @@ because of end consumer device issues with Json data processing performance).
 ## The things I dislike about Play Framework ##
 
 The list in the order of dislike:
+
 * Scala vs Java battle
+
+  Typesafe (the company behind Scala and Play Framework) poses Scala as general programming language which is
+  evolutionary improvement over current programming languages and paradigms. The ultimate goal in my understanding is
+  not to accomplish _JVM developer vulgaris_, but eventually to replace the Java language or become the serious
+  alternative.
+
+  The Play2 Framework core is written in Scala and Typesafe conveniently provide separate version of Play Framework
+  modules for developers who still wants to use Java for their job (silly me).
+
+  The problems appear when you want to for example - dynamically update certain ports of configurations during
+  application startup, or you notice that form field validation actually behaves differently in Scala and Java
+  versions (different error messages and Java version list of available validations is not so complete) etc...
+  Mostly those are small things, however it something I had to struggle with or inspect and compare Scala and Java
+  version internals.
 * Compatibility
+
+  Play is famously known for rewriting Play1 core from Java -> Scala, replacing view system etc... So,
+  historical record is pretty bad. I can't be afraid the next major version release won't be based on Clojure for
+  example if it will become good-selling trend).
+
+  Other side of the problem is Scala itself. As I understand it - Scala might (and often is) binary incompatible
+  between version updates (even minor ones). As an end result - if Play Framework decides to change it's compiler
+  version to benefit from new Scala features or bug fixes - it potentially will introduce dependency hell for end
+  developers to upgrade (dependencies might either be binary incompatible or their new updated recompiled version
+  might be missing).
 * Compilation time
-* Sbt-weirdness
+
+  Even with my small application, SSD disk and 8Gb Ram - compilation took up to 30 secs or in some cases up to 1-2
+  min. It places it nearby GWT, which is sad for both of those frameworks.
+
+* sbt
+
+  It's the system I just don't get. So far I've some sort of experience with Ant, Maven, Gradle, even Leiningen,
+  Rake and Buildr. But I don't get sbt, just don't. And actually I don't want and couldn't care less (maybe it's the
+  problem).
+
 * Module maturity
+
+  I'm used to Spring Security authentication and authorization programming model and maturity. I was unpleasantly
+  suprised with the state of things with Play Framework modules. Some of them seems mature,
+  but require quite a lot of boilerplate code to start with. Other just break binary compatibility too often (it
+  happens when the only version to depend to in public repository is SNAPSHOT one).
+
+  I wish auth modules would the only example to point to, however I had similar experience with different modules. I
+  get it, it happens. The shitty thing is when you don't have a lot of alternatives to choose from. Something breaks
+  and you are forced into options: either to rollback or maintain/fix the module dependency. It's not something you
+  could always afford to spend your time on, especially on tight calendar schedule.
+
 * Developer platform support (e.g. Windows)
+
+  Basically the reason I ended up using version `2.1.5` at the moment - is shitty Windows platform support on `2.2x`
+  branches on their initial releases. As I understood from GitHub issue comments and Google Group mailing lists - the
+  core team doesn't have testing on Windows integrated into their develop pipelines (since their use Mac OSX and
+  Linux mostly).
+
+  I would expect something like this from beta or release candidate, however it was strange to see it in release
+  version. But! I might misunderstood Play version and release concept, maybe it's something expected to happen until
+  some certain version is marked as production ready.
 
 ## Would I choose Play for my next project ##
 
