@@ -75,19 +75,19 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   Play for Java developers by default integrates with [Ebean ORM] [9].
 
   During the development process I grew more and more satisfied with Ebean capabilities,
-  I even like it more than hibernate/JPA now. It was a good fit for my needs,
-  with small learning curve and almost no annoyances. The only thing I dislike so far is the lack of opportunities to
-  specify `NULLS FIRST` or `NULLS LAST` in `ORDER BY` statements (the workaround is to use [RawSql] [10] and manual
-  column mapping, but it defeats the whole ORM purpose). By no means I allege Ebean is more feature-rich, faster,
-  cleaner or simpler to use in multi-layered OSGi application, but it was good enough for my use case and
-  didn't step on my toes too much during development.
+  I even like it more than hibernate/JPA now. It was good fit for my needs, with small learning curve and almost no
+  annoyances. The only thing I dislike so far is the lack of opportunities to specify `NULLS FIRST` or `NULLS LAST`
+  in `ORDER BY` statements (the workaround is to use [RawSql] [10] and manual column mapping,
+  but it defeats the whole ORM purpose). By no means I allege Ebean is more feature-rich, faster,
+  cleaner or simpler to use in multi-layered OSGi application, but it was good enough for my use case and didn't step
+   on my toes too much during development.
 
   As mentioned above, Play comes with built-in [evolutions] [7] database schema migration tool,
-  which turned out to be very handy in practice. In local development environment it watches
-  `conf/evolutions/<<ebean.server.instance>>` directory for changes and allows developer either to apply those or
-  ignore.
+  which turned out to be very handy in practice. In development environment it watches
+  `conf/evolutions/<<ebean.server.instance>>` directory for SQL script changes and allows developer either to apply
+  those or dismiss.
 
-  As it often is the case using agile methodologies I had to constantly update database schema during application
+  As it's often the case using agile methodologies I had to frequently adjust database schema during application
   development. So I had developed another small utility application to process business-analyst crafted Excel with
   database meta-model (sheets are database tables, columns are columns, certain meta-data gives Foreign Keys etc..)
   and generate database DDL and data (in Play evolutions format), application model beans,
@@ -103,13 +103,13 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
 ### API layer / Action Layer ###
 
-  Play Framework for java developers defaults to statically scoped class functions (see [JavaActions] [13] for more
-  details).
+  Play Framework for java developers defaults to statically scoped class functions (see [JavaActions] [13] for
+  idiomatic Java examples).
 
-  The most of us, the _JVM programmer-vulgaris_ kind come from C/C++, OOP, Spring world with JEE system legacy on
-  behind backs. First we are taught to learn structures, then algorithms, then OOP and abstractions,
-  then someone comes in and makes all of us look as fools, because 'patterns are the king'. Then in few years
-  after another newcomer makes all of look as fools again - 'all of us should use Scala/Haskell/XYZ' and write our code
+  The most of us, the _JVM programmer-vulgaris_ kind come from C/C++, OOP, Spring world with JEE system legacy behind
+  backs. First we are taught to learn structures, then algorithms, then OOP and abstractions,
+  then someone comes in and makes all of us look as fools, because _patterns are the king_. Then, few years after
+  another newcomer makes all of look as fools again - _we should use Scala/Haskell/XYZ_ and write our code
   monads/burito style ;) The same thing applies to application layers as well.
 
   So, my first _wtf_ reaction is mostly because of what influence Spring, Guice and similar programming models has had
@@ -118,23 +118,21 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   however as time moved on I got more and more used to program things that way and now I'm mentally ok now with this
   model.
 
-  I still don't believe Plays for Java approach is _the only right_ design approach. Plus,
+  I still don't believe Play for Java approach is _the only right_ design approach. Plus,
   I have to mention here what Play provides means to integrate with Spring or Guice IoC containers (e.g. see
-  [Play Java Spring] [14] and [Play Guice] [15] integration examples). I get what is the reason to stick with this
-  weird-looking static method design style. Play core itself is written in Scala programming language (which
-  itself is another buzz-generating topic out there, especially if you follow Twitter and LinkedIn engineering blog
-  posts).
+  [Play Java Spring template] [14] and [Play Guice template] [15]).
 
-  _NB: The rest of the paragraph are my speculations, thoughts and interpretations only._
-  The Play core is built around [Akka actors] [16] and [Netty network stack] [3], which kinda flirt with functional
-  programming styles, immutability, event-loops, message passing etc.., which idiomatically maps to first class
-  functions or function objects (I understand I'm functional paradigm n00b and might have mis-used terminology). I
-  personally hope that Java8 and [Project Lambda] [17] will provide lots of better alternatives of expressing this
-  kind of stuff with Java language itself. Still at the moment of writing Java7 is the current bleeding technology;
-  thus static functions is the most cleanest and easy way to express _just code, no shared state other than method
-  arguments and built-in-framework-methods to access my current execution scope_ programming model. The whole API and
-   stack design screams out of it, the whole stack points you mentally in _process event_, _share nothing_,
-   _cache aggressively_ thinking model.
+  _NB: The rest of the paragraph are my speculations and interpretations._
+  Play core is written in Scala programming language (which itself is another buzz-generating topic out there,
+  especially if you follow Twitter and LinkedIn engineering blog posts). The Play core is built around [Akka actors]
+  [16] and [Netty network stack] [3], both promote functional programming style, state immutability, event-loops,
+  message passing etc.., which idiomatically maps to first class functions or function objects (I understand I'm
+  functional paradigm n00b and might have mis-used terminology). I personally hope that Java8 and [Project Lambda]
+  [17] will provide lots of better alternatives of expressing this kind of stuff with Java language itself. Still, at
+  the moment of writing Java7, is the current bleeding technology; thus static functions is the most cleanest and
+  easy way to express _just code, no shared state other than method arguments and built-in-framework-methods to
+  access my current execution scope_ programming model. The whole API and stack design screams out of it,
+  the whole stack points you mentally in _process event_, _share nothing_, _cache aggressively_ thinking model.
 
 ### V for Vendetta or Scala Templates for Views ###
 
