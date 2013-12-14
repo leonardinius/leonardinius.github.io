@@ -202,15 +202,16 @@ because of end consumer device issues with Json data processing performance).
 
 ## Would I choose Play for my next project ##
 
-The short answer is classical _it depends_ ;) In case application is Json services oriented or requires client rich
-interaction, could be suited in small web-application or micro-service categories - most definitely yes. There are
-crazy enough people to [develop advanced online bank system using play in five months] [23] (please note,
-guys used Play1 Framework).
+The short answer is classical _it depends_ ;) In case my next project is Json services oriented or requires client rich
+interaction, or could be fitted in small web-application or micro-service categories - most definitely yes. There are
+even crazy enough people to [develop advanced online bank system using Play1 Framework] [23].
 
-I don't see any blockers not to do so, and I really enjoyed the certain point during application development in which
-Play allowed me to concentrate on my application and my clients requirements and not on technical solution part.
+I am concerned about Play compatibility, poor documentation and lack of developer resources. I am Ok to recommend Play
+to develop small replace-able business non-critical application, or micro-service, or set of Akka actors or whatever
+popular now, small, simple and requires high-throughput and low-latency.
 
-I personally am
+However If we are still talking in Online Bank system terms - Play Framework would not be either my first choice,
+nor second one.
 
 ## Other frameworks in my consideration list
 
