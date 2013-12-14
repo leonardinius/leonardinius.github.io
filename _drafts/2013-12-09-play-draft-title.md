@@ -37,12 +37,12 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 Similar to Ruby on Rails, Django or your favorite flavor of similar kind of full-stack development frameworks, Play
 comes with it's own version of tooling set.
 
-With a little help of `play new app-name`, `play debug run` and `play dist` commands
-(see [Play Console documentation] [2] for more) you are able to create new project skeleton,
+With a little help of `play new app-name`, `play debug run` and `play dist` commands (see
+[Play Console documentation] [2] for more) you are able to create new project skeleton,
 run application in debug mode or prepare standalone deployment artifacts...
 
-For those of you who actually like their IDEs to do most of their job, there are good news for you - Play comes
-with decent modern [IDE support] [11]. I would not vouch for all the IDEs listed there (Eclipse, IntelliJ Idea,
+For those of you who actually like their IDEs to do most of their job, there are good news for you - Play comes with
+decent modern [IDE support] [11]. I would not vouch for all the IDEs listed there (Eclipse, IntelliJ Idea,
 Netbeans) since I haven't tried them all with Play Framework. Still, I found IntelliJ Idea integration with Play
 Framework quite feature complete, snappy and mostly bug-free.
 
@@ -55,8 +55,8 @@ EventSource) and more...
 As a result of such bold move - Play applications are bad fitted for deployment on top of classical JEE Application
 containers (which as I understand is still [possible] [12], just highly not recommended). It's not something very
 uncommon lately: certain niche application frameworks abandon classical well-established enterprise deployment
-strategies and provide their own alternatives to develop and deploy applications into production. Just to name a
-few: [Vert.x] [4], [Dropwizard] [5]...
+strategies and provide their own alternatives to develop and deploy applications into production. Just to name a few:
+ [Vert.x] [4], [Dropwizard] [5]...
 
 In my personal opinion it's mostly a good thing, it provides Play Framework core developers possibility to optimize
 hard for particular niche. In this case Play concentrates on high-load, high-throughput and low-latency web services.
@@ -65,10 +65,10 @@ Another take on this is to consider that modern web application requirements are
 enterprise/JEE world tries to solve yesterdays problems on enterprise scale of business and processes; the rest of
 the world tries to address tomorrow's issues and challenges, empowering users to make them come a reality today.
 
-I myself am in the process of finalizing my application delivery and "throwing it over the fence" into
-production, so I don't have any _REAL_ experience with Play application in operation. I'm planning to leverage most
-of it to [play2-native-packager-plugin] [6] sbt-plugin (assembles debian package) and built-in [Play evolutions] [7]
-(manages database schema migrations). Only the time will show how it goes.
+I myself am in the process of finalizing my application delivery and "throwing it over the fence" into production,
+so I don't have any _REAL_ experience with Play application in operation. I'm planning to leverage most of it to
+[play2-native-packager-plugin] [6] sbt-plugin (assembles debian package) and built-in [Play evolutions] [7] (manages
+database schema migrations). Only the time will show how it goes.
 
 ### Data Modeling ###
 
@@ -76,11 +76,11 @@ Play for Java developers by default integrates with [Ebean ORM] [9].
 
 During the development process I grew more and more satisfied with Ebean capabilities,
 I even like it more than hibernate/JPA now. It was good fit for my needs, with small learning curve and almost no
-annoyances. The only thing I dislike so far is the lack of opportunities to specify `NULLS FIRST` or `NULLS LAST`
-in `ORDER BY` statements (the workaround is to use [RawSql] [10] and manual column mapping,
+annoyances. The only thing I dislike so far is the lack of opportunities to specify `NULLS FIRST` or `NULLS LAST` in
+`ORDER BY` statements (the workaround is to use [RawSql] [10] and manual column mapping,
 but it defeats the whole ORM purpose). By no means I allege Ebean is more feature-rich, faster,
 cleaner or simpler to use in multi-layered OSGi application, but it was good enough for my use case and didn't step
- on my toes too much during development.
+on my toes too much during development.
 
 As mentioned above, Play comes with built-in [evolutions] [7] database schema migration tool,
 which turned out to be very handy in practice. In development environment it watches
@@ -89,17 +89,17 @@ those or dismiss.
 
 As it's often the case using agile methodologies I had to frequently adjust database schema during application
 development. So I had developed another small utility application to process business-analyst crafted Excel with
-database meta-model (sheets are database tables, columns are columns, certain meta-data gives Foreign Keys etc..)
-and generate database DDL and data (in Play evolutions format), application model beans,
+database meta-model (sheets are database tables, columns are columns, certain meta-data gives Foreign Keys etc..) and
+generate database DDL and data (in Play evolutions format), application model beans,
 DAOs and admin CRUD interface. That way all I had to do was to provide new version of Excel into my utility
 application, refresh my main application page in browser, wait a few seconds, press button to agree with database
 schema update and vuala, I'm ready to go.
 
-And the best part of it - it's something integrated with the platform itself,
-is part of natural and default workflow. Any other developers running application on their own local development
-environments will get latest database version without any hassle, procedures or 'read in wiki and proceed with step
-by step instructions'. All they have to do - to continue run application the same way they always do and then
-`git pull` will fetch new updates - framework will conveniently notify them and allow to apply latest changes.
+And the best part of it - it's something integrated with the platform itself, is part of natural and default workflow.
+Any other developers running application on their own local development environments will get latest database version
+without any hassle, procedures or 'read in wiki and proceed with step by step instructions'. All they have to do - to
+continue run application the same way they always do and then `git pull` will fetch new updates - framework will
+conveniently notify them and allow to apply latest changes.
 
 ### API layer / Action Layer ###
 
@@ -108,9 +108,9 @@ idiomatic Java examples).
 
 The most of us, the _JVM programmer-vulgaris_ kind come from C/C++, OOP, Spring world with JEE system legacy behind
 backs. First we are taught to learn structures, then algorithms, then OOP and abstractions,
-then someone comes in and makes all of us look as fools, because _patterns are the king_. Then, few years after
-another newcomer makes all of look as fools again - _we should use Scala / Haskell / XYZ_ and write our code
-monads / burritoto style ;) The same thing applies to application layers as well.
+then someone comes in and makes all of us look as fools, because _patterns are the king_. Then,
+few years after another newcomer makes all of look as fools again - _we should use Scala / Haskell / XYZ_ and write
+our code monads / burritoto style ;) The same thing applies to application layers as well.
 
 So, my first _wtf_ reaction is mostly because of what influence Spring, Guice and similar programming models has had
 on me. I'm used to layer applications certain way now. And it was challenging to me rethink this approach with Play
@@ -119,74 +119,68 @@ however as time moved on I got more and more used to program things that way and
 model.
 
 Play Framework 2.x series core is written in Scala programming language (which itself is another buzz-generating
-topic out there, especially if you follow Twitter and LinkedIn engineering blog posts). The Play core is built
-around [Akka actors] [16] and [Netty network stack] [3], both promote functional programming style,
-state immutability, event-loops, message passing etc.., which idiomatically maps to first class functions or
-function objects (I understand I'm functional paradigm n00b and might have mis-used terminology). I personally hope
-that Java8 and [Project Lambda] [17] will provide lots of better alternatives of expressing this kind of stuff with
-Java language itself. Still, at the moment of writing, Java7 is the current bleeding technology; thus static
-functions are the most cleanest and easiest way to express _just code, no shared state other than method arguments
-and framework-methods to access current execution scope_ programming model. The whole API and stack design screams
-out of it, the whole stack points you mentally in _process event_, _share nothing_,
-_cache aggressively_ thinking model.
+topic out there, especially if you follow Twitter and LinkedIn engineering blog posts). The Play core is built around
+[Akka actors] [16] and [Netty network stack] [3], both promote functional programming style, state immutability,
+event-loops, message passing etc.., which idiomatically maps to first class functions or function objects (I
+know I'm functional paradigm n00b and might have mis-used terminology). I personally hope that Java8 and [Project
+Lambda] [17] will provide lots of better alternatives of expressing this kind of stuff with Java language itself.
+Still, at the moment of writing, Java7 is the current bleeding technology; thus static functions are the most
+cleanest and easiest way to express _just code, no shared state other than method arguments and framework-methods to
+access current execution scope_ programming model. The whole API and stack design screams out of it,
+the whole stack points you mentally in _process event_, _share nothing_, _cache aggressively_ thinking model.
 
 I still don't believe Play for Java approach is _the only right_ design approach. Plus,
 I have to mention here what Play provides means to integrate with Spring or Guice IoC containers (e.g. see
 [Play Java Spring template] [14] and [Play Guice template] [15]). In my particular case I decided to go without any
 additional fancy toolkits or IoC, both as experiment and simplification instrument. My application was small enough,
-with most of the boilerplate code and coupling auto-generated by my other utility application; the rest of
-business logic was arranged in specific controller classes and in shared Domain Knowledge utility services. At the
-moment I'm pretty ok with the application layout and layers: I don't find it too difficult or too spaghetti. Of
-course, the real implications of design decisions made and their consequences I will see only in system operations
-and support.
+with most of the boilerplate code and coupling auto-generated by my other utility application; the rest of business
+logic was arranged in specific controller classes and in shared Domain Knowledge utility services. At the moment I'm
+pretty ok with the application layout and layers: I don't find it too difficult or too spaghetti. Of course,
+the real implications of design decisions made and their consequences I will see only in system operations and support.
 
 ### V for Vendetta or Scala Templates for Views ###
 
-[Play Framework Templates] [18] is the feature I personally found the as one of the most controversial Play
-Framework features.
+[Play Framework Templates] [18] is the feature I personally found the as one of the most controversial Play Framework
+features.
 
 From day zero I hated that it forces me to learn new template programming language (basically Scala subset). Plus,
 initially I disliked the fact that Play Framework Scala templates are generally much more imperative,
 than declarative. It reminded me old good PHP scripts with business process logic literally littered around and mixed
 with visualization.
 
-I still believe declarative approach should be used as much as possible for application views (encourages
-business process and logic decoupling from the actual view). However I also Sound scala template reusable blocks,
-implicit form field decoration (I was able to modify default field html layout with my twitter bootstrap based
-field layout) and view composition extremely powerful and flexible.
+I still believe declarative approach should be used as much as possible for application views (encourages business
+process and logic decoupling from the actual view). However I also Sound scala template reusable blocks,
+implicit form field decoration (I was able to modify default field html layout with my twitter bootstrap based field
+layout) and view composition extremely powerful and flexible.
 
-At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the
-same way as PHP does. Openly speaking I myself performed quite a lot model lookups (-> SQL queries) from
-auto-generated template views, it was just so dead simple and easy to render dropdown fields in Admin Crud
-interface. Though, is used properly with certain cross-layer constraints - Scala Templates are extremely convenient
+At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the same
+way as PHP does. Openly speaking I myself performed quite a lot model lookups (-> SQL queries) from auto-generated
+template views, it was just so dead simple and easy to render dropdown fields in Admin Crud interface. Though,
+is used properly with certain cross-layer constraints - Scala Templates are extremely convenient
 and powerful.
 
 ### Media type support ###
 
 Play Framework provides built-in [Json content support] [19] and [Xml content support] [20].
 
-Saying that I must admit that I find Play Framework Json support quite decent (Play Json support is backed by
-popular [Jackson] [21] toolkit). However Xml support ir disappointingly limited comparing to Spring MVC (basically
-Play just exposes request body as `org.w3c.dom.Document` and you are free to use SAX parser or whatever else to
-process it).
+Saying that I must admit that I find Play Framework Json support quite decent (Play Json support is backed by popular
+[Jackson] [21] toolkit). However Xml support ir disappointingly limited comparing to Spring MVC (basically Play just
+exposes request body as `org.w3c.dom.Document` and you are free to use SAX parser or whatever else to process it).
 
 During my particular application development I switched to [FasterXML/jackson-dataformat-xml] [22] library,
 for simple, light-weight and more feature-rich XML support. Basically I was able to continue use my Json beans and
 serialize/deserialize them either as Json or as Xml depending on context.
 
 I came to conclusion that Xml is treated as second class citizen in the framework, all the love,
-care and polishing comes to Json. Xml is that poor neighbour which with envy watches Json riding his Bentley in
-front of his doors ;)
+care and polishing comes to Json. Xml is that poor neighbour which with envy watches Json riding his Bentley in front
+of his doors ;)
 
 It seems that Play is betting on modern Web technologies, light-weight micro-services etc... The Xml is undoubtedly
-dying beast in these areas, it's mostly enterprise legacy. With all new specs addressing json document
-constraints, schemas and data validation rules - it's not too long until Json replaces Xml completely.
+dying beast in these areas, it's mostly enterprise legacy. With all new specs addressing json document constraints,
+schemas and data validation rules - it's not too long until Json replaces Xml completely.
 
-But still, until that most of us still will be forced to struggle with Xml time to time (in my particular case it
-was because of end consumer device issues with Json data processing performance).
-
-So far I have summed up most of main Play Framework for Java components. Now I'm going to sum up things I liked the
-most.
+But still, until that most of us still will be forced to struggle with Xml time to time (in my particular case it was
+because of end consumer device issues with Json data processing performance).
 
 ## The things I liked most about Play Framework ##
 
