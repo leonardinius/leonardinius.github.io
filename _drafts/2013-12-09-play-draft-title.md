@@ -216,6 +216,10 @@ because of end consumer device issues with Json data processing performance).
 
 * JsRoutes
 
+  The same thing as routes above, but to [invoke controllers action from client-side Javascript] [30]. It makes just
+  so strangely easy and convenient to call server-side action from the browser, and still I don't need to worry about
+  using right URL or using right HTTP method etc ... I even still reference it using statically typed and
+  compile-time checked helper methods. What can I say? It very convenient.
 
 ## The things I dislike about Play Framework ##
 
@@ -281,3 +285,5 @@ order of appeal):
 [26]: http://www.ninjaframework.org/ "Ninja Web Framework home page"
 [27]: http://grails.org/ "Grails Home Page"
 [28]: https://wicket.apache.org/ "Apache Wicket Home page"
+[29]: http://www.playframework.com/documentation/2.1.5/JavaRouting "Play Framework Routing"
+[30]: http://www.playframework.com/documentation/2.1.5/JavaGuide6 "Invoking actions from Javascript"
