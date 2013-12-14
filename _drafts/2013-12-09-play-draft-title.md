@@ -69,7 +69,7 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
   Play for Java developers by default integrates with [Ebean ORM] [9].
 
-  During the development process I felt more and more satisfied with Ebean capabilities,
+  During the development process I grew more and more satisfied with Ebean capabilities,
   I even like it more than hibernate/JPA now. It was a good fit for my needs,
   with small learning curve and almost no annoyances. The only thing I dislike so far is the lack of opportunities to
    specify `NULLS FIRST` or `NULLS LAST` in order expressions (the workaround is to use [RawSql] [10] and manual
