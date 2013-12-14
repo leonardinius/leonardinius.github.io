@@ -72,23 +72,23 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   During the development process I grew more and more satisfied with Ebean capabilities,
   I even like it more than hibernate/JPA now. It was a good fit for my needs,
   with small learning curve and almost no annoyances. The only thing I dislike so far is the lack of opportunities to
-   specify `NULLS FIRST` or `NULLS LAST` in order expressions (the workaround is to use [RawSql] [10] and manual
-   column mapping, but it defeats the whole ORM concept). By no means I allege Ebean is more feature-rich, faster,
-   cleaner or simpler to use in multi module SME or JEE application, but it was good enough for my use case and
-   didn't step on my toes during development.
+  specify `NULLS FIRST` or `NULLS LAST` in `ORDER BY` statements (the workaround is to use [RawSql] [10] and manual
+  column mapping, but it defeats the whole ORM purpose). By no means I allege Ebean is more feature-rich, faster,
+  cleaner or simpler to use in multi-layered OSGi application, but it was good enough for my use case and
+  didn't step on my toes too much during development.
 
   As mentioned above, Play comes with built-in [evolutions] [7] database schema migration tool,
-  which turned out to be very handy in practice. The way it works in local development environment is - it tracks
-  special directory for sql scripts and when sql scripts changes are detected it offers to changes on local
-  development database.
+  which turned out to be very handy in practice. In local development environment it watches
+  `conf/evolutions/<<ebean.server.instance>>` directory for changes and allows developer either to apply those or
+  ignore.
 
   As it often is the case using agile methodologies I had to constantly update database schema during application
-  development. So I had developed another small Play application to process business-analyst crafted Excel with
+  development. So I had developed another small utility application to process business-analyst crafted Excel with
   database meta-model (sheets are database tables, columns are columns, certain meta-data gives Foreign Keys etc..)
-  and generate database DDL and data, application model beans, DAOs and admin CRUD interface. That way all I had to
-  do was to upload new version of Excel into my utility application, refresh my main application page in browser,
-  wait a few seconds, press button to agree with database schema update and vuala,
-  I'm ready to go.
+  and generate database DDL and data (in Play evolutions format), application model beans,
+  DAOs and admin CRUD interface. That way all I had to do was to provide new version of Excel into my utility
+  application, refresh my main application page in browser, wait a few seconds, press button to agree with database
+  schema update and vuala, I'm ready to go.
 
   And the best part of it - it's something integrated with the platform itself,
   is part of natural and default workflow. Any other developers running application on their own local development
@@ -98,8 +98,7 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
 ### API layer / Action Layer / MVC ###
 
-  ss
-  sd
+  Play Framework for java developers default Action or MVC programming model is
 
  ```
   controller
