@@ -184,7 +184,7 @@ because of end consumer device issues with Json data processing performance).
 
 ## The things I liked most about Play Framework ##
 
-* Low entry
+* Low entry level
 
   I believe Play Framework has almost the lowest entry level to Java full-stack web framework I have seen so far. For
   starters it comes with it's [Typesafe Activator] [24] and multiple [starter templates] [25].
@@ -200,7 +200,20 @@ because of end consumer device issues with Json data processing performance).
 
   So, I think entry level is extremely low, however getting to experienced plateau might be a challenge.
 * Static typing (templates, routes)
-  Almost everything (except
+
+  Almost everything (except i18N messages most noticeably) is statically typed and checked during compilation. All
+  the web application routes to controller methods, all the view templates are compiled and checked before going out
+  into production. It freakingly awesome, I don't have to worry about mistyping url, miscasting request parameter
+  or accidental change during refactoring.
+
+  Now I have single point of truth for url definitions, `conf/routes` file. There is no other place to look into. In
+  my views and my controller code I just reference compile-time generated binding, if something is mis-configured or
+  mis-used - compile time error will be displayed.
+
+  I had quite positive experience with IntelliJ Idea IDE using and navigating Play routes during application
+  development. So. it's not something inconvenient (I didn't have to launch anything,
+  wait for something or perform any other kind of manual configuration magic; it just worked).
+
 * JsRoutes
 
 
