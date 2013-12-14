@@ -109,8 +109,8 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   The most of us, the _JVM programmer-vulgaris_ kind come from C/C++, OOP, Spring world with JEE system legacy behind
   backs. First we are taught to learn structures, then algorithms, then OOP and abstractions,
   then someone comes in and makes all of us look as fools, because _patterns are the king_. Then, few years after
-  another newcomer makes all of look as fools again - _we should use Scala/Haskell/XYZ_ and write our code
-  monads/burito style ;) The same thing applies to application layers as well.
+  another newcomer makes all of look as fools again - _we should use Scala / Haskell / XYZ_ and write our code
+  monads / burritoto style ;) The same thing applies to application layers as well.
 
   So, my first _wtf_ reaction is mostly because of what influence Spring, Guice and similar programming models has had
   on me. I'm used to layer applications certain way now. And it was challenging to me rethink this approach with Play
@@ -118,17 +118,17 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   however as time moved on I got more and more used to program things that way and now I'm mentally ok now with this
   model.
 
-  _NB: The rest of the paragraph are my speculations and interpretations._
-  Play2 core is written in Scala programming language (which itself is another buzz-generating topic out there,
-  especially if you follow Twitter and LinkedIn engineering blog posts). The Play core is built around [Akka actors]
-  [16] and [Netty network stack] [3], both promote functional programming style, state immutability, event-loops,
-  message passing etc.., which idiomatically maps to first class functions or function objects (I understand I'm
-  functional paradigm n00b and might have mis-used terminology). I personally hope that Java8 and [Project Lambda]
-  [17] will provide lots of better alternatives of expressing this kind of stuff with Java language itself. Still, at
-  the moment of writing, Java7 is the current bleeding technology; thus static functions are the most cleanest and
-  easiest way to express _just code, no shared state other than method arguments and framework-methods to access
-  current execution scope_ programming model. The whole API and stack design screams out of it,
-  the whole stack points you mentally in _process event_, _share nothing_, _cache aggressively_ thinking model.
+  Play Framework 2.x series core is written in Scala programming language (which itself is another buzz-generating
+  topic out there, especially if you follow Twitter and LinkedIn engineering blog posts). The Play core is built
+  around [Akka actors] [16] and [Netty network stack] [3], both promote functional programming style,
+  state immutability, event-loops, message passing etc.., which idiomatically maps to first class functions or
+  function objects (I understand I'm functional paradigm n00b and might have mis-used terminology). I personally hope
+  that Java8 and [Project Lambda] [17] will provide lots of better alternatives of expressing this kind of stuff with
+  Java language itself. Still, at the moment of writing, Java7 is the current bleeding technology; thus static
+  functions are the most cleanest and easiest way to express _just code, no shared state other than method arguments
+  and framework-methods to access current execution scope_ programming model. The whole API and stack design screams
+  out of it, the whole stack points you mentally in _process event_, _share nothing_,
+  _cache aggressively_ thinking model.
 
   I still don't believe Play for Java approach is _the only right_ design approach. Plus,
   I have to mention here what Play provides means to integrate with Spring or Guice IoC containers (e.g. see
@@ -138,7 +138,7 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   business logic was arranged in specific controller classes and in shared Domain Knowledge utility services. At the
   moment I'm pretty ok with the application layout and layers: I don't find it too difficult or too spaghetti. Of
   course, the real implications of design decisions made and their consequences I will see only in system operations
-  ans support.
+  and support.
 
 ### V for Vendetta or Scala Templates for Views ###
 
@@ -152,7 +152,7 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
   I still believe declarative approach should be used as much as possible for application views (encourages
   business process and logic decoupling from the actual view). However I also Sound scala template reusable blocks,
-  implicit form field decoration (I was able to modify default field html layout with my twitter-bootstrap based
+  implicit form field decoration (I was able to modify default field html layout with my twitter bootstrap based
   field layout) and view composition extremely powerful and flexible.
 
   At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the
@@ -162,7 +162,23 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
 ### Media type support ###
 
+  Play Framework provides built-in [Json request support] [19] and [Xml content support] [20].
 
+  Saying that I must admit that I find Play Framework Json support quite decent (Play Json support is backed by
+  popular [Jackson] [21] toolkit). However Xml support ir disappointingly limited comparing to Spring MVC (basically
+  Play just exposes request body as `org.w3c.dom.Document` and you are free to use SAX parser to process it).
+
+  During my particular application development I switched to [FasterXML/jackson-dataformat-xml] [22] library,
+  for simple, light-weight and more feature-rich XML support. Basically I was able to continue use my Json beans and
+  serialize/deserialize them either as Json or as Xml depending on context.
+
+  I came to conclusion that Xml is treated as second class citizen in the framework, all the love,
+  care and polishing comes to Json. Xml is that poor neighbour which with envy watches Json riding his Bentley in
+  front of his doors ;) To some extent it makes certain sense.
+
+  It seems that Play is more interested in modern Web technologies, light-weight micro-services etc... The Xml is
+  undoubtedly dying beast in these areas, it's mostly enterprise legacy. With all new specs addressing json document
+  constraints, schemas and data validation rules - it's not too long until Json replaces Xml completely.
 
 ## The things I liked about Play Framework ##
 
@@ -220,10 +236,6 @@ share the idea and concerns
 
 scala sucks
 
-> Let me preface this in that I really don't want to criticise anyone's individual code here.
-> More than that, if someone would look at my own JavaScript code it would not be any better.
-> If anything it's worse, because I did not spend much time on it and I'm not very experienced with JavaScript.
-
 <!-- Link definition -->
 [galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
 [1]:  http://www.playframework.com/ "Play Framework site"
@@ -246,3 +258,5 @@ scala sucks
 [18]: http://www.playframework.com/documentation/2.1.5/ScalaTemplates "Scala Templates"
 [19]: http://www.playframework.com/documentation/2.1.5/JavaJsonRequests "Java Json Content handling"
 [20]: http://www.playframework.com/documentation/2.1.5/JavaXmlRequests "Java Xml Content handling"
+[21]: http://jackson.codehaus.org/ "Jackson toolkit home page"
+[22]: https://github.com/FasterXML/jackson-dataformat-xml "Jackson JSON support for de-/serializing POJOs as XML"
