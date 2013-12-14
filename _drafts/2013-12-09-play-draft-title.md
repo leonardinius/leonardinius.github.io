@@ -3,7 +3,7 @@ title: "play-draft-title"
 layout: post
 ---
 
-[Play Framework] [1] is getting a lot of attention lately. Since I had recent first hand experience using Play
+[Play Framework 2x] [1] is getting a lot of attention lately. Since I had recent first hand experience using Play
 framework for java developers to develop small web application, I decided to summarize my thoughts and concerns in
 the form of blog entry.
 
@@ -184,44 +184,10 @@ because of end consumer device issues with Json data processing performance).
 
 ## The things I liked most about Play Framework ##
 
-## The things I hate about Play Framework ##
-
-## Would I choose Play for my next project ##
-
- ```
-  controller
-  json, xml?
-  rest
-
-  RESTful by default
-  Asset Compiler for CoffeeScript, LESS, etc
-  JSON is a first class citizen
-  Websockets, Comet, EventSource
-  Extensive NoSQL & Big Data Support
- ```
-
-How does play! compare to framework x
-=====================================
-
-Alternatives
-* Spring
-* Grails
-* Wicket
-* Vert.x
-* Dropwizard
-* Ninja Web Framework
-
+## The things I dislike about Play Framework ##
 
 + Main goal is to replace, not to accompanion
-
-Ecosystem
-========
-
-List
 * libs
-* IDEs
-* last not least - community
-
 * play compatability
 * compilation time
 * scala and sbt-weirdness
@@ -233,10 +199,29 @@ List
 * community is not so bad, however the backward compatability approach etc .. rifing the other horse (not java shop way)
 
 
-While writing this article - came across http://lucumr.pocoo.org/2013/12/9/stop-being-clever/
-share the idea and concerns
 
-scala sucks
+## Would I choose Play for my next project ##
+
+The short answer is classical _it depends_ ;) In case application is Json services oriented or requires client rich
+interaction, could be suited in small web-application or micro-service categories - most definitely yes. There are
+crazy enough people to [develop advanced online bank system using play in five months] [23] (please note,
+guys used Play1 Framework).
+
+I don't see any blockers not to do so, and I really enjoyed the certain point during application development in which
+Play allowed me to concentrate on my application and my clients requirements and not on technical solution part.
+
+I personally am
+
+## Other frameworks in my consideration list
+
+Here is the list of frameworks I might consider to develop my next small experimental project (the list is in the
+order of appeal):
+
+* Vert.x
+* Dropwizard
+* Ninja Web Framework
+* Grails
+* Wicket
 
 <!-- Link definition -->
 [galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
@@ -262,3 +247,4 @@ scala sucks
 [20]: http://www.playframework.com/documentation/2.1.5/JavaXmlRequests "Java Xml Content handling"
 [21]: http://jackson.codehaus.org/ "Jackson toolkit home page"
 [22]: https://github.com/FasterXML/jackson-dataformat-xml "Jackson JSON support for de-/serializing POJOs as XML"
+[23]: http://blog.codeborne.com/2013/03/online-bank-from-scratch-in-five-months.html "Codeborne: Online Bank in five months"
