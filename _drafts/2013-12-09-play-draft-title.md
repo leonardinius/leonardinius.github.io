@@ -7,22 +7,23 @@ layout: post
 framework for java developers to develop small web application, I decided to summarize my thoughts and concerns in
 the form of blog entry.
 
+For the disclosure, the application I developed with Play Framework consists from around 142 Java files (647 Kb),
+416 Scala.Html templates (416 Kb), 3 Scala files (28 Kb), 14 SQL files (478 Kb), css, js, etc...
+
 Let me preface this in that I really don't consider myself to be any kind of Web-development,
 platform or stack guru. The opinions expressed here are mine and mine only. More than that,
 because of my brief  acquaintance with the subject and not very prolonged overall experience with top-edge high-load
-real-time buzz-this buzzword-that system development  and operations - my opinions and conclusions are expected to be
+real-time buzz-this buzzword-that system development and operations - my opinions and conclusions are expected to be
 one-sided, shallow, incomplete and to certain degree incompetent.
 
-The main point of this post is mostly self-oriented: to exercise writing skills and mentally iterate through my Play
-experience stuff, to summarize all of things I have in my head, get it down in the written form to share
-with my colleagues at [@galeoconsulting](https://twitter.com/galeoconsulting) and have some reference point to return
-to after a while (I found it useful to re-iterate time to time through previous experiences and re-evaluate
-assumptions and conclusions).
+The main goal of this post is to mentally iterate through my Play experience, summarize all of things I have in my
+head, get it down in the written form and share it with my colleagues at
+[@galeoconsulting] [galeo]. Plus, I find it useful to sometimes re-iterate through previous experiences and
+re-evaluate past assumptions and reconsider conclusions.
 
 In my first draft of this article it was 1-2 paragraphs large, just few pain points and thoughts.  After a while,
 however, it became less and less concentrated, the whole thing became confusing. At one point I stopped worrying
-about overall structure and decided to simply go with the natural flow of my thoughts: to list main concepts of the
-Play Framework, provide my comments, share my experience and concerns.
+about overall structure and decided to simply go with the natural flow of my thoughts.
 
 ## Brief acquaintance with Play Framework ##
 
@@ -42,32 +43,31 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
   For those of you who actually like their IDEs to do most of their job, there are good news for you - Play comes
   with decent modern [IDE support] [11]. I would not vouch for all the IDEs listed there (Eclipse, IntelliJ Idea,
-  Netbeans) since I haven't tried them all with Play Framework. Still, I found IntelliJ Idea and Play Framework
-  integration quite feature complete, snappy and mostly bug-free.
+  Netbeans) since I haven't tried them all with Play Framework. Still, I found IntelliJ Idea integration with Play
+  Framework quite feature complete, snappy and mostly bug-free.
 
 ### Server, Network, and Hosting Environment ###
 
-   Play dismisses JEE servlet model in favor of NIO-charged [Netty] [3] network stack. As a result,
-   Play features _Stateless Web Tier_, _Non-blocking I/O_, _Real-time communication support_ (Web-sockets, Comet,
-   EventSource)  and more...
+  Play dismisses JEE servlet model in favor of NIO-charged [Netty] [3] network stack. As a result,
+  Play features _Stateless Web Tier_, _Non-blocking I/O_, _Real-time communication support_ (Web-sockets, Comet,
+  EventSource) and more...
 
-   As a result of such bold move - Play applications are bad fitted for deployment on top of classical JEE Application
-   containers (which as I understand is still [possible] [12], just highly not recommended). It's not something very
-   uncommon lately: certain niche application frameworks abandon classical well-established enterprise deployment
-   strategies and provide their own alternatives to develop and deploy applications into production. Just to name a
-   few: [Vert.x] [4], [Dropwizard] [5]...
+  As a result of such bold move - Play applications are bad fitted for deployment on top of classical JEE Application
+  containers (which as I understand is still [possible] [12], just highly not recommended). It's not something very
+  uncommon lately: certain niche application frameworks abandon classical well-established enterprise deployment
+  strategies and provide their own alternatives to develop and deploy applications into production. Just to name a
+  few: [Vert.x] [4], [Dropwizard] [5]...
 
-  In my personal opinion it's mostly good thing, it provides Play Framework core developers possibility to optimize
+  In my personal opinion it's mostly a good thing, it provides Play Framework core developers possibility to optimize
   hard for particular niche. In this case Play concentrates on high-load, high-throughput and low-latency web services.
 
-  Another take on this is to consider that modern web application developer requirements are a decade ahead of
-  enterprise. The enterprise/JEE world tries to solve yesterdays problems on enterprise scale of business and
-  processes; the rest of the world tries to address tomorrow's issues and challenges,
-  empowering users to make them come a reality today.
+  Another take on this is to consider that modern web application requirements are a decade ahead of enterprise. The
+  enterprise/JEE world tries to solve yesterdays problems on enterprise scale of business and processes; the rest of
+  the world tries to address tomorrow's issues and challenges, empowering users to make them come a reality today.
 
   I myself am in the process of finalizing my application delivery and "throwing it over the fence" into
   production, so I don't have any _REAL_ experience with Play application in operation. I'm planning to leverage most
-   of it to [play2-native-packager-plugin] [6] sbt-plugin (assembles debian package) and built-in [Play evolutions] [7]
+  of it to [play2-native-packager-plugin] [6] sbt-plugin (assembles debian package) and built-in [Play evolutions] [7]
   (manages database schema migrations). Only the time will show how it goes.
 
 ### Data Modeling ###
@@ -213,6 +213,7 @@ scala sucks
 > If anything it's worse, because I did not spend much time on it and I'm not very experienced with JavaScript.
 
 <!-- Link definition -->
+[galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
 [1]:  http://www.playframework.com/ "Play Framework site"
 [2]:  http://www.playframework.com/documentation/2.2.x/PlayConsole "Play Console documentation"
 [3]:  http://netty.io/ "Netty home page"
