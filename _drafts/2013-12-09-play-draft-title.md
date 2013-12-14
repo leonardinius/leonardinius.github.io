@@ -3,9 +3,9 @@ title: "play-draft-title"
 layout: post
 ---
 
-[Play Framework] [1] is getting a lot of attention lately. I won't speculate on the reasons  why this is so. However
-since I had lately a first hand experience developing small application using the Play framework for java developers,
-I decided to share my thoughts and concerns here.
+[Play Framework] [1] is getting a lot of attention lately. Since I had recent first hand experience using Play
+framework for java developers to develop small web application, I decided to summarize my thoughts and concerns in
+the form of blog entry.
 
 Let me preface this in that I really don't consider myself to be any kind of Web-development,
 platform or stack guru. The opinions expressed here are mine and mine only. More than that,
@@ -13,11 +13,16 @@ because of my brief  acquaintance with the subject and not very prolonged overal
 real-time buzz-this buzzword-that system development  and operations - my opinions and conclusions are expected to be
 one-sided, shallow, incomplete and to certain degree incompetent.
 
+The main point of this post is mostly self-oriented: to exercise writing skills and mentally iterate through my Play
+experience stuff, to summarize all of things I have in my head, get it down in the written form to share
+with my colleagues at [@galeoconsulting](https://twitter.com/galeoconsulting) and have some reference point to return
+to after a while (I found it useful to re-iterate time to time through previous experiences and re-evaluate
+assumptions and conclusions).
+
 In my first draft of this article it was 1-2 paragraphs large, just few pain points and thoughts.  After a while,
-however, it became less and less concentrated, the whole thing became confusing. So I’ve decided to simply go with
-the natural flow of thoughts, listing main concepts of the Play Framework along with my comments,
-sharing my experience and then (potentially) write a series of follow up posts with more details on particular
-matters.
+however, it became less and less concentrated, the whole thing became confusing. At one point I stopped worrying
+about overall structure and decided to simply go with the natural flow of my thoughts: to list main concepts of the
+Play Framework, provide my comments, share my experience and concerns.
 
 ## Brief acquaintance with Play Framework ##
 
@@ -33,7 +38,7 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
 
   With a little help of `play new app-name`, `play debug run` and `play dist` commands
   (see [Play Console documentation] [2] for more) you are able to create new project skeleton,
-  run application in debug mode or prepare standalone deployment artifact ...
+  run application in debug mode or prepare standalone deployment artifacts...
 
   For those of you who actually like their IDEs to do most of their job, there are good news for you - Play comes
   with decent modern [IDE support] [11]. I would not vouch for all the IDEs listed there (Eclipse, IntelliJ Idea,
@@ -96,9 +101,52 @@ Play is acknowledged to be full-stack family framework, which means it comes wit
   by step instructions'. All they have to do - to continue run application the same way they always do and then
   `git pull` will fetch new updates - framework will conveniently notify them and allow to apply latest changes.
 
-### API layer / Action Layer / MVC ###
+### API layer / Action Layer ###
 
-  Play Framework for java developers default Action or MVC programming model is
+  Play Framework for java developers defaults to statically scoped class functions (see [JavaActions] [13] for more
+  details).
+
+  The most of us, the _JVM programmer-vulgaris_ kind come from C/C++, OOP, Spring world with JEE system legacy on
+  behind backs. First we are taught to learn structures, then algorithms, then OOP and abstractions,
+  then someone comes in and makes all of us look as fools, because 'patterns are the king'. Then in few years
+  after another newcomer makes all of look as fools again - 'all of us should use Scala/Haskell/XYZ' and write our code
+  monads/burito style ;) The same thing applies to application layers as well.
+
+  So, my first _wtf_ reaction is mostly because of what influence Spring, Guice and similar programming models has had
+  on me. I'm used to layer applications certain way now. And it was challenging to me rethink this approach with Play
+  Framework stack. Initially it was something unpleasant/mentally challenging at least,
+  however as time moved on I got more and more used to program things that way and now I'm mentally ok now with this
+  model.
+
+  I still don't believe Plays for Java approach is _the only right_ design approach. Plus,
+  I have to mention here what Play provides means to integrate with Spring or Guice IoC containers (e.g. see
+  [Play Java Spring] [14] and [Play Guice] [15] integration examples). I get what is the reason to stick with this
+  weird-looking static method design style. Play core itself is written in Scala programming language (which
+  itself is another buzz-generating topic out there, especially if you follow Twitter and LinkedIn engineering blog
+  posts).
+
+  _NB: The rest of the paragraph are my speculations, thoughts and interpretations only._
+  The Play core is built around [Akka actors] [16] and [Netty network stack] [3], which kinda flirt with functional
+  programming styles, immutability, event-loops, message passing etc.., which idiomatically maps to first class
+  functions or function objects (I understand I'm functional paradigm n00b and might have mis-used terminology). I
+  personally hope that Java8 and [Project Lambda] [17] will provide lots of better alternatives of expressing this
+  kind of stuff with Java language itself. Still at the moment of writing Java7 is the current bleeding technology;
+  thus static functions is the most cleanest and easy way to express _just code, no shared state other than method
+  arguments and built-in-framework-methods to access my current execution scope_ programming model. The whole API and
+   stack design screams out of it, the whole stack points you mentally in _process event_, _share nothing_,
+   _cache aggressively_ thinking model.
+
+### V for Vendetta or Scala Templates for Views ###
+
+  sdsd
+
+### Media type support ###
+
+## Experience overall / Feelings zone ###
+
+## Would I choose Play for my next project ##
+
+asas
 
  ```
   controller
@@ -165,15 +213,20 @@ scala sucks
 > If anything it's worse, because I did not spend much time on it and I'm not very experienced with JavaScript.
 
 <!-- Link definition -->
-[1]: http://www.playframework.com/ "Play Framework site"
-[2]: http://www.playframework.com/documentation/2.0.2/PlayConsole "Play Console documentation"
-[3]: http://netty.io/ "Netty home page"
-[4]: http://vertx.io/ "Vert.x home page"
-[5]: http://dropwizard.codahale.com/ "Dropwizard site"
-[6]: https://github.com/kryptt/play2-native-packager-plugin "sbt play2-native-packager github home"
-[7]: http://www.playframework.com/documentation/2.2.x/Evolutions "Play evolutions documentation"
-[8]: http://www.playframework.com/documentation/2.0/ScalaAnorm "Scala Anorm and Play integration documentation"
-[9]: http://www.playframework.com/documentation/2.2.x/JavaEbean "EBean and Play for java developers documentation"
+[1]:  http://www.playframework.com/ "Play Framework site"
+[2]:  http://www.playframework.com/documentation/2.2.x/PlayConsole "Play Console documentation"
+[3]:  http://netty.io/ "Netty home page"
+[4]:  http://vertx.io/ "Vert.x home page"
+[5]:  http://dropwizard.codahale.com/ "Dropwizard site"
+[6]:  https://github.com/kryptt/play2-native-packager-plugin "sbt play2-native-packager github home"
+[7]:  http://www.playframework.com/documentation/2.2.x/Evolutions "Play evolutions documentation"
+[8]:  http://www.playframework.com/documentation/2.2.x/ScalaAnorm "Scala Anorm and Play integration documentation"
+[9]:  http://www.playframework.com/documentation/2.2.x/JavaEbean "EBean and Play for java developers documentation"
 [10]: http://www.avaje.org/ebean/introquery_rawsql.html "EBean RawSql example"
-[11]: http://www.playframework.com/documentation/2.0.1/IDE "Play documentation on Setting up your preferred IDE"
+[11]: http://www.playframework.com/documentation/2.2.x/IDE "Play documentation on Setting up your preferred IDE"
 [12]: https://github.com/dlecan/play2-war-plugin "Play2 War Plugin Github page"
+[13]: http://www.playframework.com/documentation/2.2.x/IDE "Play Java Actions"
+[14]: http://typesafe.com/activator/template/play-java-spring "Play Java Spring template"
+[15]: http://typesafe.com/activator/template/play-guice "Play Guice template"
+[16]: http://akka.io/ "Akka home page"
+[17]: http://openjdk.java.net/projects/lambda/ "Project Lambda home page"
