@@ -193,15 +193,16 @@ of his doors ;)
 
   Almost everything (except i18N messages most noticeably) is statically typed and checked during compilation. All
   the web application routes to controller methods, all the view templates are compiled and checked before going out
-  into production. It freakingly awesome, I don't have to worry about mistyping url, miscasting request parameter
-  or accidental change during refactoring.
+  into production. It's freakingly awesome, I don't have to worry about mistyping url, miscasting request parameter
+  or accidental change introduced during refactoring. And I don't need to rely on integration / Selenium tests to
+  catch this type of errors, I get this kind of feedback almost instantly on save / refresh.
 
   Now I have single point of truth for url definitions, `conf/routes` file. There is no other place to look into. In
   my views and my controller code I just reference compile-time generated binding, if something is mis-configured or
   mis-used - compile time error will be displayed.
 
   I had quite positive experience with IntelliJ Idea IDE using and navigating Play routes during application
-  development. So. it's not something inconvenient (I didn't have to launch anything,
+  development. So, it's not something inconvenient (I didn't have to launch anything,
   wait for something or perform any other kind of manual configuration magic; it just worked).
 
 * JsRoutes
@@ -209,7 +210,7 @@ of his doors ;)
   The same thing as routes above, but to [invoke controllers action from client-side Javascript] [30]. It makes just
   so strangely easy and convenient to call server-side action from the browser, and still I don't need to worry about
   using right URL or using right HTTP method etc ... I even still reference it using statically typed and
-  compile-time checked helper methods. What can I say? It very convenient.
+  compile-time checked helper methods. What can I say? Convenient.
 
 ## The things I dislike about Play Framework ##
 
@@ -222,12 +223,12 @@ The list in the order of dislike:
   not to accomplish _JVM developer vulgaris_, but eventually to replace the Java language or become the serious
   alternative.
 
-  The Play2 core is written in Scala and Typesafe conveniently provide separate version of Play Framework modules for
-  developers who still wants to use Java for their job (silly me).
+  The Play2 core is written in Scala and Typesafe provide separate version of Play modules for developers who still
+  wants to use Java for their daily job (silly me).
 
-  The problems appear when you want to for example - dynamically update certain ports of configurations during
+  The problems appear when you want to for example - dynamically update certain parts of configurations during
   application startup, or you notice that form field validation actually behaves differently in Scala and Java
-  versions (different error messages and Java version list of available validations is not so complete) etc...
+  versions (different error messages and Java version does not provides all the validations Scala version does) etc...
   Mostly those are small things, however it something I had to struggle with or inspect and compare Scala and Java
   version internals.
 * Compatibility
