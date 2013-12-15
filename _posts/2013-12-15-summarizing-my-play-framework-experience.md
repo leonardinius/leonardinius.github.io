@@ -1,5 +1,5 @@
 ---
-title: "play-draft-title"
+title: "Summarizing My Play Framework experience"
 layout: post
 ---
 
@@ -8,18 +8,17 @@ framework for java developers to develop small web application, I decided to sum
 the form of blog entry.
 
 For the disclosure, the application I developed with Play Framework consists from around 142 Java files (647 Kb),
-106 Scala.Html templates (416 Kb), 3 Scala files (28 Kb), 14 SQL files (478 Kb), css, js, etc...
+106 Scala Html templates (416 Kb), 3 Scala files (28 Kb), 14 SQL files (478 Kb), css, js, etc...
 
 Let me preface this in that I really don't consider myself to be any kind of Web-development,
 platform or stack guru. The opinions expressed here are mine and mine only. More than that,
-because of my brief  acquaintance with the subject and not very prolonged overall experience with top-edge high-load
-real-time buzz-this buzzword-that system development and operations - my opinions and conclusions are expected to be
-one-sided, shallow, incomplete and to certain degree incompetent.
+because of my brief acquaintance with the subject - my opinions and conclusions are expected to be one-sided,
+shallow, incomplete and to certain degree incompetent.
 
 The main goal of this post is to mentally iterate through my Play experience, summarize all of things I have in my
 head, get it down in the written form and share it with my colleagues at
-[@galeoconsulting] [galeo]. Plus, I find it useful to sometimes re-iterate through previous experiences and
-re-evaluate past assumptions and reconsider conclusions.
+[@galeoconsulting] [galeo]. Plus, I find it useful sometimes to go through previous experiences and re-evaluate past
+assumptions and reconsider conclusions.
 
 In my first draft of this article it was 1-2 paragraphs large, just few pain points and thoughts.  After a while,
 however, it became less and less concentrated, the whole thing became confusing. At one point I stopped worrying
@@ -58,8 +57,8 @@ uncommon lately: certain niche application frameworks abandon classical well-est
 strategies and provide their own alternatives to develop and deploy applications into production. Just to name a few:
  [Vert.x] [4], [Dropwizard] [5]...
 
-In my personal opinion it's mostly a good thing, it provides Play Framework core developers possibility to optimize
-hard for particular niche. In this case Play concentrates on high-load, high-throughput and low-latency web services.
+In my opinion it's mostly a good thing, it provides Play Framework core developers possibility to optimize hard for
+particular niche. In this case Play concentrates on high-load, high-throughput and low-latency web services.
 
 Another take on this is to consider that modern web application requirements are a decade ahead of enterprise. The
 enterprise/JEE world tries to solve yesterdays problems on enterprise scale of business and processes; the rest of
@@ -144,7 +143,7 @@ the real implications of design decisions made and their consequences I will see
 features.
 
 From day zero I hated that it forces me to learn new template programming language (basically Scala subset). Plus,
-initially I disliked the fact that Play Framework Scala templates are generally much more imperative,
+initially I disliked the fact that Scala templates are generally much more imperative,
 than declarative. It reminded me old good PHP scripts with business process logic literally littered around and mixed
 with visualization.
 
