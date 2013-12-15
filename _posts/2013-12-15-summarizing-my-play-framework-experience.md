@@ -139,7 +139,7 @@ the real implications of design decisions made and their consequences I will see
 
 ### V for Vendetta or Scala Templates for Views ###
 
-Play [Scala Templates] [18] is the feature I initially considered as the one of the most controversial Play features.
+Play [Scala Templates] [18] is the feature I initially considered one of the most controversial Play features.
 
 From day zero I hated that it forces me to learn new template programming language (basically Scala subset). Plus,
 initially I disliked the fact that Scala templates are generally much more imperative,
