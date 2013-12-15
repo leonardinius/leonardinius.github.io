@@ -147,9 +147,9 @@ than declarative. It reminded me old good PHP scripts with business process logi
 with visualization.
 
 I still believe declarative approach should be used as much as possible for application views (encourages business
-process and logic decoupling from the actual view). However I also Sound scala template reusable blocks,
+process and logic decoupling from the actual view). However I also find Scala Template reusable blocks,
 implicit form field decoration (I was able to modify default field html layout with my twitter bootstrap based field
-layout) and view composition extremely powerful and flexible.
+layout) and view compositions extremely powerful and flexible.
 
 At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the same
 way as PHP does. Openly speaking I myself performed quite a lot model lookups (-> SQL queries) from auto-generated
