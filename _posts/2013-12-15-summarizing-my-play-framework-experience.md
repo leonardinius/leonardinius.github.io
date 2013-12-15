@@ -154,7 +154,7 @@ layout) and view compositions extremely powerful and flexible.
 At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the same
 way as most PHP code does. Openly speaking I myself performed quite a lot model lookups (-> SQL queries) from auto
 generated template views, it was just so dead simple and easy to render dropdown fields in Admin Crud interface.
-Though, is used properly with certain cross-layer constraints - Scala Templates are extremely convenient and powerful.
+Still, if used properly with certain cross-layer constraints - Scala Templates are extremely convenient and powerful.
 
 ### Media type support ###
 
