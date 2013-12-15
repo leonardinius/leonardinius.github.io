@@ -229,13 +229,13 @@ The list in the order of dislike:
   The problems appear when you want to for example - dynamically update certain parts of configurations during
   application startup, or you notice that form field validation actually behaves differently in Scala and Java
   versions (different error messages and Java version does not provides all the validations Scala version does) etc...
-  Mostly those are small things, however it something I had to struggle with or inspect and compare Scala and Java
-  version internals.
+  Mostly those are small things, however it's still something I had to struggle with or inspect and compare Scala and
+  Java version internals.
 * Compatibility
 
   Play is famously known for rewriting Play1 core from Java -> Scala, replacing view system etc... So,
-  historical record is pretty bad. I can't be afraid the next major version release won't be based on Clojure for
-  example if it will become good-selling trend).
+  historical record is pretty bad. I can't not to be afraid the next major version release won't introduce,
+  for example, Clojure based stack if it will become good-selling trend).
 
   Other side of the problem is Scala itself. As I understand it - Scala might (and often is) binary incompatible
   between version updates (even minor ones). As an end result - if Play core team decides to change it's compiler
@@ -247,7 +247,7 @@ The list in the order of dislike:
   Even with my small application, SSD disk and 8Gb Ram - compilation took up to 30 secs or in some cases up to 1-2
   min. It places it nearby GWT, which is sad for both of those frameworks.
 
-* sbt
+* Sbt
 
   It's the system I just don't get. So far I've some sort of experience with Ant, Maven, Gradle, even Leiningen,
   Rake and Buildr. But I don't get sbt, just don't. And actually I don't want and couldn't care less (maybe it's the
@@ -256,20 +256,20 @@ The list in the order of dislike:
 * Module maturity
 
   I'm used to Spring Security authentication and authorization programming model and maturity. I was unpleasantly
-  suprised with the state of things with Play modules. Some of them seems mature,
+  suprised with the state of things with Play modules. Some of them seem mature,
   but require quite a lot of boilerplate code to start with. Other just break binary compatibility too often (it
   happens when the only version to depend to in public repository is SNAPSHOT one).
 
   I wish auth modules would the only example to point to, however I had similar experience with different modules. I
   get it, it happens. The shitty thing is when you don't have a lot of alternatives to choose from. Something breaks
-  and you are forced into options: either to rollback or maintain / fix the module dependency. It's not something you
-  could always afford to spend your time on, especially on tight calendar schedule.
+  and you are forced into options: either to rollback to snapshot, maintain module or fix the module dependency. It's
+  not something you could always afford to spend your time on, especially on tight calendar schedule.
 
 * Developer platform support (e.g. Windows)
 
   Basically the reason I ended up using version `2.1.5` at the moment - is shitty Windows platform support on `2.2x`
   branches on their initial releases. As I understood from GitHub issue comments and Google Group mailing lists - the
-  core team doesn't have testing on Windows integrated into their develop pipelines (since their use Mac OSX and
+  core team doesn't have testing on Windows integrated into their develop pipelines (since their use Mac OS X and
   Linux mostly).
 
   I would expect something like this from beta or release candidate, however it was strange to see it in release
@@ -282,12 +282,10 @@ The short answer is classical _it depends_ ;) In case my next project is Json se
 interaction, or could be fitted in small web-application or micro-service categories - most definitely yes. There are
 even crazy enough people to [develop advanced online bank system using Play1 Framework] [23].
 
-I am concerned about Play compatibility, poor documentation and lack of developer resources. I am Ok to recommend Play
+I am concerned about Play compatibility, poor documentation and lack of developer resources. If we are talking about
+Online Bank system - Play Framework would not be either my first choice, nor second one. But I am Ok to recommend Play
 to develop small replace-able business non-critical application, or micro-service, or set of Akka actors or whatever
 popular now, small, simple and requires high-throughput and low-latency.
-
-However If we are still talking in Online Bank system terms - Play Framework would not be either my first choice,
-nor second one.
 
 ## Other frameworks in my consideration list
 
