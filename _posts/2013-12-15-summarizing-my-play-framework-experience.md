@@ -148,35 +148,29 @@ with visualization.
 
 I still believe declarative approach should be used as much as possible for application views (encourages business
 process and logic decoupling from the actual view). However I also find Scala Template reusable blocks,
-implicit form field decoration and view compositions powerful and flexible.
+implicit form field decoration and view compositions very powerful and flexible.
 
 At the end of the day I came to conclusion I love Scala Templates engine. Of course it's easy to misuse them the same
-way as most PHP code does. Openly speaking I myself performed quite a lot model lookups (-> SQL queries) from auto
-generated template views, it was just so dead simple and easy to render dropdown fields in Admin Crud interface.
-Still, if used properly with certain cross-layer constraints - Scala Templates are extremely convenient and useful.
+way as most PHP code does. Openly speaking, I myself performed quite a lot model lookups (-> SQL queries) from auto
+generated template views, it was just so dead simple and easy to render dropdown fields in Admin Crud interface this
+way. Still, if used properly with certain cross-layer constraints - Scala Templates are extremely convenient and
+useful.
 
 ### Media type support ###
 
-Play Framework provides built-in [Json content support] [19] and [Xml content support] [20].
+Play Framework provides built-in [Json content support] [19] and [XML content support] [20].
 
 Saying that I must admit that I find Json support quite decent (Play Json support is backed by popular [Jackson] [21]
-toolkit). However Xml support ir disappointingly limited comparing to Spring MVC (basically Play just exposes request
+toolkit). However XML support ir disappointingly limited comparing to Spring MVC (basically Play just exposes request
 body as `org.w3c.dom.Document` and you are free to use SAX parser or whatever else to process it).
 
-During my particular application development I switched to [FasterXML/jackson-dataformat-xml] [22] library,
-for simple, light-weight and more feature-rich XML support. Basically I was able to continue use my Json beans and
-serialize / deserialize them either as Json or as Xml depending on context.
+During my particular application development I switched to [FasterXML/jackson-dataformat-xml] [22] library for
+simple, light-weight and more feature-rich XML support. Basically I was able to continue use my Json beans and
+serialize / deserialize them either as Json or as XML depending on context.
 
-I came to conclusion that Xml is treated as second class citizen in the framework, all the love,
-care and polishing comes to Json. Xml is that poor neighbour which with envy watches Json riding his Bentley in front
+I came to conclusion that XML is treated as second class citizen in the framework, all the love,
+care and polishing comes to Json. XML is that poor neighbour which with envy watches Json riding his Bentley in front
 of his doors ;)
-
-It seems that Play is betting on modern Web technologies, light-weight micro-services etc... The Xml is undoubtedly
-dying beast in these areas, it's mostly enterprise legacy. With all new specs addressing json document constraints,
-schemas and data validation rules - it's not too long until Json replaces Xml completely.
-
-But still, until that most of us still will be forced to struggle with Xml time to time (in my particular case it was
-because of end consumer device issues with Json data processing performance).
 
 ## The things I liked most about Play Framework ##
 
@@ -189,7 +183,7 @@ because of end consumer device issues with Json data processing performance).
   application. Play's helloworld is really no more different that Java `static void main(String[]args)`. And you
   don't need to know anything how to bundle things, how to deploy them, WARs or JARs - what's that?
 
-  Saying that I have to note that when you overcome helloworld application level and to move forward,
+  Saying that I have to note that when you overcome helloworld application level and want to move forward,
   you might start to struggle, since there is no really tons of detailed and qualitative documentation out there. You
   should have either to have good basic understanding of how things works or where and how to look for solution / help
   to stay productive.
@@ -326,7 +320,7 @@ order of appeal):
 [17]: http://openjdk.java.net/projects/lambda/ "Project Lambda home page"
 [18]: http://www.playframework.com/documentation/2.1.5/ScalaTemplates "Scala Templates"
 [19]: http://www.playframework.com/documentation/2.1.5/JavaJsonRequests "Java Json Content handling"
-[20]: http://www.playframework.com/documentation/2.1.5/JavaXmlRequests "Java Xml Content handling"
+[20]: http://www.playframework.com/documentation/2.1.5/JavaXmlRequests "Java XML Content handling"
 [21]: http://jackson.codehaus.org/ "Jackson toolkit home page"
 [22]: https://github.com/FasterXML/jackson-dataformat-xml "Jackson JSON support for de-/serializing POJOs as XML"
 [23]: http://blog.codeborne.com/2013/03/online-bank-from-scratch-in-five-months.html "Codeborne: Online Bank in five months"
