@@ -61,7 +61,7 @@ In my opinion it's mostly a good thing, it provides Play Framework core develope
 particular niche. In this case Play concentrates on high-load, high-throughput and low-latency web services.
 
 Another take on this is to consider that modern web application requirements are a decade ahead of enterprise. The
-enterprise/JEE world tries to solve yesterdays problems on enterprise scale of business and processes; the rest of
+enterprise / JEE world tries to solve yesterdays problems on enterprise scale of business and processes; the rest of
 the world tries to address tomorrow's issues and challenges, empowering users to make them come a reality today.
 
 I myself am in the process of finalizing my application delivery and "throwing it over the fence" into production,
@@ -74,7 +74,7 @@ database schema migrations). Only the time will show how it goes.
 Play for Java developers by default integrates with [Ebean ORM] [9].
 
 During the development process I grew more and more satisfied with Ebean capabilities,
-I even like it more than hibernate/JPA now. It was good fit for my needs, with small learning curve and almost no
+I even like it more than hibernate / JPA now. It was good fit for my needs, with small learning curve and almost no
 annoyances. The only thing I dislike so far is the lack of opportunities to specify `NULLS FIRST` or `NULLS LAST` in
 `ORDER BY` statements (the workaround is to use [RawSql] [10] and manual column mapping,
 but it defeats the whole ORM purpose). By no means I allege Ebean is more feature-rich, faster,
@@ -113,7 +113,7 @@ our code monads / burritoto style ;) The same thing applies to application layer
 
 So, my first _wtf_ reaction is mostly because of what influence Spring, Guice and similar programming models has had
 on me. I'm used to layer applications certain way now. And it was challenging to me rethink this approach with Play
-Framework stack. Initially it was something unpleasant/mentally challenging at least,
+Framework stack. Initially it was something unpleasant / mentally challenging at least,
 however as time moved on I got more and more used to program things that way and now I'm mentally ok now with this
 model.
 
@@ -168,7 +168,7 @@ exposes request body as `org.w3c.dom.Document` and you are free to use SAX parse
 
 During my particular application development I switched to [FasterXML/jackson-dataformat-xml] [22] library,
 for simple, light-weight and more feature-rich XML support. Basically I was able to continue use my Json beans and
-serialize/deserialize them either as Json or as Xml depending on context.
+serialize / deserialize them either as Json or as Xml depending on context.
 
 I came to conclusion that Xml is treated as second class citizen in the framework, all the love,
 care and polishing comes to Json. Xml is that poor neighbour which with envy watches Json riding his Bentley in front
@@ -188,13 +188,13 @@ because of end consumer device issues with Json data processing performance).
   I believe Play Framework has almost the lowest entry level to Java full-stack web framework I have seen so far. For
   starters it comes with it's [Typesafe Activator] [24] and multiple [starter templates] [25].
 
-  I do honestly believe you don't have to know a lot /recognize a lot of concepts to start developing Play
+  I do honestly believe you don't have to know a lot / recognize a lot of concepts to start developing Play
   application. Play's helloworld is really no more different that Java `static void main(String[]args)`. And you
   don't need to know anything how to bundle things, how to deploy them, WARs or JARs - what's that?
 
   Saying that I have to note that when you overcome helloworld application level and to move forward,
   you might start to struggle, since there is no really tons of detailed and qualitative documentation out there. You
-  should have either to have good basic understanding of how things works or where and how to look for solution/help
+  should have either to have good basic understanding of how things works or where and how to look for solution / help
   to stay productive.
 
   So, I think entry level is extremely low, however getting to experienced plateau might be a challenge.
@@ -270,7 +270,7 @@ The list in the order of dislike:
 
   I wish auth modules would the only example to point to, however I had similar experience with different modules. I
   get it, it happens. The shitty thing is when you don't have a lot of alternatives to choose from. Something breaks
-  and you are forced into options: either to rollback or maintain/fix the module dependency. It's not something you
+  and you are forced into options: either to rollback or maintain / fix the module dependency. It's not something you
   could always afford to spend your time on, especially on tight calendar schedule.
 
 * Developer platform support (e.g. Windows)
