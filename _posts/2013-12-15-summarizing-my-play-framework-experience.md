@@ -57,8 +57,8 @@ uncommon lately: certain niche application frameworks abandon classical well-est
 strategies and provide their own alternatives to develop and deploy applications into production. Just to name a few:
  [Vert.x] [4], [Dropwizard] [5]...
 
-In my opinion it's mostly a good thing, it provides Play Framework core developers possibility to optimize hard for
-particular niche. In this case Play concentrates on high-load, high-throughput and low-latency web services.
+In my opinion it's mostly a good thing, it provides Play core developers possibility to optimize hard for particular
+niche. In this case Play concentrates on high-load, high-throughput and low-latency web services.
 
 Another take on this is to consider that modern web application requirements are a decade ahead of enterprise. The
 enterprise / JEE world tries to solve yesterdays problems on enterprise scale of business and processes; the rest of
@@ -89,36 +89,36 @@ those or dismiss.
 As it's often the case using agile methodologies I had to frequently adjust database schema during application
 development. So I had developed another small utility application to process business-analyst crafted Excel with
 database meta-model (sheets are database tables, columns are columns, certain meta-data gives Foreign Keys etc..) and
-generate database DDL and data (in Play evolutions format), application model beans,
-DAOs and admin CRUD interface. That way all I had to do was to provide new version of Excel into my utility
-application, refresh my main application page in browser, wait a few seconds, press button to agree with database
-schema update and vuala, I'm ready to go.
+generate database DDL and data (in Play evolutions format), application models, DAOs and admin CRUD interface. That
+way all I had to do was to provide new version of Excel into my utility application,
+refresh my main application page in browser, wait a few seconds, press button to agree with database schema update
+and vuala, I'm ready to go.
 
 And the best part of it - it's something integrated with the platform itself, is part of natural and default workflow.
 Any other developers running application on their own local development environments will get latest database version
-without any hassle, procedures or 'read in wiki and proceed with step by step instructions'. All they have to do - to
+without any hassle, procedures or _read in wiki and proceed with step by step instructions_. All they have to do - to
 continue run application the same way they always do and then `git pull` will fetch new updates - framework will
 conveniently notify them and allow to apply latest changes.
 
 ### API layer / Action Layer ###
 
-Play Framework for java developers defaults to statically scoped class functions (see [JavaActions] [13] for
-idiomatic Java examples).
+Play Framework for java developers defaults to static function usage (see [JavaActions] [13] for idiomatic Java
+examples).
 
-The most of us, the _JVM programmer-vulgaris_ kind come from C/C++, OOP, Spring world with JEE system legacy behind
-backs. First we are taught to learn structures, then algorithms, then OOP and abstractions,
+The most of us, _JVM programmer-vulgaris_ kind, come from C/C++, OOP, Spring world with JEE system legacy behind
+our backs. First we were taught to learn structures, then algorithms, then OOP and abstractions,
 then someone comes in and makes all of us look as fools, because _patterns are the king_. Then,
 few years after another newcomer makes all of look as fools again - _we should use Scala / Haskell / XYZ_ and write
 our code monads / burritoto style ;) The same thing applies to application layers as well.
 
 So, my first _wtf_ reaction is mostly because of what influence Spring, Guice and similar programming models has had
-on me. I'm used to layer applications certain way now. And it was challenging to me rethink this approach with Play
-Framework stack. Initially it was something unpleasant / mentally challenging at least,
+on me. I'm used to layer applications certain way now. And it was mentally challenging to me rethink this approach
+with Play stack. Initially it was something unpleasant / mentally challenging at least,
 however as time moved on I got more and more used to program things that way and now I'm mentally ok now with this
 model.
 
-Play Framework 2.x series core is written in Scala programming language (which itself is another buzz-generating
-topic out there, especially if you follow Twitter and LinkedIn engineering blog posts). The Play core is built around
+Play 2.x series core is written in Scala programming language (which itself is another buzz-generating topic out
+there, especially if you follow Twitter and LinkedIn engineering blog posts). The Play core is built around
 [Akka actors] [16] and [Netty network stack] [3], both promote functional programming style, state immutability,
 event-loops, message passing etc.., which idiomatically maps to first class functions or function objects (I
 know I'm functional paradigm n00b and might have mis-used terminology). I personally hope that Java8 and [Project
@@ -139,8 +139,7 @@ the real implications of design decisions made and their consequences I will see
 
 ### V for Vendetta or Scala Templates for Views ###
 
-[Play Framework Templates] [18] is the feature I personally found the as one of the most controversial Play Framework
-features.
+Play [Scala Templates] [18] is the feature I personally found the as one of the most controversial Play features.
 
 From day zero I hated that it forces me to learn new template programming language (basically Scala subset). Plus,
 initially I disliked the fact that Scala templates are generally much more imperative,
@@ -162,9 +161,9 @@ and powerful.
 
 Play Framework provides built-in [Json content support] [19] and [Xml content support] [20].
 
-Saying that I must admit that I find Play Framework Json support quite decent (Play Json support is backed by popular
-[Jackson] [21] toolkit). However Xml support ir disappointingly limited comparing to Spring MVC (basically Play just
-exposes request body as `org.w3c.dom.Document` and you are free to use SAX parser or whatever else to process it).
+Saying that I must admit that I find Json support quite decent (Play Json support is backed by popular [Jackson] [21]
+toolkit). However Xml support ir disappointingly limited comparing to Spring MVC (basically Play just exposes request
+body as `org.w3c.dom.Document` and you are free to use SAX parser or whatever else to process it).
 
 During my particular application development I switched to [FasterXML/jackson-dataformat-xml] [22] library,
 for simple, light-weight and more feature-rich XML support. Basically I was able to continue use my Json beans and
@@ -231,8 +230,8 @@ The list in the order of dislike:
   not to accomplish _JVM developer vulgaris_, but eventually to replace the Java language or become the serious
   alternative.
 
-  The Play2 Framework core is written in Scala and Typesafe conveniently provide separate version of Play Framework
-  modules for developers who still wants to use Java for their job (silly me).
+  The Play2 core is written in Scala and Typesafe conveniently provide separate version of Play Framework modules for
+  developers who still wants to use Java for their job (silly me).
 
   The problems appear when you want to for example - dynamically update certain ports of configurations during
   application startup, or you notice that form field validation actually behaves differently in Scala and Java
@@ -246,7 +245,7 @@ The list in the order of dislike:
   example if it will become good-selling trend).
 
   Other side of the problem is Scala itself. As I understand it - Scala might (and often is) binary incompatible
-  between version updates (even minor ones). As an end result - if Play Framework decides to change it's compiler
+  between version updates (even minor ones). As an end result - if Play core team decides to change it's compiler
   version to benefit from new Scala features or bug fixes - it potentially will introduce dependency hell for end
   developers to upgrade (dependencies might either be binary incompatible or their new updated recompiled version
   might be missing).
@@ -264,7 +263,7 @@ The list in the order of dislike:
 * Module maturity
 
   I'm used to Spring Security authentication and authorization programming model and maturity. I was unpleasantly
-  suprised with the state of things with Play Framework modules. Some of them seems mature,
+  suprised with the state of things with Play modules. Some of them seems mature,
   but require quite a lot of boilerplate code to start with. Other just break binary compatibility too often (it
   happens when the only version to depend to in public repository is SNAPSHOT one).
 
