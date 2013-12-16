@@ -185,7 +185,7 @@ of his doors ;)
 
   Saying that I have to note that when you overcome helloworld application level and want to move forward,
   you might start to struggle first, since there are no really tons of qualitative documentation available. You
-  should either have good basic understanding of how things works or where and how to look for solution / help
+  should either have good basic understanding of how things works or where and how look for solution / help
   to stay productive.
 
   So, I think entry level is extremely low, however getting to experienced plateau might be a challenge.
