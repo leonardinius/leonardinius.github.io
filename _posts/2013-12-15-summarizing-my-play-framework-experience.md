@@ -184,8 +184,8 @@ of his doors ;)
   don't need to know anything how to bundle things, how to deploy them, WARs or JARs - what's that?
 
   Saying that I have to note that when you overcome helloworld application level and want to move forward,
-  you might start to struggle, since there is no really tons of detailed and qualitative documentation out there. You
-  should have either to have good basic understanding of how things works or where and how to look for solution / help
+  you might start to struggle first, since there are no really tons of qualitative documentation available. You
+  should either have good basic understanding of how things works or where and how to look for solution / help
   to stay productive.
 
   So, I think entry level is extremely low, however getting to experienced plateau might be a challenge.
