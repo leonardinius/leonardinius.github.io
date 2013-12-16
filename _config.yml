@@ -20,3 +20,8 @@ analytics:
   provider: "google"
   google:
     code: "UA-3088662-1"
+
+comments:
+  provider: "disqus"
+  disqus:
+    code: 'codingparadigmlinebyline'
