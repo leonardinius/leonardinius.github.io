@@ -29,9 +29,11 @@ layout: default
   </ul>
 </div>
 
+{% if site.comments.provider <> null %}
+<!-- Start of {{ site.comments.provider }} comments -->
 {% case site.comments.provider %}
 {% when "disqus" %}
-<!-- Start of {{ site.analytics.provider }} comments -->
 {% include disqus_comments.html %}
-<!-- End of {{ site.analytics.provider }} comments -->
 {% endcase %}
+<!-- End of {{ site.comments.provider }} comments -->
+{% endif %}

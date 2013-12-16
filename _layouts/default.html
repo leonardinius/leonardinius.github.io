@@ -21,12 +21,14 @@
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-{% case site.analytics.provider %}
-    {% when "google" %}
+{% if site.analytics.provider <> null %}
     <!-- Start of {{ site.analytics.provider }} analytics -->
+    {% case site.analytics.provider %}
+    {% when "google" %}
     {% include google_analytics.html %}
+    {% endcase %}
     <!-- End of {{ site.analytics.provider }} analytics -->
-{% endcase %}
+{% endif %}
 
   </head>
   <body>
