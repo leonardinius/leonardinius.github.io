@@ -267,10 +267,9 @@ The list in the order of dislike:
 
 * Developer platform support (e.g. Windows)
 
-  Basically the reason I ended up using version `2.1.5` at the moment - is shitty Windows platform support on `2.2x`
-  branches on their initial releases. As I understood from GitHub issue comments and Google Group mailing lists - the
-  core team doesn't have testing on Windows integrated into their develop pipelines (since their use Mac OS X and
-  Linux mostly).
+  Shitty Windows platform support on `2.2x` branches was the reason I stuck with `2.1.5` version. As I understood from
+  GitHub issues' comments and Play mailing lists - the core team doesn't have testing on Windows integrated into their
+  develop pipelines (they mostly are Mac OS X and Linux users).
 
   I would expect something like this from beta or release candidate, however it was strange to see it in release
   version. But! I might misunderstood Play version and release concept, maybe it's something expected to happen until
