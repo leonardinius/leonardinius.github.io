@@ -272,7 +272,7 @@ The list in the order of dislike:
   develop pipelines (they mostly are Mac OS X and Linux users).
 
   I would expect something like this from beta or release candidate, however it was strange to see it in release
-  version. But! I might misunderstood Play version and release concept, maybe it's something expected to happen until
+  versions. But! I might misunderstood Play version and release concept, maybe it's something expected to happen until
   some certain version is marked as production ready.
 
 ## Would I choose Play for my next project ##
