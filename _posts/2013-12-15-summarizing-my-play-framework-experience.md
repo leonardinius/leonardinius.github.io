@@ -78,8 +78,8 @@ I even like it more than hibernate / JPA now. It was good fit for my needs, with
 annoyances. The only thing I dislike so far is the lack of opportunities to specify `NULLS FIRST` or `NULLS LAST` in
 `ORDER BY` statements (the workaround is to use [RawSql] [10] and manual column mapping,
 but it defeats the whole ORM purpose). By no means I allege Ebean is more feature-rich, faster,
-cleaner or simpler to use in multi-layered OSGi application, but it was good enough for my use case and didn't step
-on my toes too much during development.
+cleaner or simpler to use in multi-layered OSGi application (sarcasm detected), but it was good enough for my use case
+and didn't step on my toes too much during development.
 
 As mentioned above, Play comes with built-in [evolutions] [7] database schema migration tool,
 which turned out to be very handy in practice. In development environment it watches
