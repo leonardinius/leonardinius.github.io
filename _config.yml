@@ -3,8 +3,8 @@ title: "Coding paradigm: line by line"
 tagline: "Personal blog and opinions by Leonids Maslovs"
 description: "Personal blog and opinions by Leonids Maslovs"
 author:
-  name:       "Leonids Maslovs"
-  email:      "leonids.maslovs@galeoconsulting.com"
+  name: "Leonids Maslovs"
+  email: "leonids.maslovs@galeoconsulting.com"
 baseurl: ''
 url: http://leonardinius.galeoconsulting.com
 permalink: /:year/:month/:title
@@ -12,16 +12,19 @@ markdown: redcarpet
 pygments: true
 paginate: 5
 
+gems:
+  - jekyll-sitemap
+
 github:
   repo: "https://github.com/leonardinius/leonardinius.github.io"
   branch: "master"
 
 analytics:
-  provider: "google"
+  provider: "none"
   google:
     code: "UA-3088662-1"
 
 comments:
-  provider: "disqus"
+  provider: "none"
   disqus:
     code: 'codingparadigmlinebyline'
