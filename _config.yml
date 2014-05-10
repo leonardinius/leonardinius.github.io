@@ -20,11 +20,11 @@ github:
   branch: "master"
 
 analytics:
-  provider: "none"
+  provider: "google"
   google:
     code: "UA-3088662-1"
 
 comments:
-  provider: "none"
+  provider: "disqus"
   disqus:
     code: 'codingparadigmlinebyline'
