@@ -1,7 +1,9 @@
-name: "DEV - Coding paradigm: line by line"
-title: "DEV - Coding paradigm: line by line"
-tagline: "DEV - Personal blog and opinions by Leonids Maslovs"
-description: "DEV - Personal blog and opinions by Leonids Maslovs"
+env: "DEV"
+
+name: "Coding paradigm: line by line"
+title: "Coding paradigm: line by line"
+tagline: "Personal blog and opinions by Leonids Maslovs"
+description: "Personal blog and opinions by Leonids Maslovs"
 author:
   name: "Leonids Maslovs"
   email: "leonids.maslovs@galeoconsulting.com"

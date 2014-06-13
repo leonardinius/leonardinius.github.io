@@ -6,7 +6,7 @@ layout: default
   <h1>
       <a href="{{ site.url }}">
         <span class="icon-large icon-chevron-left navigate-chevron-post"></span>
-          {{ page.title }}</a>
+          {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</a>
   </h1>
 
   <span class="post-date">{{ page.date | date_to_string }}</span>
