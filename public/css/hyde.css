@@ -386,3 +386,7 @@ a:hover {
     padding:  5px;
     background-color: #f4f4f4;
 }
+
+.icon-large.navigate-chevron-post {
+    position: relative; top: -0.2em;
+}
