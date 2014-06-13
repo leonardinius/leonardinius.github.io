@@ -24,9 +24,6 @@ Vagrant.configure("2") do |config|
     | sudo apt-get update
     | sudo apt-get -y install dos2unix tmux
     |
-    | # for https reverse proxy
-    | sudo apt-get -y install nginx
-    |
     | sudo apt-get -y install build-essential git ruby1.9.3
     | sudo gem install github-pages --no-ri --no-rdoc
     |
