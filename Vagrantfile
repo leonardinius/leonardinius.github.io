@@ -17,8 +17,6 @@ Vagrant.configure("2") do |config|
     cfg.vm.network "private_network", ip: "192.168.58.5"
     cfg.ssh.forward_agent = true
 
-    config.vm.synced_folder "secret",           "/secret"
-
     script = <<-SSH
     | #!/bin/bash -ex
     | sudo apt-get update
