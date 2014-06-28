@@ -4,9 +4,7 @@ layout: default
 
 <div class="post">
   <h1>
-      <a href="{{ site.url }}">
-        <span class="icon-large icon-chevron-left navigate-chevron-post"></span>
-          {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</a>
+      <a href="{{ site.url }}"> {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</a>
   </h1>
 
   <span class="post-date">{{ page.date | date_to_string }}</span>
@@ -19,19 +17,20 @@ layout: default
 </div>
 
 <div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+      {% if page.next %}
+        <p><strong>Newer</strong>
+            <a href="{{ page.next.url }}">
+                {{ page.next.title }}
+                <small>{{ page.next.date | date_to_string }}</small>
+            </a></p>
+      {% endif %}
+      {% if page.previous %}
+        <p><strong>Older</strong>
+            <a href="{{ page.previous.url }}">
+                {{ page.previous.title }}
+                <small>{{ page.previous.date | date_to_string }}</small>
+            </a></p>
+      {% endif %}
 </div>
 
 {% if site.comments.provider <> null %}

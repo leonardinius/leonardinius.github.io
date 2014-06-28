@@ -3,10 +3,10 @@
 sudo hostname leonardinius.galeoconsulting.com
 
 cd /vagrant \
+  && rm -rf ./_site \
   && sudo jekyll serve \
-   --port 80 \
-   --lsi \ 
    --watch \
    --force_polling \
-   --drafts \
+   --port 80 \
+   --drafts  \
    --config _config-dev.yml

@@ -35,7 +35,7 @@
   <body>
     <header class="masthead">
       <div class="masthead-inner">
-        <h2>{{site.name}}</h2>
+        <h2><a class="site-url" href="{{site.url}}">{{site.name}}</a></h2>
         <p class="lead">
             {{site.description}}
         </p>
@@ -48,7 +48,11 @@
           </ul>
           <p></p>
           <p>Made with love, powered by <a href="http://jekyllrb.com/">Jekyll</a>, designed by <a href="http://andhyde.com/">@mdo</a></p>
-          <p>&copy; {{ site.time | date: '%Y'}}. {{ site.author.name }} All rights reserved.</p>
+          <p>
+              &copy; {{ site.posts.last.date | date: '%Y'}}-{{ site.time | date: '%Y'}}
+              all rights reserved by
+              {{ site.author.name }}
+          </p>
         </div>
       </div>
     </header>
