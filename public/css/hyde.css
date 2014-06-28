@@ -387,6 +387,11 @@ a:hover {
     background-color: #f4f4f4;
 }
 
-.icon-large.navigate-chevron-post {
-    position: relative; top: -0.2em;
+a.site-url {
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+}
+a.site-url:hover {
+    text-decoration: no-underline;
 }

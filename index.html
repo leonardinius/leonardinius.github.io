@@ -6,9 +6,7 @@ layout: default
   {% for post in paginator.posts %}
   <div class="post">
     <h1>
-      <a href="{{ post.url }}">
-        <span class="icon-large icon-chevron-right navigate-chevron-post"></span>
-          {% if site.env %}[{{ site.env }}] {% endif %}{{ post.title }}</a>
+      <a href="{{ post.url }}"> {% if site.env %}[{{ site.env }}] {% endif %}{{ post.title }}</a>
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
