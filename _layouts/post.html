@@ -4,7 +4,7 @@ layout: default
 
 <div class="post">
   <h1>
-      <a href="{{ site.url }}"> {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</a>
+      <a href="{{ page.url }}"> {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</a>
   </h1>
 
   <span class="post-date">{{ page.date | date_to_string }}</span>
