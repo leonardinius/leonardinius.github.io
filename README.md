@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/leonardinius/leonardinius.github.io.png?label=ready&title=Ready)](https://waffle.io/leonardinius/leonardinius.github.io)
 leonardinius.github.io
 ======================
 
