@@ -1,5 +1,5 @@
 ---
-title: "Devops101 with SaltStack: Because salt goes EVERYWHERE"
+title: "SaltStack101: Because salt goes EVERYWHERE"
 layout: post
 ---
 
@@ -34,6 +34,7 @@ You don't want to outsource that_.
 
 Devops is new sexy buzzword glossing all around on top of _cloudy i-thingy_.
 
-<!-- Link definition --> [galeo]: https://twitter.com/galeoconsulting "Galeo
-twitter"
+<!-- Link definition --> 
+
+[galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
 
