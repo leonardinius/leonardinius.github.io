@@ -4,9 +4,7 @@ layout: default
 
 <div class="post">
   <h1>
-      <a href="{{ page.url }}" class="page-title">
-        {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}
-      </a>
+      <a href="{{ page.url }}"> {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</a>
   </h1>
 
   <span class="post-date">{{ page.date | date_to_string }}</span>
@@ -14,10 +12,10 @@ layout: default
 
   <hr/>
   If you've found typos or errors, please
-    <a class="suggest" href="{{ site.github.repo }}/issues/new?title=Feedback+on+%60{% if page.title <> null %}{{ page.title | cgi_escape}}{% else %}{{ page.path | cgi_escape}}{% endif %}%60&body=%60{{ page.path | cgi_escape }}%60%0A%0A----%0APlace+your+description+here">
+    <a href="{{ site.github.repo }}/issues/new?title=Feedback+on+%60{% if page.title <> null %}{{ page.title | cgi_escape}}{% else %}{{ page.path | cgi_escape}}{% endif %}%60&body=%60{{ page.path | cgi_escape }}%60%0A%0A----%0APlace+your+description+here">
         suggest a correction</a>
     or
-    <a class="suggest" href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path }}">
+    <a href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path }}">
         edit on github</a>.
 </div>
 
