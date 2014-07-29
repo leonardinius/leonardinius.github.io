@@ -6,11 +6,9 @@ layout: post
 I by no means am no system administrator or SCM guy or DBA guy or whatever. My
 job duties consist mostly from analysis, system design and delivery, little
 piece of architecture now and then. I proudly call myself _Developer vulgaris_.
-
 Still, I used to find myself in position I have working (locally) solution and
 little or no clue how the heck to get it out in window. Should I just throw it
 to admins, let them handle that and hope it won't break? 
-
 ![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg) 
 Image source @[mptron.com](http://mptron.com/news/javagame/sisgame/3919-volk-yaycelov-nu-pogodi.html)
 
@@ -39,20 +37,20 @@ And here it begins, The Struggle
 
 The struggle for resolution in my practice quite often begins with search for
 mystic 'Golden Hammer', some particular tool or set of tools, which would make
-all the hard work and defeat all problems.
+all the hard work and defeat all problems. [Devops][devops] is new promising
+sexy buzzword glossing all around on top of _i-cloudy i-thingy_ and claims to
+address exactly that.
 
-[Devops][devops] is new promising sexy buzzword glossing all around on top of
-_i-cloudy i-thingy_. One of assumed promises is what development team empowered
-by set of tools and practices would perform most of operations needs and will
-increase operations turnout and indirectly ROI (return of investment) on people
-and infrastructure automation.
+__tl; dr;__ In business there is no place for separate development and
+operations teams working independently in isolated environments. There is ONLY
+ONE PRODUCT TEAM. Period. Product team is solely and completely responsible for
+Product, there is no other group to blame for mis-deployment or
+misconfiguration. Everybody needs to communicate, cooperate and work together.
 
-In real life it more or less means that in business there is no place for
-separate development and operations teams working independently in isolated
-environments. There is ONLY ONE PRODUCT TEAM. Period. Product team is solely
-and completely responsible for Product, there is no other group to blame for
-mis-deployment or misconfiguration. Everybody needs to communicate and
-cooperate and work together.
+One of assumed DevOps' promises is what development team empowered by set of
+tools and practices would perform most of operations needs in automated,
+repeatable and testable manner. That indirectly would lead to operations
+turnout and ROI (return of investment) increase.
 
 Having said that, I did my best in research what are the latest tools available
 on the market, that the trends are. In the matter of literally 10 minutes I
@@ -60,8 +58,8 @@ have come up with the following list:
 
 1. [PuppetLabs Puppet][1], [puppetlabs/puppet][2]
 2. [OpsCode Chef][3], [opscode/chef][4]
-3. [SaltStack Salt][5], [saltstack/salt][6]
-4. [Ansible][7], [ansible/ansible][8]
+3. [Ansible][7], [ansible/ansible][8]
+4. [SaltStack Salt][5], [saltstack/salt][6]
 
 I won't try to beat Google Search and repeat multiple various sites comparing
 tools and do apples-to-oranges OR trying to switch into apples-to-apples zones.
@@ -70,20 +68,19 @@ I've chosen tool A over B in my particular use case.
 
 ### Puppet
 
-Puppet
+[Puppet][1]
 
 ### Chef
 
-Chef
-
-### Salt
-
-Salt
+[OpsCode Chef][3]
 
 ### Ansible
 
-Ansible
+[Ansible][7]
 
+### Salt
+
+[Salt][5]
 
 ----
 
