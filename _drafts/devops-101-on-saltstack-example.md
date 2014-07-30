@@ -1,31 +1,42 @@
 ---
-title: "Devops101 with SaltStack: Because salt goes EVERYWHERE"
+title: "DevOps101 with SaltStack: Because salt goes EVERYWHERE"
 layout: post
 ---
 
-I by no means am no system administrator or SCM guy or DBA guy or whatever. My
-job duties consist mostly from analysis, system design and delivery, little
-piece of architecture now and then. I proudly call myself _Developer vulgaris_.
-Still, I used to find myself in position I have working (locally) solution and
-little or no clue how the heck to get it out in window. Should I just throw it
-to admins, let them handle that and hope it won't break? 
-![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg) 
-Image source @[mptron.com](http://mptron.com/news/javagame/sisgame/3919-volk-yaycelov-nu-pogodi.html)
+I by all means am not a system administrator or SCM guy or DBA guy or whatever.
+My job duties consist mostly from analysis, system design and delivery, little
+piece of architecture every now and then. I proudly call myself _Developer
+vulgaris_.  Still, I used to find myself in position I have working (locally)
+solution and little or no clue how the heck to get it out in window.  Should I
+just throw it to support and let let them handle that?  
 
-It worked perfectly well. Until... until you are small consultant venture with
-3-5 team members and no additional separate support/admin team to poke issues
+![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg) Image
+source
+@[mptron.com](http://mptron.com/news/javagame/sisgame/3919-volk-yaycelov-nu-pogodi.html)
+
+It works perfectly well. Until... until you become small consultant venture
+with 3-5 team members and no additional separate support team to poke issues
 to.
 
-I myself don't religiously believe system administrators are extinct creatures
+## Contents
+
+Given the length, here’s a helpful table of contents.
+
+ - [The NEED](#the-need)
+ - [The STRUGGLE](#the-struggle)
+ - [Evaluation notes](#evaluation-notes)
+
+## The NEED ##
+
+I don't fanatically believe that system administrators are extinct creatures
 from Age of Reptiles. I also don't think that in-team operations experience is
 a MUST. In my humble opinion in some cases it makes more sense to outsource
 application maintenance or use PAAS. It depends on scope, budget, difficulty,
-level of expertise required, average Joe on the team et cetera.
-
-To sum up, in some cases it's up to external stuff you can't control (budget,
-client wishes..) and in some cases it's team internal decision. In later case
-the real question is - _Are operations part of your Core Competences?  You
-don't want to outsource that_.
+level of expertise required, average Joe on the team, ... To sum up, in some
+cases it's up to external stuff you can't control (budget, client wishes..) and
+in some cases it's team internal decision. In later case the real question is -
+_Are operations part of your Core Competences?  You don't want to outsource
+that_.
 
 In my latest project our team have found ourselves in need of system
 administration and maintenance. One of the project delivery if legacy system
@@ -33,13 +44,13 @@ migration to Amazon Web Services (namely ec2, s3 et cetera).
 
 And here it begins, The Struggle
 
-## Operations struggle
+## The STRUGGLE
 
 The struggle for resolution in my practice quite often begins with search for
-mystic 'Golden Hammer', some particular tool or set of tools, which would make
-all the hard work and defeat all problems. [Devops][devops] is new promising
-sexy buzzword glossing all around on top of _i-cloudy i-thingy_ and claims to
-address exactly that.
+mystic 'Golden Hammer', some particular practice or set of tools, which would
+do all the hard work instead of me and would make all hard problems to vanish
+away. [DevOps] [devops] is such new promising sexy buzzword glossing all around
+on top of _i-cloudy i-thingy_ and claims to address exactly that.
 
 __tl; dr;__ In business there is no place for separate development and
 operations teams working independently in isolated environments. There is ONLY
@@ -47,40 +58,65 @@ ONE PRODUCT TEAM. Period. Product team is solely and completely responsible for
 Product, there is no other group to blame for mis-deployment or
 misconfiguration. Everybody needs to communicate, cooperate and work together.
 
-One of assumed DevOps' promises is what development team empowered by set of
-tools and practices would perform most of operations needs in automated,
-repeatable and testable manner. That indirectly would lead to operations
-turnout and ROI (return of investment) increase.
+I don't completely buy into _DevOps as Golden Hammer universal tool idea_. It's
+clear that sane amounts of cooperation and communication are only welcome
+addition and natural fit into bigger product evolution picture, nothing new
+here. Also, one of DevOps interpretation is what development team empowered by
+set of tools and practices would prepare OR/AND perform most of operations
+tasks in automated, repeatable and testable manner. It does not necessary mean
+developers perform the operations themselves.  There is still a place for
+operation guys if it needs to be there: e.g. monitoring, topology setup,
+hardware router configuration, Linux kernel parameter tuning et cetera, et
+cetera. The DevOps scope is really about defining the framework for automation,
+testing and team internal communication.  The goal is to judiciously automate
+business enablers, reduce change delivery turnout time and minimize
+_1-sysadmin-know-how_ and human error factors.
 
-Having said that, I did my best in research what are the latest tools available
-on the market, that the trends are. In the matter of literally 10 minutes I
-have come up with the following list:
+__Example procedure for Feature A turnout__
 
-1. [PuppetLabs Puppet][1], [puppetlabs/puppet][2]
-2. [OpsCode Chef][3], [opscode/chef][4]
-3. [Ansible][7], [ansible/ansible][8]
-4. [SaltStack Salt][5], [saltstack/salt][6]
+ - The feature has been implemented in [feature branch] [f-branch] OR [feature
+   toggle] [f-toggle] has been created.
+ - The provisioning (automated deployment and configuration) scripts have been
+   committed into [VCS] [vcs].
+ - The [Continuous Integration][ci] (CI) server deployed and enabled feature
+   using [provisioning scripts][provisioning]
+ - CI unit tests and feature acceptance tests have been successfully passed
+ - Feature was automatically merged into master 
+ - ...TBD
+
+The procedure may vary depending on product needs and team preferences. 
+
+Having said that, I did my best in research what the tools available on the
+market are, that the trends are and what potential benefits I might get. In the
+matter of literally 10 minutes I have come up with the following list:
+
+ 1. [PuppetLabs Puppet] [1], [puppetlabs/puppet] [2]
+ 2. [OpsCode Chef] [3], [opscode/chef] [4]
+ 3. [Ansible] [7], [ansible/ansible] [8]
+ 4. [SaltStack Salt] [5], [saltstack/salt] [6]
 
 I won't try to beat Google Search and repeat multiple various sites comparing
 tools and do apples-to-oranges OR trying to switch into apples-to-apples zones.
 However, I'm wiling to share my subjective evaluation results and explain why
 I've chosen tool A over B in my particular use case.
 
+## Evaluation notes
+
 ### Puppet
 
-[Puppet][1]
+[Puppet] [1]
 
 ### Chef
 
-[OpsCode Chef][3]
+[OpsCode Chef] [3]
 
 ### Ansible
 
-[Ansible][7]
+[Ansible] [7]
 
 ### Salt
 
-[Salt][5]
+[Salt] [5]
 
 ----
 
@@ -88,6 +124,11 @@ I've chosen tool A over B in my particular use case.
 
 [galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
 [devops]: http://en.wikipedia.org/wiki/DevOps "DevOps"
+[vcs]: http://en.wikipedia.org/wiki/Revision_control "Version Control System"
+[f-branch]: http://martinfowler.com/bliki/FeatureBranch.html "Feature Branch"
+[f-toggle]: http://martinfowler.com/bliki/FeatureToggle.html "Feature Toggle"
+[ci]: http://martinfowler.com/articles/continuousIntegration.html "Continious Integration"
+[provisioning]: http://en.wikipedia.org/wiki/Provisioning "Provisioning"
 [1]: http://puppetlabs.com/ "Puppet"
 [2]: https://github.com/puppetlabs/puppet "Puppet at Github"
 [3]: http://www.getchef.com/ "Chef"
