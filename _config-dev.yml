@@ -11,6 +11,8 @@ baseurl: ''
 url: http://leonardinius.galeoconsulting.com
 permalink: /:year/:month/:title
 markdown: redcarpet
+redcarpet:
+    extensions: [with_toc_data]
 highlighter: pygments
 paginate: 5
 
