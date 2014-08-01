@@ -4,11 +4,10 @@ layout: post
 ---
 
 I by all means am not a system administrator or SCM guy or DBA guy or whatever.
-My job duties consist mostly from analysis, system design and delivery, little
-piece of architecture every now and then. I proudly call myself _Developer
-vulgaris_.  Still, I used to find myself in position I have working (locally)
-solution and little or no clue how the heck to get it out in window.  Should I
-just throw it to support and let let them handle that?  
+I would call myself _Developer vulgaris_. Still, I used to find myself in
+position I have working (locally) solution and little or no clue how the heck
+to get it out in window.  Should I just throw it to support and let let them
+handle that?
 
 ![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg) Image
 source
@@ -22,11 +21,11 @@ to.
 
 Given the length, here’s a helpful table of contents.
 
- - [The NEED](#the-need)
- - [The STRUGGLE](#the-struggle)
+ - [The Struggle](#the-struggle)
+ - [The Golden Hammer](#the-golden-hammer)
  - [Evaluation notes](#evaluation-notes)
 
-## The NEED ##
+## The Struggle ##
 
 I don't fanatically believe that system administrators are extinct creatures
 from Age of Reptiles. I also don't think that in-team operations experience is
@@ -39,23 +38,34 @@ _Are operations part of your Core Competences?  You don't want to outsource
 that_.
 
 In my latest project our team have found ourselves in need of system
-administration and maintenance. One of the project delivery if legacy system
-migration to Amazon Web Services (namely ec2, s3 et cetera).
+administration and maintenance. Project deliveries (amongst others) are legacy
+system migration to Amazon Web Services (namely ec2, s3 et cetera) and
+support/operations takeover. As usual things become more and more difficult when you dig in deep enough. Even simple cases (and I consider that particular project small enough to give it `M` size complexity T-shirt) become nontrivial:
 
-And here it begins, The Struggle
+- Mapping all different kinds of topology to constraints of new platform
+- Ensuring non-functional requirements still stand true
+- We want to make small confident steps and polish later. Therefore we are unwilling to throw away all existing infrastructure, security configuration, instance inter communication schemes et cetera. We do it as we need to (or are forced to by two previous bullet points).
 
-## The STRUGGLE
+As [@pukhalski](https://twitter.com/pukhalski) has [pointed out](https://twitter.com/pukhalski/status/492235123597639680)
+> Architecture is constraint-based design. Art is design without constraints.
+
+And I could not agree more. Sometimes we have to limit our creative side and do
+what we need to do in most safe/efficient way plausible.
+
+## The Golden Hammer
 
 The struggle for resolution in my practice quite often begins with search for
 mystic 'Golden Hammer', some particular practice or set of tools, which would
-do all the hard work instead of me and would make all hard problems to vanish
-away. [DevOps] [devops] is such new promising sexy buzzword glossing all around
-on top of _i-cloudy i-thingy_ and claims to address exactly that.
+do all the hard work instead of as and would make all hard problems to vanish
+away.
+
+[DevOps] [devops] is such new promising sexy buzzword glossing all around on
+top of _i-cloudy i-thingy_ and claims to address exactly that.
 
 __tl; dr;__ In business there is no place for separate development and
 operations teams working independently in isolated environments. There is ONLY
-ONE PRODUCT TEAM. Period. Product team is solely and completely responsible for
-Product, there is no other group to blame for mis-deployment or
+ONE PRODUCT TEAM.  Period. Product team is solely and completely responsible
+for Product, there is no other group to blame for mis-deployment or
 misconfiguration. Everybody needs to communicate, cooperate and work together.
 
 I don't completely buy into _DevOps as Golden Hammer universal tool idea_. It's
@@ -72,7 +82,7 @@ testing and team internal communication.  The goal is to judiciously automate
 business enablers, reduce change delivery turnout time and minimize
 _1-sysadmin-know-how_ and human error factors.
 
-__Example procedure for Feature A turnout__
+**Example procedure for Feature A turnout**
 
  - The feature has been implemented in [feature branch] [f-branch] OR [feature
    toggle] [f-toggle] has been created.
@@ -81,10 +91,10 @@ __Example procedure for Feature A turnout__
  - The [Continuous Integration][ci] (CI) server deployed and enabled feature
    using [provisioning scripts][provisioning]
  - CI unit tests and feature acceptance tests have been successfully passed
- - Feature was automatically merged into master 
+ - Feature was automatically merged into master
  - ...TBD
 
-The procedure may vary depending on product needs and team preferences. 
+The procedure may vary depending on product needs and team preferences.
 
 Having said that, I did my best in research what the tools available on the
 market are, that the trends are and what potential benefits I might get. In the
@@ -101,6 +111,8 @@ However, I'm wiling to share my subjective evaluation results and explain why
 I've chosen tool A over B in my particular use case.
 
 ## Evaluation notes
+
+TODO
 
 ### Puppet
 
@@ -120,7 +132,7 @@ I've chosen tool A over B in my particular use case.
 
 ----
 
-<!-- Link definition --> 
+<!-- Link definition -->
 
 [galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
 [devops]: http://en.wikipedia.org/wiki/DevOps "DevOps"
