@@ -21,10 +21,13 @@ Given the length, here’s a helpful table of contents.
 
  - [The Struggle](#the-struggle)
  - [The Golden Hammer](#the-golden-hammer)
- - [The Evaluation](#the-evaluation)
- - [The Choice](#the-choice)
+ - [The Goals](#the-goals)
+ - [The Evaluation](#the-evaluation) ([Chef](#chef), [Puppet](#puppet),
+   [Ansible](#ansible), [Salt](#salt))
+ - [The Final Choice](#the-final-choice)
  - [Things I wish I knew before start](#things-i-wish-i-knew-before-start)
  - [Lessons learned](#lessons-learned)
+ - [The Result](#the-result)
 
 ## The Struggle ##
 
@@ -92,23 +95,49 @@ testing and team internal communication.  The goal is to judiciously automate
 business enablers, reduce change delivery turnout time and minimize
 _1-sysadmin-know-how_ and human error factors.
 
-**Example procedure for Feature A turnout**
+## The Goals ##
 
- - The feature has been implemented in [feature branch] [define:f-branch] OR
-   [feature toggle] [define:f-toggle] has been created.
- - The provisioning (automated deployment and configuration) scripts have been
-   committed into [VCS] [define:vcs].
- - The [Continuous Integration][define:ci] (CI) server deployed and enabled
-   feature using [provisioning scripts][define:provisioning]
- - CI unit tests and feature acceptance tests have been successfully passed
- - Feature was automatically merged into master
- - ...TBD
+In our case our goals were more migration process related:
 
-The procedure may vary depending on product needs and team preferences.
+ - **Minimize _try-fail-repeat_ cycle turnout time.**
+   My initial assumption was we won't get into PROD-ready state right away. In
+   the process we definitely would like to experiment with certain components
+   AND/OR approaches more than few times. Think about multi-node environment
+   [provisioning] [define:provisioning] from scratch, DB backup restores, file
+   system backup restores, etc... It's likely to take a while. EVERY. SINGLE.
+   TIME. I wanted to automate as much as possible to reduce human error risks
+   and speedup the whole procedure.
+ - **Enable local development.**
+   My goal was to enable every team member to contribute in right away from
+   migration sub-project start. The plan was to setup local
+   [Vagrant](http://www.vagrantup.com/) virtual environment, similar to
+   existing STAGE and/or PROD. That way everybody would be able to reproduce
+   problems, contribute and provide fixes, reduce initial ramp-up time, remove
+   dependency for AWS in local development.
+ - **Document things.**
+   One of the problems in early estimation was getting grasp of existing
+   environment, understanding existing topology, it's difficulty and all
+   inter-connections and inter-dependencies. Having our infrastructure in (even
+   semi-)automated provisioned way would be a big step forward in terms of
+   platform internals documentation. Every developer would be able to sift
+   through provisioning [Code Versioning System] [define:vcs] history and be
+   able to make informed guesses about _who_, _when_, _how_ and _why_
+   introduced certain change, adjusted particular parameter or opened some
+   port.
+ - **Single point of truth.**
+   With infrastructure as data/code we would be able to answer that the state
+   _should be_ in every moment of time. Where should not be questions of
+   whether John followed the wiki instructions OR some issue comment OR
+   whatever else. Still, there might be issues in implementation OR our
+   assumptions about the platform universe might be wrong (e.g. what state
+   revision was used to provision service A), however now there is only one
+   place the state _should_ come from - from Code Versioning System.
 
-Having said that, I did my best in research what the tools available on the
-market are, that the trends are and what potential benefits I might get. In the
-matter of literally 10 minutes I have come up with the following list:
+## The Evaluation
+
+I did my best in research what the tools available on the market are, that the
+trends are and what potential benefits I might get. In the matter of literally
+10 minutes I have come up with the following list:
 
  1. [PuppetLabs Puppet] [1], [puppetlabs/puppet] [2]
  2. [OpsCode Chef] [3], [opscode/chef] [4]
@@ -119,8 +148,6 @@ I won't try to beat Google Search and repeat multiple various posts trying to
 do apples-to-oranges OR apples-to-apples comparisons. However, I'm wiling to
 share my subjective evaluation results and explain why I've chosen tool A over
 B in my particular use case.
-
-## The Evaluation
 
 The whole process was highly subjective - no measurable criteria, no Cartesian
 square comparisons etc... However, those are some of criteria I was paying
@@ -233,13 +260,86 @@ Salt introduces a lot of it's own terminology. The amount of supported use
 cases is quite big, there is quite a lot documentation out there. No all of it
 is newcomer friendly.
 
-## The Choice ##
+## The Final Choice ##
 
+In the end I choose SaltStack Salt over other solutions. The list of reasons in
+order of importance:
+
+ - I've found it easier to begin with. Most likely it has something with
+   _Getting Started_ tutorials and quality of documentation in general.
+ - The astonishing community.
+ - Idempotent declarative states.
+ - Multi paradigm approach promised I could make it work one way or another.
+ - IaS provisioning support
 
 
 ## Things I wish I knew before start ##
 
+In the process I have re-evaluated some of the evaluation results and findings.
+
+Things I have discovered during implementation phase (mostly the hard way):
+
+ - **Community and enormous velocity has it's quirks.**
+   Salt community is huge and very vibrant. At the moment of writing
+   [saltstack] [6] has `320` watchers and `3, 787` stars. And `1, 462` open
+   issues. No doubt, being an open souce gardener [is no an easy
+   walk](http://words.steveklabnik.com/how-to-be-an-open-source-gardener). The
+   community contribution is easy and kindly accepted without very strict
+   procedure, signing CLA agreements and long formal reviews. As a result some
+   functionality or additions might be incomplete in sense documentation might
+   be incomplete or inconsistent (some particular page might have while other
+   not). I wouldn't say it's all bad OR black and white, I believe Salt has
+   managed to be in compromise sweet pot - getting maximum from community, free
+   of charge, while still be useful and mostly reliable.
+ - **Screw you GitFS, I'm going home.**
+   My initial plan was to leverage Git to deliver environment configuration to
+   Salt master and slave nodes (minions). Salt recommends to split states and
+   sensitive data in separate things, e.g. [Salt
+   states](http://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html)
+   and [Salt
+   pillar](http://docs.saltstack.com/en/latest/topics/pillar/index.html).
+   Former one could be split in environments (each Git branch is a separate
+   environment name) and multiple Git repositories with different branch names
+   could be collected under one single environment (e.g. you own states under
+   PROD branch, some Github repo with Apache provisioning state under MASTER
+   branch). Pillar data however has drawback
+   [#11575](https://github.com/saltstack/salt/issues/11575) of not being able
+   to redefine `base` environment data. That, lack of transparency, no means to
+   ensure pillar GitFS data and multiple state GitFS repositories are correctly
+   inter-synchronized (each of GitFS repositories is potential point of
+   failure, pillar data might be pulled correctly, however some other git repo
+   might fail due to network connectivity and still refer to previous outdated
+   version), having to worry about network connectivity to remote Git
+   repositories - effectively kill the idea. A local copy of
+   data on PROD instances in AWS seems much more better idea.
+   _Make Continious Integration server to rsync data to AWS master_
+   _and only then provision things_.is by no doubt more transparent and
+   controlled setup, which is by far a better way to do things in production.
+ - **Multi environment has no answer.**
+   [Environments](http://docs.saltstack.com/en/latest/ref/states/top.html#environments)
+   seems to  work best in _master of masters of minions_ (aka
+   [syndic](http://docs.saltstack.com/en/latest/topics/topology/syndic.html)
+   mode. In such case it's convenient to control multiple environments from one
+   super master. However in our case I would like to treat each particular
+   environment as sandbox, each of being `base` or baseline in itself. I view
+   STAGE environment as a separate sandbox version of PROD environment, DEV
+   environment the same. It might be they do not share the same topology,
+   however all the roles/components are present one or other way (e.g. we use
+   RDS in AWS and PostgreSQL in local development environment).  As it turns
+   out, Salt does not have an answer on how to layout things in multi
+   environment configuration. I have tried asking on user mailing lists and
+   IIRC. People do things the way it works best for them, however there is not
+   such thing as _Recommended layouts for different types of environments_
+   documentation out there. There are certain means how to do things and cover
+   your needs one way or another (it's the place where Salt's enormous
+   flexibility kicks in), however it feels as reinventing square wheel over and
+   over again and again.
+ - **Orchestration is not worth it.**
+ - **IaS provisioning is insufficient.**
+
 ## Lessons learned ##
+
+## The Result ##
 
 
 ----
@@ -249,9 +349,6 @@ is newcomer friendly.
 [galeo]: https://twitter.com/galeoconsulting "Galeo twitter"
 [define:devops]: http://en.wikipedia.org/wiki/DevOps "DevOps"
 [define:vcs]: http://en.wikipedia.org/wiki/Revision_control "Version Control System"
-[define:f-branch]: http://martinfowler.com/bliki/FeatureBranch.html "Feature Branch"
-[define:f-toggle]: http://martinfowler.com/bliki/FeatureToggle.html "Feature Toggle"
-[define:ci]: http://martinfowler.com/articles/continuousIntegration.html "Continious Integration"
 [define:provisioning]: http://en.wikipedia.org/wiki/Provisioning "Provisioning"
 [define:idempotence]: http://en.wikipedia.org/wiki/Idempotence "Idempotence"
 [define:imperative]: http://en.wikipedia.org/wiki/Imperative_programming "Imperative"
