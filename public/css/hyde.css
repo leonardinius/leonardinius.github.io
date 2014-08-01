@@ -147,20 +147,36 @@ pre code {
 
 /* Quotes */
 blockquote {
-  padding: 0 0 0 20px;
-  margin: 15px 30px 15px 0;
-  border-left: 5px solid #eee;
+  // padding: 0 0 0 20px;
+  // margin: 15px 30px 15px 0;
+  // border-left: 5px solid #eee;
+  padding: 13px 13px 21px 15px;
+  margin-bottom: 18px;
+  font-family: georgia,serif;
+  font-style: italic;
 }
 blockquote p {
   margin-bottom: 0;
   color: #7a7a7a;
   text-indent: -0.4em;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 18px;
+  font-style: italic;
 }
 blockquote p:before {
   content: '\201C';
+  font-size: 40px;
+  margin-left: -10px;
+  font-family: georgia,serif;
+  color: #eee;
 }
 blockquote p:after {
-  content: '\201D';
+  // content: '\201D';
+  // font-size: 40px;
+  // margin-left: -10px;
+  // font-family: georgia,serif;
+  // color: #eee;
 }
 
 img {
