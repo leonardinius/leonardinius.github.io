@@ -4,13 +4,11 @@ layout: post
 ---
 
 I by all means am not a system administrator or SCM guy or DBA guy or whatever.
-I would call myself _Developer vulgaris_. Still, I used to find myself in
-position I have working (locally) solution and little or no clue how the heck
-to get it out in window.  Should I just throw it to support and let let them
-handle that?
-
-![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg) Image
-source
+I call myself _Developer vulgaris_. Still, I'm used to find myself in position
+I have working (locally) solution and little or no clue how the heck to get it
+out in window.  Should I just throw it to support and let let them handle that?
+![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg)
+Image source
 @[mptron.com](http://mptron.com/news/javagame/sisgame/3919-volk-yaycelov-nu-pogodi.html)
 
 It works perfectly well. Until... until you become small consultant venture
@@ -33,21 +31,29 @@ a MUST. In my humble opinion in some cases it makes more sense to outsource
 application maintenance or use PAAS. It depends on scope, budget, difficulty,
 level of expertise required, average Joe on the team, ... To sum up, in some
 cases it's up to external stuff you can't control (budget, client wishes..) and
-in some cases it's team internal decision. In later case the real question is -
-_Are operations part of your Core Competences?  You don't want to outsource
-that_.
+in some cases it's team internal decision.
+
+> _Are operations part of your Core Competences?_
+> _You don't want to outsource that_.
 
 In my latest project our team have found ourselves in need of system
 administration and maintenance. Project deliveries (amongst others) are legacy
-system migration to Amazon Web Services (namely ec2, s3 et cetera) and
-support/operations takeover. As usual things become more and more difficult when you dig in deep enough. Even simple cases (and I consider that particular project small enough to give it `M` size complexity T-shirt) become nontrivial:
+system migration to Amazon Web Services and support/operations takeover. As
+usual things become more and more difficult when you dig in deep enough. Even
+simple cases (and I consider that particular project small enough to give it
+`M` size complexity T-shirt) become nontrivial:
 
-- Mapping all different kinds of topology to constraints of new platform
-- Ensuring non-functional requirements still stand true
-- We want to make small confident steps and polish later. Therefore we are unwilling to throw away all existing infrastructure, security configuration, instance inter communication schemes et cetera. We do it as we need to (or are forced to by two previous bullet points).
+ - Mapping all different kinds of topology to constraints of new platform
+ - Ensuring non-functional requirements still stand true We want to make small
+ - confident steps and polish later. Therefore we are unwilling to throw away
+ - all existing infrastructure, security configuration, instance inter
+ - communication schemes et cetera. We do it as we need to (or are forced to by
+ - two previous bullet points).
 
 As [@pukhalski](https://twitter.com/pukhalski) has [pointed out](https://twitter.com/pukhalski/status/492235123597639680)
-> Architecture is constraint-based design. Art is design without constraints.
+
+> Architecture is constraint-based design.
+> Art is design without constraints.
 
 And I could not agree more. Sometimes we have to limit our creative side and do
 what we need to do in most safe/efficient way plausible.
