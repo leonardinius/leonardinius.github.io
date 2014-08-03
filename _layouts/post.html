@@ -4,16 +4,21 @@ layout: default
 
 <div class="post">
   <h1>
-      <a href="{{ page.url }}"> {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</a>
+      <a href="{{ page.url }}" class="page-title">
+        {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}
+      </a>
   </h1>
 
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
 
   <hr/>
-  <strong>NB</strong> if you've found any typos, errors or would like to submit corrections or recommendations: please
-   <a href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path }}">edit via github</a> or
-   <a href="{{ site.github.repo }}/issues/new?title=Feedback+on+%60{% if page.title <> null %}{{ page.title | cgi_escape}}{% else %}{{ page.path | cgi_escape}}{% endif %}%60&body=%60{{ page.path | cgi_escape }}%60%0A%0A----%0APlace+your+description+here">file an issue</a>.
+  If you've found typos or errors, please
+    <a class="suggest" href="{{ site.github.repo }}/issues/new?title=Feedback+on+%60{% if page.title <> null %}{{ page.title | cgi_escape}}{% else %}{{ page.path | cgi_escape}}{% endif %}%60&body=%60{{ page.path | cgi_escape }}%60%0A%0A----%0APlace+your+description+here">
+        suggest a correction</a>
+    or
+    <a class="suggest" href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path }}">
+        edit on github</a>.
 </div>
 
 <div class="related">

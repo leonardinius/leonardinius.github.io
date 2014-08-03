@@ -6,13 +6,18 @@ layout: default
   {% for post in paginator.posts %}
   <div class="post">
     <h1>
-      <a href="{{ post.url }}"> {% if site.env %}[{{ site.env }}] {% endif %}{{ post.title }}</a>
+      <a href="{{ post.url }}" class="post-title">
+        {% if site.env %}[{{ site.env }}] {% endif %}{{ post.title }}
+      </a>
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
     {{ post.excerpt }}
-    <span class="read-more"><a href="{{ post.url }}">Read more</a></span>
+    <span class="read-more">
+      <a href="{{ post.url }}" class="read-more">
+        Read more</a>
+    </span>
   </div>
   {% endfor %}
 </div>

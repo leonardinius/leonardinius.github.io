@@ -78,7 +78,7 @@ ul, ol {
   margin-bottom: 15px;
 }
 li {
-  color: #888580;
+  //color: #888580;
 }
 
 hr {
@@ -191,7 +191,8 @@ img {
 
 a {
   font-weight: 600;
-  color: #222;
+  //color: #222;
+  color: #268bd2;
   text-decoration: none;
 }
 a:hover {
@@ -385,6 +386,10 @@ a:hover {
 /**
  * leonardinius.galeoconsulting.com changes
 */
+.page-title, .post-title, .post-title a {
+  color: #303030;
+}
+
 #about_images {
     min-height: 125px;
     text-align: center;
@@ -400,6 +405,7 @@ a:hover {
 .read-more a{
     text-decoration: overline;
     padding:  5px;
+    color: #303030;
     background-color: #f4f4f4;
 }
 
@@ -410,4 +416,8 @@ a.site-url {
 }
 a.site-url:hover {
     text-decoration: no-underline;
+}
+
+div.pagination a, div.related a, a.suggest {
+  color: #303030;
 }
