@@ -19,17 +19,18 @@ to.
 
 Given the length, here’s a helpful table of contents.
 
- - [The Struggle](#the-struggle)
+ - [The Problem](#the-problem)
  - [The Golden Hammer](#the-golden-hammer)
  - [The Goals](#the-goals)
  - [The Evaluation](#the-evaluation) ([Chef](#chef), [Puppet](#puppet),
    [Ansible](#ansible), [Salt](#salt))
  - [The Final Choice](#the-final-choice)
  - [Things I wish I knew before start](#things-i-wish-i-knew-before-start)
+ - [What worked best](#what-worked-best)
  - [Lessons learned](#lessons-learned)
  - [The Result](#the-result)
 
-## The Struggle ##
+## The Problem ##
 
 I don't fanatically believe that system administrators are extinct creatures
 from Age of Reptiles. I also don't think that in-team operations experience is
@@ -44,25 +45,26 @@ in some cases it's team internal decision.
 
 In my latest project our team have found ourselves in need of system
 administration and maintenance. Project deliveries (amongst others) are legacy
-system migration to Amazon Web Services and support/operations takeover. As
+system migration to Amazon Web Services, support and operations takeover. As
 usual things become more and more difficult when you dig in deep enough. Even
 simple cases (and I consider that particular project small enough to give it
 `M` size complexity T-shirt) become nontrivial:
 
  - Mapping all different kinds of topology to constraints of new platform
- - Ensuring non-functional requirements still stand true We want to make small
- - confident steps and polish later. Therefore we are unwilling to throw away
- - all existing infrastructure, security configuration, instance inter
- - communication schemes et cetera. We do it as we need to (or are forced to by
- - two previous bullet points).
+ - Ensuring non-functional requirements still stand true
+ - We want to make small confident steps and polish later. Therefore we are
+   unwilling to throw away all existing infrastructure, security configuration,
+   instance inter communication schemes et cetera. We do it as we need to (or
+   are forced to by two previous bullet points).
 
-As [@pukhalski](https://twitter.com/pukhalski) has [pointed out](https://twitter.com/pukhalski/status/492235123597639680)
+Recently I came across [@pukhalski's](https://twitter.com/pukhalski)
+[tweet](https://twitter.com/pukhalski/status/492235123597639680)
 
 > Architecture is constraint-based design.
 > Art is design without constraints.
 
 And I could not agree more. Sometimes we have to limit our creative side and do
-what we need to do in most safe/efficient way plausible.
+what we need to do in most safe/efficient way plausible given the constraints.
 
 ## The Golden Hammer
 
@@ -100,7 +102,7 @@ _1-sysadmin-know-how_ and human error factors.
 In our case our goals were more migration process related:
 
  - **Minimize _try-fail-repeat_ cycle turnout time.**
-   My initial assumption was we won't get into PROD-ready state right away. In
+   Our initial assumption was we won't get into PROD-ready state right away. In
    the process we definitely would like to experiment with certain components
    AND/OR approaches more than few times. Think about multi-node environment
    [provisioning] [define:provisioning] from scratch, DB backup restores, file
@@ -108,7 +110,7 @@ In our case our goals were more migration process related:
    TIME. I wanted to automate as much as possible to reduce human error risks
    and speedup the whole procedure.
  - **Enable local development.**
-   My goal was to enable every team member to contribute in right away from
+   Our goal was to enable every team member to contribute in right away from
    migration sub-project start. The plan was to setup local
    [Vagrant](http://www.vagrantup.com/) virtual environment, similar to
    existing STAGE and/or PROD. That way everybody would be able to reproduce
@@ -117,8 +119,8 @@ In our case our goals were more migration process related:
  - **Document things.**
    One of the problems in early estimation was getting grasp of existing
    environment, understanding existing topology, it's difficulty and all
-   inter-connections and inter-dependencies. Having our infrastructure in (even
-   semi-)automated provisioned way would be a big step forward in terms of
+   inter-connections and inter-dependencies. Having our infrastructure in even
+   semi-automated provisioned way would be a big step forward in terms of
    platform internals documentation. Every developer would be able to sift
    through provisioning [Code Versioning System] [define:vcs] history and be
    able to make informed guesses about _who_, _when_, _how_ and _why_
@@ -153,8 +155,7 @@ The whole process was highly subjective - no measurable criteria, no Cartesian
 square comparisons etc... However, those are some of criteria I was paying
 attention to:
 
- - Find Homepage, source code, documentation URLs. Assess availability and
-   readability.
+ - Assess availability and readability of source code and documentation.
  - Estimate size of community and assess the level of support it provides.
  - Asses how quickly and easy is to start doing something useful.
  - Find ready to use templates, solutions OR solution repositories.
@@ -231,7 +232,7 @@ Didn't find any kind of public playbook repository. Also I found documentation
 too brief and compact. I lacked details, complex examples and best practices
 documentation.
 
-_Discovered later_ [Ansible Galaxy](https://galaxy.ansible.com/) is publicly
+**Discovered later** [Ansible Galaxy](https://galaxy.ansible.com/) is publicly
 available playbook repository. I must say I most likely misjudged Ansible and
 this tool is definitely in _will try on next small project_ category.
 
@@ -239,11 +240,14 @@ this tool is definitely in _will try on next small project_ category.
 
 **+ I liked**
 
-It's execution model (modules) are imperative and it's states are imperative
-and idempotent. Basically they are just YML files/data describing the end state
-of things. Some complex dynamic things could be expressed in state templates
-via Jinja markup. To sum up, Salt provides some multi paradigm mix of things and
-it's your choice how to glue things. On top of it - Salt explicitly documents
+It's execution model is imperative but it's states are declarative
+and idempotent. Basically they are just [YAML] [define:yaml] files/data
+describing the end state of things. Some complex dynamic things could be
+expressed in state templates via [Jinja](http://jinja.pocoo.org/) markup OR
+implemented as [Salt modules] (http://docs.saltstack.com/en/latest/ref/modules/)
+in Python programming language. To sum up, Salt provides some multi paradigm
+mix of things and it's your choice how to glue things. I particularly liked
+that Salt offered
 [best practices and recommendations](http://docs.saltstack.com/en/latest/topics/best_practices.html).
 Salt also has support of _master - slaves_, _standalone masterless_, _salt over
 ssh_, _master of master of slaves_ modes. Again, you have a choice. Salt also
@@ -292,12 +296,12 @@ Things I have discovered during implementation phase (mostly the hard way):
    managed to be in compromise sweet pot - getting maximum from community, free
    of charge, while still be useful and mostly reliable.
  - **Screw you GitFS, I'm going home.**
-   My initial plan was to leverage Git to deliver environment configuration to
-   Salt master and slave nodes (minions). Salt recommends to split states and
-   sensitive data in separate things, e.g. [Salt
-   states](http://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html)
-   and [Salt
-   pillar](http://docs.saltstack.com/en/latest/topics/pillar/index.html).
+   My initial plan was to leverage
+   [GitFS](http://docs.saltstack.com/en/latest/topics/tutorials/gitfs.html) to
+   deliver environment configuration to Salt master and slave nodes (minions).
+   Salt recommends to split states and sensitive data in separate things, e.g.
+   [Salt states](http://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html)
+   and [Salt pillar](http://docs.saltstack.com/en/latest/topics/pillar/index.html).
    Former one could be split in environments (each Git branch is a separate
    environment name) and multiple Git repositories with different branch names
    could be collected under one single environment (e.g. you own states under
@@ -310,12 +314,13 @@ Things I have discovered during implementation phase (mostly the hard way):
    failure, pillar data might be pulled correctly, however some other git repo
    might fail due to network connectivity and still refer to previous outdated
    version), having to worry about network connectivity to remote Git
-   repositories - effectively kill the idea. A local copy of
-   data on PROD instances in AWS seems much more better idea.
-   _Make Continious Integration server to rsync data to AWS master_
-   _and only then provision things_.is by no doubt more transparent and
-   controlled setup, which is by far a better way to do things in production.
- - **Multi environment has no answer.**
+   repositories - effectively kill the idea, at least for use in production. A
+   local copy of data on production instances in AWS seems much more better
+   idea.
+   Make Continuous Integration server to rsync data to AWS master _and
+   only then provision things_ is more transparent and controlled
+   setup, which is by far a better way to do things in production.
+ - **Multi environment setup has no answer.**
    [Environments](http://docs.saltstack.com/en/latest/ref/states/top.html#environments)
    seems to  work best in _master of masters of minions_ (aka
    [syndic](http://docs.saltstack.com/en/latest/topics/topology/syndic.html)
@@ -324,18 +329,48 @@ Things I have discovered during implementation phase (mostly the hard way):
    environment as sandbox, each of being `base` or baseline in itself. I view
    STAGE environment as a separate sandbox version of PROD environment, DEV
    environment the same. It might be they do not share the same topology,
-   however all the roles/components are present one or other way (e.g. we use
-   RDS in AWS and PostgreSQL in local development environment).  As it turns
-   out, Salt does not have an answer on how to layout things in multi
+   however all the roles/components are present in one or other way (e.g. we
+   use RDS in AWS and PostgreSQL in local development environment).  As it
+   turns out, Salt does not have an answer on how to layout things in multi
    environment configuration. I have tried asking on user mailing lists and
    IIRC. People do things the way it works best for them, however there is not
    such thing as _Recommended layouts for different types of environments_
-   documentation out there. There are certain means how to do things and cover
-   your needs one way or another (it's the place where Salt's enormous
-   flexibility kicks in), however it feels as reinventing square wheel over and
-   over again and again.
+   document out there. There are certain means how to do things and cover your
+   needs one way or another (it's the place where Salt's enormous flexibility
+   kicks in), however it feels as reinventing square wheel over and over again
+   and again.
  - **Orchestration is not worth it.**
+   Salt has certain means to define order and interdependencies between nodes.
+   In Salt terminology it's called _orchestration_. The recommended way
+   nowadays seems to be Salt's
+   [orchestrate runner](http://salt.readthedocs.org/en/latest/topics/tutorials/states_pt5.html#the-orchestrate-runner).
+   I've spent fair  amount of time trying to automate our environment initial
+   roll out using that tool. However I've found it inadequately lacking for our
+   needs. The nature of our project enforced multi-node deployment, multi-step
+   restore from backups et cetera. Than kind of logic and especially different
+   kind of retry-wait-retry procedures are difficult (if even possible) to
+   express using that tool. I'm not saying that could not be done in safe
+   reliable way. But, my outtake was it's quite time consuming to implement it
+   and I would rather spend that time moving project further rather than doing
+   time sinking exercises. I've decided to leave it as manual step-by-step
+   procedure put in Wiki. It serves our needs, is much more reliable and
+   doesn't bother us much.
  - **IaS provisioning is insufficient.**
+   [Salt Cloud](http://docs.saltstack.com/en/latest/topics/cloud/) is Salt way
+   of how to describe and launch nodes (minions) on different target providers.
+   The list of supported providers covers most of mainstream cargo providers
+   out there. Initially I've tried to leverage node configuration to Salt
+   Cloud, to keep all things one uniformed way. However I soon had a lot of
+   questions with no answer: how to describe
+   [VPC] (http://aws.amazon.com/vpc/), how to define security groups et cetera,
+   et cetera. I have found Salt Cloud inadequately lacking for my needs and not
+   documented well enough (e.g. I've discovered some pieces of functionality
+   from issue tracker, not from official documentation). Salt Cloud might be a
+   nice tool for more simple use cases, e.g. to launch several nodes outside of
+   VPC, no Elastic Load Balancer and no AutoScale groups, however we decided we
+   will use different solutions more suited for our needs.
+
+## What worked best ##
 
 ## Lessons learned ##
 
@@ -352,6 +387,7 @@ Things I have discovered during implementation phase (mostly the hard way):
 [define:provisioning]: http://en.wikipedia.org/wiki/Provisioning "Provisioning"
 [define:idempotence]: http://en.wikipedia.org/wiki/Idempotence "Idempotence"
 [define:imperative]: http://en.wikipedia.org/wiki/Imperative_programming "Imperative"
+[define:yaml]: http://en.wikipedia.org/wiki/YAML "YAML"
 [1]: http://puppetlabs.com/ "Puppet"
 [2]: https://github.com/puppetlabs/puppet "Puppet at Github"
 [3]: http://www.getchef.com/ "Chef"
