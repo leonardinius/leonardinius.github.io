@@ -7,5 +7,6 @@ cd /vagrant \
   && sudo jekyll serve \
    --watch \
    --port 80 \
+   --force_polling \
    --drafts  \
    --config _config-dev.yml
