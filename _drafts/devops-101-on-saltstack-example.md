@@ -351,12 +351,12 @@ Things I have discovered during implementation phase (mostly the hard way):
    from official documentation). Salt Cloud might be a nice tool for more
    simple use cases, e.g. to launch several nodes outside of VPC, no Elastic
    Load Balancer and no AutoScale groups, however we decided we will use
-   different solutions more suited for our needs.
+   different solutions more suited for our needs.G
 
 ## What worked best for us ##
 
  - **AWS CloudFormation**
-   TBD
+   
    [AWS CloudFormation] [28]
  - **Roles based configuration**
    TBD
@@ -368,8 +368,6 @@ Things I have discovered during implementation phase (mostly the hard way):
 
 ## Lessons learned ##
 
- - **Automation saves huge amount of time**
-   TBD
  - **Don't buy into feature lists**
    TBD
  - **Decouple first**
@@ -377,6 +375,8 @@ Things I have discovered during implementation phase (mostly the hard way):
  - **Time limit proof of concept attempts**
    TBD
  - **Make first, polish later**
+   TBD
+ - **Automation saves huge amount of time**
    TBD
 
 ## The Result ##
@@ -423,3 +423,4 @@ TBD
 [27]: http://aws.amazon.com/vpc/ "Amazon VPC"
 [28]: http://aws.amazon.com/cloudformation/ "Amazon CloudFormation"
 [29]: http://www.saltstat.es/posts/role-infrastructure.html "Role based infrastructure"
+[30]: https://github.com/cloudtools/troposphere "Troposphere"
