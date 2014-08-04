@@ -26,7 +26,7 @@ Given the length, here’s a helpful table of contents.
    [Ansible](#ansible), [Salt](#salt))
  - [The Final Choice](#the-final-choice)
  - [Things I wish I knew before start](#things-i-wish-i-knew-before-start)
- - [What worked best](#what-worked-best)
+ - [What worked best for us](#what-worked-best-for-us)
  - [Lessons learned](#lessons-learned)
  - [The Result](#the-result)
 
@@ -57,8 +57,7 @@ simple cases (and I consider that particular project small enough to give it
    instance inter communication schemes et cetera. We do it as we need to (or
    are forced to by two previous bullet points).
 
-Recently I came across [@pukhalski's](https://twitter.com/pukhalski)
-[tweet](https://twitter.com/pukhalski/status/492235123597639680)
+Recently I came across [@pukhalski's] [9] [tweet] [10]
 
 > Architecture is constraint-based design.
 > Art is design without constraints.
@@ -111,11 +110,10 @@ In our case our goals were more migration process related:
    and speedup the whole procedure.
  - **Enable local development.**
    Our goal was to enable every team member to contribute in right away from
-   migration sub-project start. The plan was to setup local
-   [Vagrant](http://www.vagrantup.com/) virtual environment, similar to
-   existing STAGE and/or PROD. That way everybody would be able to reproduce
-   problems, contribute and provide fixes, reduce initial ramp-up time, remove
-   dependency for AWS in local development.
+   migration sub-project start. The plan was to setup local [Vagrant] [11]
+   virtual environment, similar to existing STAGE and/or PROD. That way
+   everybody would be able to reproduce problems, contribute and provide fixes,
+   reduce initial ramp-up time, remove dependency for AWS in local development.
  - **Document things.**
    One of the problems in early estimation was getting grasp of existing
    environment, understanding existing topology, it's difficulty and all
@@ -203,20 +201,18 @@ team.
 
 **+ I liked**
 
-In general I find
-[DSL](http://docs.puppetlabs.com/puppet/latest/reference/lang_summary.html)
-more readable and concise than code. I also consider state idempotence nice
-feature. The project seems to have one of the biggest communities, especially
-in non-developers camps. By all means it is mature solution.
+In general I find [DSL] [12] more readable and concise than code. I also
+consider state idempotence nice feature. The project seems to have one of the
+biggest communities, especially in non-developers camps. By all means it is
+mature solution.
 
 **- I didn't like**
 
 It seems the project aggressively tries to monetize on "Enterprise" additions
 and services. Also, in the process I had a look in what I consider to be a
-[simple case](https://github.com/aestasit/talks2013-javaday-groovy-devops-setup/blob/a3259feebddf66dbce336447babdae5343b71e3e/manifests/init.pp)
-and I couldn't say I liked that. I like DSL and I liked _hello world_ level
-examples. That being said I don't want to reinvent the wheel and learn another
-complex still useless XSLT/XML programming language.
+[simple case] [13] and I couldn't say I liked that. I like DSL and I liked
+_hello world_ level examples. That being said I don't want to reinvent the
+wheel and learn another complex still useless XSLT/XML programming language.
 
 ### Ansible
 
@@ -232,31 +228,29 @@ Didn't find any kind of public playbook repository. Also I found documentation
 too brief and compact. I lacked details, complex examples and best practices
 documentation.
 
-**Discovered later** [Ansible Galaxy](https://galaxy.ansible.com/) is publicly
-available playbook repository. I must say I most likely misjudged Ansible and
-this tool is definitely in _will try on next small project_ category.
+**Discovered later** [Ansible Galaxy] [14] is publicly available playbook
+repository.  I must say I most likely misjudged Ansible and this tool is
+definitely in _will try on next small project_ category.
 
 ### Salt
 
 **+ I liked**
 
-It's execution model is imperative but it's states are declarative
-and idempotent. Basically they are just [YAML] [define:yaml] files/data
-describing the end state of things. Some complex dynamic things could be
-expressed in state templates via [Jinja](http://jinja.pocoo.org/) markup OR
-implemented as [Salt modules] (http://docs.saltstack.com/en/latest/ref/modules/)
+It's execution model is imperative but it's states are declarative and
+idempotent. Basically they are just [YAML] [define:yaml] files/data describing
+the end state of things. Some complex dynamic things could be expressed in
+state templates via [Jinja] [15] markup OR implemented as [Salt modules] [16]
 in Python programming language. To sum up, Salt provides some multi paradigm
 mix of things and it's your choice how to glue things. I particularly liked
-that Salt offered
-[best practices and recommendations](http://docs.saltstack.com/en/latest/topics/best_practices.html).
-Salt also has support of _master - slaves_, _standalone masterless_, _salt over
-ssh_, _master of master of slaves_ modes. Again, you have a choice. Salt also
-claims to support IaS provisioning through API (e.g. AWS, ...). I also was
-intrigued by fact Salt was one the most active OSS projects on Github last
-year, to test it I've registered several documentation clarification and
-improvement issues and have visited IIRC one several occasions. I have to admit
-I was astonished by level of support I received. If anyone from Salt community
-is reading this, kudos to you guys!
+that Salt offered [best practices and recommendations] [17].  Salt also has
+support of _master - slaves_, _standalone masterless_, _salt over ssh_, _master
+of master of slaves_ modes. Again, you have a choice. Salt also claims to
+support IaS provisioning through API (e.g. AWS, ...). I also was intrigued by
+fact Salt was one the most active OSS projects on Github last year, to test it
+I've registered several documentation clarification and improvement issues and
+have visited IIRC one several occasions. I have to admit I was astonished by
+level of support I received. If anyone from Salt community is reading this,
+kudos to you guys!
 
 **- I didn't like**
 
@@ -285,97 +279,109 @@ Things I have discovered during implementation phase (mostly the hard way):
 
  - **Community and enormous velocity has it's quirks.**
    Salt community is huge and very vibrant. At the moment of writing
-   [saltstack] [6] has `320` watchers and `3, 787` stars. And `1, 462` open
-   issues. No doubt, being an open souce gardener [is no an easy
-   walk](http://words.steveklabnik.com/how-to-be-an-open-source-gardener). The
-   community contribution is easy and kindly accepted without very strict
-   procedure, signing CLA agreements and long formal reviews. As a result some
-   functionality or additions might be incomplete in sense documentation might
-   be incomplete or inconsistent (some particular page might have while other
-   not). I wouldn't say it's all bad OR black and white, I believe Salt has
-   managed to be in compromise sweet pot - getting maximum from community, free
-   of charge, while still be useful and mostly reliable.
+   [saltstack] [6] has 320 watchers and 3,787 stars. And 1,462 open issues. No
+   doubt, being an open souce gardener [is no an easy walk] [18]. The community
+   contribution is easy and kindly accepted, no strict procedures, no CLA
+   agreements and long formal reviews. As a result some functionality or
+   additions might be incomplete in sense documentation might be incomplete or
+   inconsistent (some particular page might have while other not). I wouldn't
+   say it's all bad OR black and white, I believe Salt has managed to be in
+   compromise sweet pot - getting maximum from community, free of charge, while
+   still be useful and mostly reliable.
  - **Screw you GitFS, I'm going home.**
-   My initial plan was to leverage
-   [GitFS](http://docs.saltstack.com/en/latest/topics/tutorials/gitfs.html) to
-   deliver environment configuration to Salt master and slave nodes (minions).
-   Salt recommends to split states and sensitive data in separate things, e.g.
-   [Salt states](http://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html)
-   and [Salt pillar](http://docs.saltstack.com/en/latest/topics/pillar/index.html).
-   Former one could be split in environments (each Git branch is a separate
-   environment name) and multiple Git repositories with different branch names
-   could be collected under one single environment (e.g. you own states under
-   PROD branch, some Github repo with Apache provisioning state under MASTER
-   branch). Pillar data however has drawback
-   [#11575](https://github.com/saltstack/salt/issues/11575) of not being able
-   to redefine `base` environment data. That, lack of transparency, no means to
-   ensure pillar GitFS data and multiple state GitFS repositories are correctly
-   inter-synchronized (each of GitFS repositories is potential point of
-   failure, pillar data might be pulled correctly, however some other git repo
-   might fail due to network connectivity and still refer to previous outdated
-   version), having to worry about network connectivity to remote Git
-   repositories - effectively kill the idea, at least for use in production. A
-   local copy of data on production instances in AWS seems much more better
-   idea.
-   Make Continuous Integration server to rsync data to AWS master _and
-   only then provision things_ is more transparent and controlled
+   My initial plan was to leverage [GitFS] [19] to deliver environment
+   configuration to Salt master and slave nodes (minions).  Salt recommends to
+   split states and sensitive data in separate things, e.g.  [Salt states] [20]
+   and [Salt pillar] [21].  Former one could be split in environments (each Git
+   branch is a separate environment name) and multiple Git repositories with
+   different branch names could be collected under one single environment (e.g.
+   you own states under PROD branch, some Github repo with Apache provisioning
+   state under MASTER branch). Pillar data however has drawback [#11575] [22]
+   of not being able to redefine `base` environment data. That, lack of
+   transparency, no means to ensure pillar GitFS data and multiple state GitFS
+   repositories are correctly inter-synchronized (each of GitFS repositories is
+   potential point of failure, pillar data might be pulled correctly, however
+   some other git repo might fail due to network connectivity and still refer
+   to previous outdated version), having to worry about network connectivity to
+   remote Git repositories - effectively kill the idea, at least for use in
+   production. A local copy of data on production instances in AWS seems much
+   more better idea.  Make Continuous Integration server to rsync data to AWS
+   master _and only then provision things_ is more transparent and controlled
    setup, which is by far a better way to do things in production.
  - **Multi environment setup has no answer.**
-   [Environments](http://docs.saltstack.com/en/latest/ref/states/top.html#environments)
-   seems to  work best in _master of masters of minions_ (aka
-   [syndic](http://docs.saltstack.com/en/latest/topics/topology/syndic.html)
-   mode. In such case it's convenient to control multiple environments from one
-   super master. However in our case I would like to treat each particular
-   environment as sandbox, each of being `base` or baseline in itself. I view
-   STAGE environment as a separate sandbox version of PROD environment, DEV
-   environment the same. It might be they do not share the same topology,
-   however all the roles/components are present in one or other way (e.g. we
-   use RDS in AWS and PostgreSQL in local development environment).  As it
-   turns out, Salt does not have an answer on how to layout things in multi
-   environment configuration. I have tried asking on user mailing lists and
-   IIRC. People do things the way it works best for them, however there is not
-   such thing as _Recommended layouts for different types of environments_
-   document out there. There are certain means how to do things and cover your
-   needs one way or another (it's the place where Salt's enormous flexibility
-   kicks in), however it feels as reinventing square wheel over and over again
-   and again.
+   [Environments] [23] seems to  work best in _master of masters of minions_
+   (aka [syndic] [24] mode. In such case it's convenient to control multiple
+   environments from one super master. However in our case I would like to
+   treat each particular environment as sandbox, each of being `base` or
+   baseline in itself. I view STAGE environment as a separate sandbox version
+   of PROD environment, DEV environment the same. It might be they do not share
+   the same topology, however all the roles/components are present in one or
+   other way (e.g. we use RDS in AWS and PostgreSQL in local development
+   environment).  As it turns out, Salt does not have an answer on how to
+   layout things in multi environment configuration. I have tried asking on
+   user mailing lists and IIRC. People do things the way it works best for
+   them, however there is not such thing as _Recommended layouts for different
+   types of environments_ document out there. There are certain means how to do
+   things and cover your needs one way or another (it's the place where Salt's
+   enormous flexibility kicks in), however it feels as reinventing square wheel
+   over and over again and again.
  - **Orchestration is not worth it.**
    Salt has certain means to define order and interdependencies between nodes.
    In Salt terminology it's called _orchestration_. The recommended way
-   nowadays seems to be Salt's
-   [orchestrate runner](http://salt.readthedocs.org/en/latest/topics/tutorials/states_pt5.html#the-orchestrate-runner).
-   I've spent fair  amount of time trying to automate our environment initial
-   roll out using that tool. However I've found it inadequately lacking for our
-   needs. The nature of our project enforced multi-node deployment, multi-step
-   restore from backups et cetera. Than kind of logic and especially different
-   kind of retry-wait-retry procedures are difficult (if even possible) to
-   express using that tool. I'm not saying that could not be done in safe
-   reliable way. But, my outtake was it's quite time consuming to implement it
-   and I would rather spend that time moving project further rather than doing
-   time sinking exercises. I've decided to leave it as manual step-by-step
-   procedure put in Wiki. It serves our needs, is much more reliable and
-   doesn't bother us much.
+   nowadays seems to be Salt's [orchestrate runner] [25].  I've spent fair
+   amount of time trying to automate our environment initial roll out using
+   that tool. However I've found it inadequately lacking for our needs. The
+   nature of our project enforced multi-node deployment, multi-step restore
+   from backups et cetera. Than kind of logic and especially different kind of
+   retry-wait-retry procedures are difficult (if even possible) to express
+   using that tool. I'm not saying that could not be done in safe reliable way.
+   But, my outtake was it's quite time consuming to implement it and I would
+   rather spend that time moving project further rather than doing time sinking
+   exercises. I've decided to leave it as manual step-by-step procedure put in
+   Wiki. It serves our needs, is much more reliable and doesn't bother us much.
  - **IaS provisioning is insufficient.**
-   [Salt Cloud](http://docs.saltstack.com/en/latest/topics/cloud/) is Salt way
-   of how to describe and launch nodes (minions) on different target providers.
-   The list of supported providers covers most of mainstream cargo providers
-   out there. Initially I've tried to leverage node configuration to Salt
-   Cloud, to keep all things one uniformed way. However I soon had a lot of
-   questions with no answer: how to describe
-   [VPC] (http://aws.amazon.com/vpc/), how to define security groups et cetera,
-   et cetera. I have found Salt Cloud inadequately lacking for my needs and not
-   documented well enough (e.g. I've discovered some pieces of functionality
-   from issue tracker, not from official documentation). Salt Cloud might be a
-   nice tool for more simple use cases, e.g. to launch several nodes outside of
-   VPC, no Elastic Load Balancer and no AutoScale groups, however we decided we
-   will use different solutions more suited for our needs.
+   [Salt Cloud] [26] is Salt way of how to describe and launch nodes (minions)
+   on different target providers.  The list of supported providers covers most
+   of mainstream cargo providers out there. Initially I've tried to leverage
+   node configuration to Salt Cloud, to keep all things one uniformed way.
+   However I soon had a lot of questions with no answer: how to describe 
+   [VPC] [27], how to define security groups et cetera, et cetera. I have found
+   Salt Cloud inadequately lacking for my needs and not documented well enough
+   (e.g.  I've discovered some pieces of functionality from issue tracker, not
+   from official documentation). Salt Cloud might be a nice tool for more
+   simple use cases, e.g. to launch several nodes outside of VPC, no Elastic
+   Load Balancer and no AutoScale groups, however we decided we will use
+   different solutions more suited for our needs.
 
-## What worked best ##
+## What worked best for us ##
+
+ - **AWS CloudFormation**
+   TBD
+   [AWS CloudFormation] [28]
+ - **Roles based configuration**
+   TBD
+   [Roles based configuration] [29]
+ - **Service discovery**
+   TBD
+ - **Plain layout**
+   TBD
 
 ## Lessons learned ##
 
+ - **Automation saves huge amount of time**
+   TBD
+ - **Don't buy into feature lists**
+   TBD
+ - **Decouple first**
+   TBD
+ - **Time limit proof of concept attempts**
+   TBD
+ - **Make first, polish later**
+   TBD
+
 ## The Result ##
 
+TBD
 
 ----
 
@@ -396,4 +402,24 @@ Things I have discovered during implementation phase (mostly the hard way):
 [6]: https://github.com/saltstack/salt "Salt at Github"
 [7]: http://www.ansible.com/ "Ansible"
 [8]: https://github.com/ansible/ansible "Ansible at Github"
-
+[9]: https://twitter.com/pukhalski "@pukhalski"
+[10]: https://twitter.com/pukhalski/status/492235123597639680
+[11]: http://www.vagrantup.com/ "Vagrant"
+[12]: http://docs.puppetlabs.com/puppet/latest/reference/lang_summary.html "Puppet DSL"
+[13]: https://github.com/aestasit/talks2013-javaday-groovy-devops-setup/blob/a3259feebddf66dbce336447babdae5343b71e3e/manifests/init.pp "Simple Puppet Case"
+[14]: https://galaxy.ansible.com/ "Ansible Galaxy"
+[15]: http://jinja.pocoo.org/ "Jinja Templates"
+[16]: http://docs.saltstack.com/en/latest/ref/modules/ "Salt Modules"
+[17]: http://docs.saltstack.com/en/latest/topics/best_practices.html "Salt Best Practices"
+[18]: http://words.steveklabnik.com/how-to-be-an-open-source-gardener "How to be an open source gardener"
+[19]: http://docs.saltstack.com/en/latest/topics/tutorials/gitfs.html "GitFS"
+[20]: http://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html "Salt States"
+[21]: http://docs.saltstack.com/en/latest/topics/pillar/index.html "Salt Pillar"
+[22]: https://github.com/saltstack/salt/issues/11575 "#11575"
+[23]: http://docs.saltstack.com/en/latest/ref/states/top.html#environments "Salt Environments"
+[24]: http://docs.saltstack.com/en/latest/topics/topology/syndic.html "Salt Syndic"
+[25]: http://salt.readthedocs.org/en/latest/topics/tutorials/states_pt5.html#the-orchestrate-runner "Orchestrate runner"
+[26]: http://docs.saltstack.com/en/latest/topics/cloud/ "Salt Cloud"
+[27]: http://aws.amazon.com/vpc/ "Amazon VPC"
+[28]: http://aws.amazon.com/cloudformation/ "Amazon CloudFormation"
+[29]: http://www.saltstat.es/posts/role-infrastructure.html "Role based infrastructure"
