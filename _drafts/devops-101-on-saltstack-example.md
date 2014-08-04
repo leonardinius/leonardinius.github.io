@@ -15,9 +15,9 @@ It works perfectly well. Until... until you become small consultant venture
 with 3-5 team members and no additional separate support team to poke issues
 to.
 
-## Contents
+## Contents ##
 
-Given the length, here’s a helpful table of contents.
+Given the length, here's a helpful table of contents.
 
  - [The Problem](#the-problem)
  - [The Golden Hammer](#the-golden-hammer)
