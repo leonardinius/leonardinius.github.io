@@ -161,7 +161,7 @@ blockquote p {
   text-indent: -0.4em;
   font-size: 22px;
   font-weight: 300;
-  line-height: 18px;
+  line-height: 30px;
   font-style: italic;
 }
 blockquote p:before {
