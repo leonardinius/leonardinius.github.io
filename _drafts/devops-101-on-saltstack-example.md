@@ -28,8 +28,7 @@ Given the length, here's a helpful table of contents.
  - [The Final Choice](#the-final-choice)
  - [Things I wish I'd known before I start](#things-i-wish-i'd-known-before-i-start)
  - [What worked well](#what-worked-well)
- - [Lessons learned](#lessons-learned)
- - [The Result](#the-result)
+ - [Personal takeout](#personal-takeout)
 
 ## The Problem ##
 
@@ -252,7 +251,7 @@ idempotent. Basically they are just [YAML] [define:yaml] files/data describing
 the end state of things. Some complex dynamic things could be expressed in
 state templates via [Jinja] [15] markup OR implemented as [Salt modules] [16]
 in Python programming language. To sum up, Salt provides some multi paradigm
-mix of things and it's your choice how to glue things. 
+mix of things and it's your choice how to glue things.
 
 I particularly liked that Salt offered [best practices and recommendations][17].
 
@@ -388,37 +387,151 @@ Technically speaking it's [JSON] [define:json] formatted AWS Cloud Computing
 resources template. See AWS CloudFormation [Template Reference] [31] for more
 information of what's possible to define using this solution.
 
-[Troposphere] [30]
+What in particular I like about AWS CloudFormation:
+
+ - [Version Control System] [define:vcs] friendly <br/>
+   JSON files are perfect fit to be stored and versioned in VCS system. We
+   still are able to dig into history, read comments and reasoning about
+   changes, are able to rollback to previous versions or even bisect certain
+   problems if we need to.
+
+ - The [range] [32] of supported AWS resources <br/>
+   AWS CloudFormation allowed us to define every bit of AWS infrastructure we
+   were up to: Elastic Load Balancer, Instances, RDS, Security Groups, EBS
+   volumes, ... To many to list. We didn't feel we are somehow limited in any
+   sense by this solution.
+
+ - The support of stack [updates] [33] <br/>
+   You modify AWS CloudFormation JSON template file and in most cases AWS is
+   able to use it as new state to stack into (you still need to read each
+   particular resource documentation to see whether the resource suports the
+   update operation and what does it mean in each particular case). In real
+   life it means you could control the amount of EC2 instances, security groups
+   rules, all the bits of your particular environment (AWS CloudFormation
+   Stack) from the same versioned, stored in VCS definition.
+
+ - Last, but not least - Atomicity of operations and treating stack as whole<br/>
+   It either updates fully, or not. It isn't stuck in the middle (at least it
+   shouldn't). And if something went wrong, the whole update could be
+   cancelled. I also found _wholism_ quite useful during early prototype phase.
+   I could easily create POC environment, play with it for a while and then
+   drop it completely with all associated resources. Very handy.
+
+At the moment we use hand-crafted AWS CloudFormation templates, mostly from the
+control point of view. We wanted to keep it as simple and plain as possible,
+with as little intermediate transformation, magic or whatever else involved in
+the middle.
+
+Having said that, we are keeping eyes on alternative approaches, such as:
+
+ - Use [Troposphere] [30] OR similar solutions to generate CloudFormation
+   templates from meta-model. This hopefully will allow us to reduce
+   boilerplate code and make our stack meta-model more concise, readable and
+   documented (CloudFormation templates don't allow to have comments).
+ - Use of [boto] [34] library to automate certain things, e.g. certain amount
+   of orchestration AND production environment freeze (e.g. create AMI images
+   from some instances and use them later on as Amazon Auto Scaling launch
+   configuration image, ...).
 
 ### II. Roles based configuration ###
 
- - TBD
-   [Roles based configuration] [29]
+We were highly influenced by [Roles based configuration] [29], the concept we
+overtook in our SaltStack based configuration as well.
+
+In our case we have different STAGE and PROD topology configurations (different
+count of instances, no RDS in STAGE, etc..), mostly due to practical expense
+reasons.
+
+In our case we use roles as means of specify resource location and as service
+discovery starting point.
+
+We don't auto generate top files, instead we define that each particular role
+means in THIS particular environment: e.g. single node LDAP in STAGE might
+become Active-Active LDAP SyncReplica in PROD. We do assign roles to instances
+via EC2 [UserData] [35] (in CloudFormation templates), e.g.
+
+```yaml
+...
+  'roles:www-frontend':
+    - match: grain
+    - fileserver.client-gfs
+    - www.site1
+    - www.site2
+...
+```
+
+This approach allowed us to concentrate on functionality and common
+denominators, with differences kept in role definitions in topfiles.
 
 ### III. Service discovery ###
 
-TBD
+See previous point. We use `(role, AWS region/Zone)` tuple as service discovery
+ID.
+
+It enables us to decouple components from physical topology removes need to
+hardcode things like DSN names, IP addresses etc..
+
+At the moment we leverage self-made solution on top of [Salt Mine] [36], which
+seemed the quickest to setup at the time. However it's our feeling it adds
+quite a lot of [accidental complexity] [37] to the cake, which we don't like.
+We are keeping eye on [Consul] [38] or some clever [dnsmasq] [39] schemas.
 
 ### IV. Plain layout ###
 
-TBD
+In general we like to keep things as simple as possible. We understand it as
+following:
 
-## Lessons learned ##
+ - Keep levels of indirection to meaningful minimum
+ - Keep things plain
+ - Prefer composition of copy of things to any clever smart-ass
+   inheritance / override / redefine schemas.
+
+Plus, we had experienced certain annoyances, bugs and glitches with SalStack
+GitFS implementation. Having said that we have come to the following general
+approach how to layout things in our SaltStack based configuration.
+
+```text
+/srv/salt
+├── base
+│   ├── sanity.sls             # shared
+│   ├── security-updates.sls   # shared
+│   ├── ...
+├── ldap
+│   ├── server-ha.sls          # PROD uses it to define it's ldap-server role
+│   └── server.sls             # DEV uses it to define it's ldap-server role
+├── reverse-proxy
+│   ├── httpd
+│   │   ├── config
+│   │   │   ├── www-zyx
+│   │   │   │   ├── default
+│   │   │   │   ├── httpd.args.jinja         # same role definition
+│   │   │   │   ├── httpd.conf.jinja         # uses file.managed with multiple sources e.g.
+│   │   │   │   ├── prod-httpd.args.jinja    # xyz:
+│   │   │   │   ├── prod-httpd.conf.jinja    #   file.managed:
+│   │   │   │   ├── prod-httpd.env.jinja     #     source:
+│   │   │   └── init.d.jinja                 #       - salt://{ { grains['environment'] } }-xyz
+│   │   └── init.sls                         #       - salt://xyz
+│   └── init.sls
+├── stage-top.sls              # STAGE top file
+└── prod-top.sls               # PROD top file
+```
+
+I'm not sure it's the best layout out there, but it works for us. Bear in mind
+that our salt universe might be considered small and simple enough. We
+definitely don't have hundreds of minions and thousands of services to
+provision, just a handful ten or so.
+
+## Personal takeout ##
+
+ - **Automation saves huge amount of time**
 
  - **Don't buy into feature lists**
-   TBD
+
  - **Decouple first**
-   TBD
+
  - **Time limit proof of concept attempts**
-   TBD
+
  - **Make first, polish later**
-   TBD
- - **Automation saves huge amount of time**
-   TBD
-
-## The Result ##
-
-TBD
 
 ----
 
@@ -463,3 +576,11 @@ TBD
 [29]: http://www.saltstat.es/posts/role-infrastructure.html "Role based infrastructure"
 [30]: https://github.com/cloudtools/troposphere "Troposphere"
 [31]: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html "AWS CloudFormation Template reference"
+[32]: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html "AWS CloudFormation Resource Types"
+[33]: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html "AWS CloudFormation Stack Updates"
+[34]: https://github.com/boto/boto "Boto"
+[35]: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html "UserData"
+[36]: http://docs.saltstack.com/en/latest/topics/mine/#mine-functions "Salt Mine"
+[37]: http://en.wikipedia.org/wiki/No_Silver_Bullet "accidental complexity"
+[38]: http://www.consul.io/ "consul.io"
+[39]: http://www.thekelleys.org.uk/dnsmasq/doc.html "dnsmasq"
