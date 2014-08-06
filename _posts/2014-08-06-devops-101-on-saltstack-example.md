@@ -41,7 +41,7 @@ Given the length, here's a helpful table of contents.
 I don't fanatically believe that system administrators are extinct creatures
 from Age of Reptiles. I also don't think that in-team operations experience is
 a MUST. In my humble opinion in some cases it makes more sense to outsource
-application maintenance or use PAAS. It depends on scope, budget, difficulty,
+application maintenance or use PaaS. It depends on scope, budget, difficulty,
 level of expertise required, average Joe on the team, ... To sum up, in some
 cases it's up to external stuff you can't control (budget, client wishes..) and
 in some cases it's team internal decision.
@@ -58,9 +58,9 @@ simple cases (and I consider that particular project small enough to give it
 
  - Mapping all different kinds of topology to constraints of new platform
  - Ensuring non-functional requirements still stand true
- - We want to make small confident steps and polish later. Thus we are
+ - We want to take small confident steps and polish later. Thus we are
    unwilling to throw away all existing infrastructure, security configuration,
-   instance inter communication schemes et cetera. We do it as we need to (or
+   instance intercommunication schemes, et cetera. We do it as we need to (or
    are forced to by two previous bullet points).
 
 Recently I came across [@pukhalski's] [9] [tweet] [10]
@@ -74,7 +74,7 @@ what we need to do in most safe/efficient way plausible given the constraints.
 ## The Golden Hammer
 
 The struggle for resolution in my practice quite often begins with search for
-mystic _Golden Hammer_ - some particular practice, tool set of tools  which
+mystic _Golden Hammer_ - some particular practice, tool or set of tools which
 would do all the hard work instead of us and would make all hard problems to
 vanish away.
 
@@ -85,7 +85,7 @@ __tl; dr;__
 In business there is no place for separate development and operations teams
 working independently in isolated environments. There is ONLY ONE PRODUCT TEAM.
 Period. Product team is solely and completely responsible for Product, there is
-no other group to blame for mis-deployment or misconfiguration. Everybody needs
+no other group to blame for misdeployment or misconfiguration. Everybody needs
 to communicate, cooperate and work together.
 
 I don't completely buy into _DevOps universal swiss knife idea_. It's clear
@@ -100,7 +100,7 @@ hardware router configuration, Linux kernel parameter tuning et cetera, et
 cetera. The DevOps scope is really about defining the framework for automation,
 testing and team internal communication.  The goal is to judiciously automate
 business enablers, reduce change delivery turnout time and minimize
-_1-sysadmin-know-how_ and human error factors.
+_one-sysadmin-know-how_ and human error factors.
 
 ## The Goals ##
 
