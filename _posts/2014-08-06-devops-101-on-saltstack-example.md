@@ -18,6 +18,12 @@ to.
 
 ## Contents ##
 
+**Update** The post topic and layout grew out of my control and present more or
+less chaotic nature of my thought flow. I've tried to concentrate the post
+around the following topics: the problem in hand, my take on it, strategy and
+goals how to address it efficiently, evaluation and findings down the road...
+Hopefully you can make a sense out of it.
+
 Given the length, here's a helpful table of contents.
 
  - [The Problem](#the-problem)
