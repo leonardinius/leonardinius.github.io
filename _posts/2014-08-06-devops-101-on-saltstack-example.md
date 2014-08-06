@@ -52,7 +52,7 @@ simple cases (and I consider that particular project small enough to give it
 
  - Mapping all different kinds of topology to constraints of new platform
  - Ensuring non-functional requirements still stand true
- - We want to make small confident steps and polish later. Therefore we are
+ - We want to make small confident steps and polish later. Thus we are
    unwilling to throw away all existing infrastructure, security configuration,
    instance inter communication schemes et cetera. We do it as we need to (or
    are forced to by two previous bullet points).
@@ -68,9 +68,9 @@ what we need to do in most safe/efficient way plausible given the constraints.
 ## The Golden Hammer
 
 The struggle for resolution in my practice quite often begins with search for
-mystic _Golden Hammer_ (we also might call it _Holy Grail_), some particular
-practice or set of tools, which would do all the hard work instead of us and
-would make all hard problems to vanish away.
+mystic _Golden Hammer_ - some particular practice, tool set of tools  which
+would do all the hard work instead of us and would make all hard problems to
+vanish away.
 
 [DevOps] [define:devops] is such new sexy buzzword methodology glossing all
 around on top of _i-cloudy i-thingy_ and claims to address exactly that.
@@ -100,7 +100,7 @@ _1-sysadmin-know-how_ and human error factors.
 
 In our case our goals were more migration process related:
 
- - **Minimize _try-fail-repeat_ cycle turnout time.** <br/>
+ - **Minimize _try-fail-repeat_ cycle turnout time** <br/>
    Our initial assumption was we won't get into PROD-ready state right away. In
    the process we definitely would like to experiment with certain components
    AND/OR approaches more than few times. Think about multi-node environment
@@ -109,32 +109,33 @@ In our case our goals were more migration process related:
    TIME. I wanted to automate as much as possible to reduce human error risks
    and speedup the whole procedure.
 
- - **Enable local development.** <br/>
+ - **Enable local development** <br/>
    Our goal was to enable every team member to contribute in right away from
    migration sub-project start. The plan was to setup local [Vagrant] [11]
-   virtual environment, similar to existing STAGE and/or PROD. That way
-   everybody would be able to reproduce problems, contribute and provide fixes,
-   reduce initial ramp-up time, remove dependency for AWS in local development.
+   virtual environment, like existing STAGE and/or PROD. That would allow us to
+   remove dependency on AWS in local development environment, reduce initial
+   ramp up to new team members and would enable us to easily reproduce
+   problems and provide fixes. And once again, experiments become more easily
+   to setup and manage.
 
- - **Document things.** <br/>
+ - **Document things** <br/>
    One of the problems in early estimation was getting grasp of existing
-   environment, understanding existing topology, it's difficulty and all
-   inter-connections and inter-dependencies. Having our infrastructure in even
-   semi-automated provisioned way would be a big step forward in terms of
-   platform internals documentation. Every developer would be able to sift
-   through provisioning [Code Versioning System] [define:vcs] history and be
-   able to make informed guesses about _who_, _when_, _how_ and _why_
-   introduced certain change, adjusted particular parameter or opened some
-   port.
+   environment, topology and all inter-connections and inter-dependencies.
+   Having our infrastructure in even semi-automated provisioned way would be a
+   big step forward in terms of platform internals documentation. Every
+   developer would be able to sift through
+   [Code Versioning System] [define:vcs] history and be able to make informed
+   guesses about _who_, _when_, _how_ and _why_ introduced certain change,
+   adjusted particular parameter or opened some port.
 
- - **Single point of truth.** <br />
+ - **Single point of truth** <br />
    With infrastructure as data/code we would be able to answer that the state
    _should be_ in every moment of time. Where should not be questions of
-   whether John followed the wiki instructions OR some issue comment OR
-   whatever else. Still, there might be issues in implementation OR our
-   assumptions about the platform universe might be wrong (e.g. what state
-   revision was used to provision service A), however now there is only one
-   place the state _should_ come from - from Code Versioning System.
+   whether John followed the Wiki instructions OR some issue comment OR
+   whatever else. There might be issues in implementation OR our assumptions
+   about the platform universe might be wrong (e.g. what state revision was
+   used to provision service A). However now there is only one place the state
+   _should_ come from - from Code Versioning System.
 
 ## The Evaluation
 
@@ -300,7 +301,7 @@ in sense documentation might be incomplete or inconsistent (some particular
 page might have while other not).
 
 I wouldn't say it's all bad OR black and white, I believe Salt has managed to
-be in compromise sweet pot - getting maximum from community, free of charge,
+be in compromise sweet spot - getting maximum from community, free of charge,
 while still be useful and mostly reliable.
 
 ### II. Screw you GitFS, I'm going home ###
