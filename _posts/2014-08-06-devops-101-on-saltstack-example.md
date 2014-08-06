@@ -5,7 +5,7 @@ layout: post
 
 I by all means am not a system administrator or SCM guy or DBA guy or whatever.
 I call myself _Developer vulgaris_. Still, I'm used to find myself in position
-I have working (locally) solution and little or no clue how the heck to get it
+I have locally working solution and little or no clue how the heck to get it
 out in window.  Should I just throw it to support guys and let let them handle
 that?
 ![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg)
@@ -20,9 +20,9 @@ to.
 
 **Update** The post topic and layout grew out of my control and present more or
 less chaotic nature of my thought flow. I've tried to concentrate the post
-around the following topics: the problem in hand, my take on it, strategy and
-goals how to address it efficiently, evaluation and findings down the road...
-Hopefully you can make a sense out of it.
+around the following topics: the problem in hand, my take on it, strategy,
+goals and how to address them efficiently, evaluation and findings down the road...
+Hopefully you can make sense out of it.
 
 Given the length, here's a helpful table of contents.
 
