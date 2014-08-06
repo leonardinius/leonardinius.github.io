@@ -530,6 +530,10 @@ provision, just a handful ten or so.
 
 ## Personal takeout ##
 
+**Update** I've made a decision to time limit myself on this post and it's
+scope. So, instead of expanding on this paragraph I will limit myself to simple
+plain bullet points with no explanations whatsoever.
+
  - **Automation saves huge amount of time**
 
  - **Don't buy into feature lists**
