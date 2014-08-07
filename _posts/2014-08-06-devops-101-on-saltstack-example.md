@@ -264,7 +264,7 @@ I particularly liked that Salt offered [best practices and recommendations][17]
 document.
 
 Salt also has supports _master - slaves_, _standalone masterless_, _salt over
-ssh_, _master of master of slaves_ modes. Again, you have a choice. 
+ssh_, _master of master of slaves_ modes. Again, you have a choice.
 
 Salt also has some sort Cloud Computing resource provisioning support.
 
@@ -315,16 +315,16 @@ while still be useful and mostly reliable.
 My initial plan was to leverage [GitFS] [19] to deliver environment
 configuration to Salt master and slave nodes (minions).  Salt recommends to
 split states and sensitive data in separate things, e.g. [Salt states] [20] and
-[Salt pillar] [21]. 
+[Salt pillar] [21].
 
 Former one could be split in environments (each Git branch is a separate
 environment name) and multiple Git repositories with different branch names
 could be collected under one single environment (e.g. you own states under PROD
 branch, some Github repo with Apache provisioning formula under MASTER
-branch). 
+branch).
 
 Pillar data however has drawback [#11575] [22] of not being able to redefine
-`base` environment data. 
+`base` environment data.
 
 That, lack of transparency, no means to ensure pillar GitFS data and multiple
 state GitFS repositories are correctly inter-synchronized (each of GitFS
@@ -377,17 +377,19 @@ much.
 
 [Salt Cloud] [26] is Salt's way of how to describe and launch nodes (minions)
 on different target Cloud Computing providers. The list of supported providers
-covers most of mainstream cargo providers out there. 
+covers most of mainstream cargo providers out there.
 
 Initially I've tried to leverage node configuration to Salt Cloud, to keep
 things in one uniformed way. However I soon had a lot of questions with no
 answer: how to describe [VPC] [27], how to define security groups et cetera, et
-cetera. I have found Salt Cloud inadequately lacking for my needs and not
-documented well enough (e.g. I've discovered some pieces of functionality from
-issue tracker, not from official documentation). Salt Cloud might be a handy
-tool for different use cases, e.g. to launch several nodes outside of VPC, no
-Elastic Load Balancer and no AutoScale groups, however we decided we will use
-different solutions more suited for our needs.
+cetera.
+
+I have found Salt Cloud inadequately lacking for my needs and not documented
+well enough (e.g. I've discovered some pieces of functionality from issue
+tracker, not from official documentation). Salt Cloud might be a handy tool for
+different use cases, e.g. to launch several nodes outside of VPC, no Elastic
+Load Balancer and no AutoScale groups, however we decided we will use different
+solutions more suited for our needs.
 
 ## What worked well ##
 
