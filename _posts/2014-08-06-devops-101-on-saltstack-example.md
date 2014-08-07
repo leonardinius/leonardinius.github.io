@@ -96,10 +96,10 @@ and practices would prepare OR/AND perform most of operations tasks in
 automated, repeatable and testable manner. It does not necessary mean
 developers perform the operations themselves.  There is still a place for
 operation guys if it needs to be there: e.g. monitoring, topology setup,
-hardware router configuration, Linux kernel parameter tuning et cetera, et
+hardware router configuration, Linux kernel parameter tuning, et cetera, et
 cetera. The DevOps scope is really about defining the framework for automation,
-testing and team internal communication.  The goal is to judiciously automate
-business enablers, reduce change delivery turnout time and minimize
+testing and team internal communication.  The goal is to **judiciously**
+automate business enablers, reduce change delivery turnout time and minimize
 _one-sysadmin-know-how_ and human error factors.
 
 ## The Goals ##
@@ -127,27 +127,27 @@ In our case our goals were more migration process related:
  - **Document things** <br/>
    One of the problems in early estimation was getting grasp of existing
    environment, topology and all inter-connections and inter-dependencies.
-   Having our infrastructure in even semi automated provisioned way would be a
-   big step forward in terms of platform internals documentation. Every
-   developer would be able to sift through
-   [Code Versioning System] [define:vcs] history and be able to make informed
-   guesses about _who_, _when_, _how_ and _why_ introduced certain change,
-   adjusted particular parameter or opened some port.
+   Having our infrastructure in even semi automated way would be a big step
+   forward in terms of platform internals documentation. Every developer would
+   be able to sift through [Code Versioning System] [define:vcs] history and be
+   able to make informed guesses about _who_, _when_, _how_ and _why_
+   introduced certain change, adjusted particular parameter or opened some
+   port.
 
  - **Single point of truth** <br />
    With infrastructure as data/code we would be able to answer that the state
    _should be_ in every moment of time. Where should not be questions of
-   whether John followed the Wiki instructions OR some issue comment OR
+   whether John followed the Wiki instructions OR some ticket comment OR
    whatever else. There might be issues in implementation OR our assumptions
    about the platform universe might be wrong (e.g. what state revision was
-   used to provision service A). However now there is only one place the state
-   _should_ come from - from Code Versioning System.
+   used to provision service A). However now there is only one place the
+   state _should_ come from - from Code Versioning System.
 
 ## The Evaluation
 
 I did my best in research what the tools available on the market are, that the
 trends are and what potential benefits I might get. In the matter of literally
-10 minutes I have come up with the following list:
+30 minutes I have come up with the following list:
 
  1. [PuppetLabs Puppet] [1], [puppetlabs/puppet] [2]
  2. [OpsCode Chef] [3], [opscode/chef] [4]
@@ -163,17 +163,17 @@ The whole process was highly subjective - no measurable criteria, no Cartesian
 square comparisons etc... However, those are some of criteria I was paying
 attention to:
 
- - Assess availability and readability of source code and documentation.
- - Estimate size of community and assess the level of support it provides.
- - Asses how quickly and easy is to start doing something useful.
- - Find ready to use templates, solutions OR solution repositories.
- - Locate Best Practices OR similar tutorials and their readability.
- - Assess infrastructure around the solution and community.
+ - Access to and readability of source code and documentation.
+ - Size of community and level of support it provides.
+ - How quickly and easy it is to start doing something useful.
+ - Ready to use templates, solutions OR solution repositories.
+ - Best Practices OR similar tutorial documents availability.
+ - Infrastructure around the community.
 
 Please note I was limited in time to assess tools. Therefore the results most
-likely are misdirected or single sided in one way or another. If you reader
-find my notes misleading, wrong or incomplete - please comment here. I would
-like indeed have free of charge peer review and another look into this.
+likely are misdirected or single sided in one way or another. If you, dear
+reader, find my notes misleading, wrong or incomplete - please comment here.
+I would like indeed have another look on this.
 
 ### Chef
 
@@ -181,8 +181,8 @@ like indeed have free of charge peer review and another look into this.
 
 I think most programmers find imperative states are easy to reason about since
 it's something that they are used to do on daily basis - reading imperative
-code.  Chef has one of the richest ecosystem, lots of available modules and
-templates, AWS OpsWorks.  Chef also enables both _master - slave_ and _knife
+code. Chef has one of the richest ecosystem, lots of available modules and
+templates, AWS OpsWorks. Chef also enables both _master - slave_ and _knife
 bootstrap_ modes.
 
 **- I didn't like**
@@ -242,7 +242,7 @@ over SSH.  Ansible claims to be able to provision Cloud Computing resources
 **- I didn't like**
 
 Didn't find any kind of public playbook repository. Also I found documentation
-too brief and compact. I lacked details, complex examples and best practices
+too brief. I lacked details, complex examples and best practices
 documentation.
 
 **Discovered later** [Ansible Galaxy] [14] is publicly available playbook
@@ -258,25 +258,26 @@ idempotent. Basically they are just [YAML] [define:yaml] files/data describing
 the end state of things. Some complex dynamic things could be expressed in
 state templates via [Jinja] [15] markup OR implemented as [Salt modules] [16]
 in Python programming language. To sum up, Salt provides some multi paradigm
-mix of things and it's your choice how to glue things.
+mix of things and it's your choice how to glue pieces together.
 
-I particularly liked that Salt offered [best practices and recommendations][17].
+I particularly liked that Salt offered [best practices and recommendations][17]
+document.
 
-Salt also has support of _master - slaves_, _standalone masterless_, _salt over
-ssh_, _master of master of slaves_ modes. Again, you have a choice. Salt also
-claims to support Cloud Computing resource provisioning.
+Salt also has supports _master - slaves_, _standalone masterless_, _salt over
+ssh_, _master of master of slaves_ modes. Again, you have a choice. 
+
+Salt also has some sort Cloud Computing resource provisioning support.
 
 I was intrigued by fact Salt was one the most active OSS projects on Github
 last year. I've registered several documentation clarification and improvement
-issues to test it and have visited IIRC one several occasions. I have to admit
-I was astonished by level of support I received. If anyone from Salt community
-is reading this, kudos to you guys!
+issues to test it, occasionally visited IIRC and a little chat there. I have to
+admit I was astonished by level of support I received. If anyone from Salt
+community is reading this, kudos to you guys!
 
 **- I didn't like**
 
-Salt introduces a lot of it's own terminology. The amount of supported use
-cases is quite big, there is quite a lot documentation out there. No all of it
-is newcomer friendly.
+Salt introduces a lot of it's own terminology. Not all of it is newcomer
+friendly.
 
 ## The Final Choice ##
 
@@ -287,7 +288,7 @@ order of importance:
    _Getting Started_ tutorials and quality of documentation in general.
  - The astonishing community.
  - Idempotent declarative states.
- - Multi paradigm approach promised I could make it work one way or another.
+ - Multi paradigm approach gave a feeling I could make it work one way or another.
  - Cloud Computing provisioning support
 
 ## Things I wish I'd known before I start ##
@@ -298,13 +299,12 @@ Things I have discovered during implementation phase (mostly the hard way).
 
 ### I. Community and enormous velocity has it's quirks ###
 
-Salt community is huge and very vibrant. At the moment of writing [saltstack]
-[6] has 320 watchers and 3,787 stars. And 1,462 open issues. No doubt, being an
-open souce gardener [is no an easy walk] [18]. The community contribution is
+Salt community is huge and vibrant. At the moment of writing [saltstack] [6]
+has 320 watchers and 3,787 stars. **And 1,462 open issues.** No doubt, being an
+open souce gardener [is no an easy walk] [18]. The community contribution are
 easy and kindly accepted, no strict procedures, no CLA agreements and long
-formal reviews. As a result some functionality or additions might be incomplete
-in sense documentation might be incomplete or inconsistent (some particular
-page might have while other not).
+formal reviews. As a result some of functionality or documentation is
+incomplete or inconsistent.
 
 I wouldn't say it's all bad OR black and white, I believe Salt has managed to
 be in compromise sweet spot - getting maximum from community, free of charge,
@@ -314,73 +314,80 @@ while still be useful and mostly reliable.
 
 My initial plan was to leverage [GitFS] [19] to deliver environment
 configuration to Salt master and slave nodes (minions).  Salt recommends to
-split states and sensitive data in separate things, e.g.  [Salt states] [20]
-and [Salt pillar] [21].  Former one could be split in environments (each Git
-branch is a separate environment name) and multiple Git repositories with
-different branch names could be collected under one single environment (e.g.
-you own states under PROD branch, some Github repo with Apache provisioning
-state under MASTER branch). Pillar data however has drawback [#11575] [22] of
-not being able to redefine `base` environment data. That, lack of transparency,
-no means to ensure pillar GitFS data and multiple state GitFS repositories are
-correctly inter-synchronized (each of GitFS repositories is potential point of
-failure, pillar data might be pulled correctly, however some other git repo
-might fail due to network connectivity and still refer to previous outdated
-version), having to worry about network connectivity to remote Git repositories
-- effectively kill the idea, at least for use in production. A local copy of
-data on production instances in AWS seems much more better idea.  Make
-Continuous Integration server to rsync data to AWS master _and only then
-provision things_ is more transparent and controlled setup, which is by far
-a better way to do things in production.
+split states and sensitive data in separate things, e.g. [Salt states] [20] and
+[Salt pillar] [21]. 
+
+Former one could be split in environments (each Git branch is a separate
+environment name) and multiple Git repositories with different branch names
+could be collected under one single environment (e.g. you own states under PROD
+branch, some Github repo with Apache provisioning formula under MASTER
+branch). 
+
+Pillar data however has drawback [#11575] [22] of not being able to redefine
+`base` environment data. 
+
+That, lack of transparency, no means to ensure pillar GitFS data and multiple
+state GitFS repositories are correctly inter-synchronized (each of GitFS
+repositories is potential point of failure, while most of data might be pulled
+correctly, however some other git repo might fail due to network connectivity
+and still refer to previous outdated version), etc. - effectively kill the
+idea, at least for use in production. A local copy of data on production
+instances in AWS seems much more better idea. Continuous Integration server
+with rsync to AWS master seems to provide more much more transparent and
+controlled setup. Those are two qualities I seek for in production setups.
 
 ### III. Salt multi environment setup has no answer ###
 
 [Environments] [23] seems to  work best in _master of masters of minions_
 (aka [syndic] [24] mode. In such case it's convenient to control multiple
-environments from one super master. However in our case I would like to
-treat each particular environment as sandbox, each of being `base` or
-baseline in itself. I view STAGE environment as a separate sandbox version
-of PROD environment, DEV environment the same. It might be they do not share
-the same topology, however all the roles/components are present in one or
-other way (e.g. we use RDS in AWS and PostgreSQL in local development
-environment).  As it turns out, Salt does not have an answer on how to
-layout things in multi environment configuration. I have tried asking on
-user mailing lists and IIRC. People do things the way it works best for
-them, however there is not such thing as _Recommended layouts for different
-types of environments_ document out there. There are certain means how to do
-things and cover your needs one way or another (it's the place where Salt's
-enormous flexibility kicks in), however it feels as reinventing square wheel
-over and over again and again.
+environments from one super master.
+
+However, in our case I would like to treat each particular environment as
+sandbox, each of being `base` or baseline in itself. E.g. I view STAGE
+environment as a separate sandbox version of PROD environment. They might not
+share the same topology, however all the roles/components are present in one
+way or another (e.g. we use RDS in AWS and PostgreSQL in local development
+environment). As it turns out, Salt does not have an answer on how to layout
+things in multi environment configuration. I have tried asking on user mailing
+lists and IIRC. People do things the way it works best for them, however there
+is not such thing as _Recommended layouts for different types of environments_
+document out there. There are certain means how to cover your needs one way or
+another (it's the place where Salt's enormous flexibility kicks in), still it
+feels as reinventing square wheel over and over, again and again.
 
 ### IV. Salt orchestration is not worth it ###
 
-Salt has certain means to define order and interdependencies between nodes.  In
+Salt has certain means to define order and interdependencies between nodes. In
 Salt terminology it's called _orchestration_. The recommended way nowadays
-seems to be Salt's [orchestrate runner] [25].  I've spent fair amount of time
-trying to automate our environment initial roll out using that tool. However
-I've found it inadequately lacking for our needs. The nature of our project
-enforced multi-node deployment, multi-step restore from backups et cetera. Than
-kind of logic and especially different kind of retry-wait-retry procedures are
-difficult (if even possible) to express using that tool. I'm not saying that
-could not be done in safe reliable way.  But, my outtake was it's quite time
-consuming to implement it and I would rather spend that time moving project
-further rather than doing time sinking exercises. I've decided to leave it as
-manual step-by-step procedure put in Wiki. It serves our needs, is much more
-reliable and doesn't bother us much.
+seems to be Salt's [orchestrate runner] [25].
+
+I've spent fair amount of time trying to automate our environment initial roll
+out using that tool. However I've found it inadequately lacking for our needs.
+The nature of our project enforced multi-node deployment, multi-step restore
+from backups et cetera. That kind of logic, especially different kind of
+retry-wait-retry procedures, is difficult if even possible to express using
+that tool. I'm not saying that could not be done in safe reliable way. But, my
+outtake was it's quite time consuming to implement it and I would rather spend
+that time moving project further rather than staying still and doing time
+sinking exercises. I've decided to leave it as manual step-by-step procedure
+put in Wiki. It serves our needs, is much more reliable and doesn't bother us
+much.
 
 ### V. Salt Cloud provisioning is insufficient ###
 
-[Salt Cloud] [26] is Salt way of how to describe and launch nodes (minions) on
-different target Cloud Computing providers.  The list of supported providers
-covers most of mainstream cargo providers out there. Initially I've tried to
-leverage node configuration to Salt Cloud, to keep all things one uniformed
-way.  However I soon had a lot of questions with no answer: how to describe
-[VPC] [27], how to define security groups et cetera, et cetera. I have found
-Salt Cloud inadequately lacking for my needs and not documented well enough
-(e.g.  I've discovered some pieces of functionality from issue tracker, not
-from official documentation). Salt Cloud might be a nice tool for more simple
-use cases, e.g. to launch several nodes outside of VPC, no Elastic Load
-Balancer and no AutoScale groups, however we decided we will use different
-solutions more suited for our needs.
+[Salt Cloud] [26] is Salt's way of how to describe and launch nodes (minions)
+on different target Cloud Computing providers. The list of supported providers
+covers most of mainstream cargo providers out there. 
+
+Initially I've tried to leverage node configuration to Salt Cloud, to keep
+things in one uniformed way. However I soon had a lot of questions with no
+answer: how to describe [VPC] [27], how to define security groups et cetera, et
+cetera. I have found Salt Cloud inadequately lacking for my needs and not
+documented well enough (e.g. I've discovered some pieces of functionality from
+issue tracker, not from official documentation). Salt Cloud might be a handy
+tool for different use cases, e.g. to launch several nodes outside of VPC, no
+Elastic Load Balancer and no AutoScale groups, however we decided we will use
+different solutions more suited for our needs.
 
 ## What worked well ##
 
@@ -398,9 +405,9 @@ What in particular I like about AWS CloudFormation:
 
  - [Version Control System] [define:vcs] friendly <br/>
    JSON files are perfect fit to be stored and versioned in VCS system. We
-   still are able to dig into history, read comments and reasoning about
-   changes, are able to rollback to previous versions or even bisect certain
-   problems if we need to.
+   still are able to dig into history, read comments and reason about changes,
+   are able to rollback to previous versions or even bisect problems if we need
+   to.
 
  - The [range] [32] of supported AWS resources <br/>
    AWS CloudFormation allowed us to define every bit of AWS infrastructure we
@@ -411,23 +418,20 @@ What in particular I like about AWS CloudFormation:
  - The support of stack [updates] [33] <br/>
    You modify AWS CloudFormation JSON template file and in most cases AWS is
    able to use it as new state to stack into (you still need to read each
-   particular resource documentation to see whether the resource suports the
-   update operation and what does it mean in each particular case). In real
-   life it means you could control the amount of EC2 instances, security groups
-   rules, all the bits of your particular environment (AWS CloudFormation
-   Stack) from the same versioned, stored in VCS definition.
+   particular resource documentation to see whether the resource supports the
+   update operation and what does it mean in each particular case).
 
  - Last, but not least - Atomicity of operations and treating stack as whole<br/>
    It either updates fully, or not. It isn't stuck in the middle (at least it
    shouldn't). And if something went wrong, the whole update could be
    cancelled. I also found _wholism_ quite useful during early prototype phase.
-   I could easily create POC environment, play with it for a while and then
-   drop it completely with all associated resources. Very handy.
+   I would create POC environment, play with it for a while and then drop it
+   completely with all associated resources. Very handy.
 
-At the moment we use hand-crafted AWS CloudFormation templates, mostly from the
-control point of view. We wanted to keep it as simple and plain as possible,
-with as little intermediate transformation, magic or whatever else involved in
-the middle.
+At the moment of writing we use hand-crafted AWS CloudFormation templates,
+mostly from the control point of view. We wanted to keep it as simple and plain
+as possible, with as little intermediate transformation, magic or whatever else
+involved in the middle.
 
 Having said that, we are keeping eyes on alternative approaches, such as:
 
@@ -452,10 +456,10 @@ reasons.
 In our case we use roles as means of specify resource location and as service
 discovery starting point.
 
-We don't auto generate top files, instead we define that each particular role
-means in THIS particular environment: e.g. single node LDAP in STAGE might
-become Active-Active LDAP SyncReplica in PROD. We do assign roles to instances
-via EC2 [UserData] [35] (in CloudFormation templates), e.g.
+We assign roles to instances via EC2 [UserData] [35] (in CloudFormation
+templates). We don't auto generate top files, instead we define that each
+particular role means in THIS particular environment (single node LDAP in STAGE
+might become Active-Active LDAP SyncReplica in PROD), e.g.
 
 ```yaml
 ...
@@ -468,7 +472,7 @@ via EC2 [UserData] [35] (in CloudFormation templates), e.g.
 ```
 
 This approach allowed us to concentrate on functionality and common
-denominators, with differences kept in role definitions in topfiles.
+denominators, with differences kept in role definitions in top files.
 
 ### III. Service discovery ###
 
@@ -481,7 +485,8 @@ hardcode things like DSN names, IP addresses etc..
 At the moment we leverage self-made solution on top of [Salt Mine] [36], which
 seemed the quickest to setup at the time. However it's our feeling it adds
 quite a lot of [accidental complexity] [37] to the cake, which we don't like.
-We are keeping eye on [Consul] [38] or some clever [dnsmasq] [39] schemas.
+We are keeping our eyes on [Consul] [38] or some clever [dnsmasq] [39]
+schemas.
 
 ### IV. Plain layout ###
 
@@ -490,8 +495,8 @@ following:
 
  - Keep levels of indirection to meaningful minimum
  - Keep things plain
- - Prefer composition of copy of things to any clever smart-ass
-   inheritance / override / redefine schemas.
+ - Prefer composition OR copy of things to any clever smart-ass
+   inheritance / override schemas.
 
 Plus, we had experienced certain annoyances, bugs and glitches with SalStack
 GitFS implementation. Having said that we have come to the following general
@@ -526,13 +531,14 @@ approach how to layout things in our SaltStack based configuration.
 I'm not sure it's the best layout out there, but it works for us. Bear in mind
 that our salt universe might be considered small and simple enough. We
 definitely don't have hundreds of minions and thousands of services to
-provision, just a handful ten or so.
+provision, just a handful ten or so. So, I suspect we would come to different
+conclusion with different scale level.
 
 ## Personal takeout ##
 
 **Update** I've made a decision to time limit myself on this post and it's
-scope. So, instead of expanding on this paragraph I will limit myself to simple
-plain bullet points with no explanations whatsoever.
+scope. So, instead of expanding on this I will limit myself to simple plain
+bullet points with no explanations whatsoever.
 
  - **Automation saves huge amount of time**
 
