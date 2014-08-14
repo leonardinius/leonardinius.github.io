@@ -17,6 +17,7 @@ highlighter: pygments
 paginate: 5
 
 exclude:
+  - CNAME
   - LICENSE
   - README.md
   - local.sh
