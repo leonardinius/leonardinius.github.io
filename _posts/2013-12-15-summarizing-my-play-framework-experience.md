@@ -15,14 +15,14 @@ Hopefully you can make sense out of it.
 
 Given the length, here's a helpful table of contents.
 
- - [Showcase](#showcase)
+ - [Showcase intro](#showcase-intro)
  - [Brief acquaintance with Play Framework](#brief-acquaintance-with-play-framework)
  - [The things I liked most about Play Framework](#the-things-i-liked-most-about-play-framework)
  - [The things I disliked about Play Framework](#the-things-i-dislike-about-play-framework)
  - [Would I choose Play for my next project](#would-i-choose-play-for-my-next-project)
  - [Other frameworks in my consideration list](#other-frameworks-in-my-consideration-list)
 
-## Showcase ##
+## Showcase intro ##
 
 For the disclosure, the application I developed with Play Framework consists from around 142 Java files (647 Kb),
 106 Scala Html templates (416 Kb), 3 Scala files (28 Kb), 14 SQL files (478 Kb), css, js, etc...
