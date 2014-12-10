@@ -24,7 +24,7 @@ layout: default
   <span class="pagination-item older">Older</span>
   {% endif %}
   {% if page.next %}
-  <a class="pagination-item newer" href="{{ page.next.url }}">
+  <a class="pagination-item newer" href="{{ page.next.url }}"
     title="{{ page.next.date | date_to_string }} &middot; {{ page.next.title }}">Newer</a>
   </a>
   {% else %}
