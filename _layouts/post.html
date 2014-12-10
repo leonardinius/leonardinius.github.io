@@ -3,39 +3,36 @@ layout: default
 ---
 
 <div class="post">
-  <h1>
-      <a href="{{ page.url }}" class="page-title">
-        {% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}
-      </a>
-  </h1>
-
+  <h1 class="post-title">{% if site.env %}[{{ site.env }}] {% endif %}{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
 
   <hr/>
-   <strong>NB.</strong> If you've found typos or errors, please
-    <a class="suggest" href="{{ site.github.repo }}/issues/new?title=Feedback+on+%60{% if page.title <> null %}{{ page.title | cgi_escape}}{% else %}{{ page.path | cgi_escape}}{% endif %}%60&body=%60{{ page.path | cgi_escape }}%60%0A%0A----%0APlace+your+description+here">
-        suggest a correction</a>
-    or
-    <a class="suggest" href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path }}">
-        edit on github</a>.
+  <strong>NB.</strong> If you've found typos or errors, please
+  <a class="suggest" href="{{ site.github.repo }}/issues/new?title=Feedback+on+%60{% if page.title <> null %}{{ page.title | cgi_escape}}{% else %}{{ page.path | cgi_escape}}{% endif %}%60&body=%60{{ page.path | cgi_escape }}%60%0A%0A----%0APlace+your+description+here">
+    suggest a correction</a>
+  or
+  <a class="suggest" href="{{ site.github.repo }}/tree/{{ site.github.branch }}/{{ page.path }}">
+    edit on github</a>.
 </div>
 
-<div class="related">
-      {% if page.next %}
-        <p><strong>Newer</strong>
-            <a href="{{ page.next.url }}">
-                {{ page.next.title }}
-                <small>{{ page.next.date | date_to_string }}</small>
-            </a></p>
-      {% endif %}
-      {% if page.previous %}
-        <p><strong>Older</strong>
-            <a href="{{ page.previous.url }}">
-                {{ page.previous.title }}
-                <small>{{ page.previous.date | date_to_string }}</small>
-            </a></p>
-      {% endif %}
+<div class="pagination">
+  {% if page.previous %}
+  <a class="pagination-item older" href="{{ page.previous.url }}">
+    Older <br/>
+    <sup>{{ page.previous.title }} {{ page.previous.date | date_to_string }}</sup>
+   </a>
+  {% else %}
+  <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if page.next %}
+  <a class="pagination-item newer" href="{{ page.next.url }}">
+    Newer <br/>
+    <sup>{{ page.next.title }} {{ page.next.date | date_to_string }}<sup>
+  </a>
+  {% else %}
+  <span class="pagination-item newer">Newer</span>
+  {% endif %}
 </div>
 
 {% if site.comments.provider <> null %}
@@ -46,3 +43,4 @@ layout: default
 {% endcase %}
 <!-- End of {{ site.comments.provider }} comments -->
 {% endif %}
+

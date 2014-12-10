@@ -2,13 +2,13 @@ env: "DEV"
 
 name: "Coding paradigm: line by line"
 title: "Coding paradigm: line by line"
-tagline: "Personal blog and opinions by Leonids Maslovs"
+tagline: "all my opinions are belong to me"
 description: "Personal blog and opinions by Leonids Maslovs"
 author:
   name: "Leonids Maslovs"
   email: "leonids.maslovs@galeoconsulting.com"
-baseurl: ''
-url: http://leonardinius.galeoconsulting.com
+baseurl: '/'
+url: http://leonardinius.galeoconsulting.com/
 permalink: /:year/:month/:title
 markdown: redcarpet
 redcarpet:
