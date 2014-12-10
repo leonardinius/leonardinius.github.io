@@ -7,6 +7,23 @@ layout: post
 framework for java developers to develop small web application, I decided to summarize my thoughts and concerns in
 the form of blog entry.
 
+**Update** The post topic and layout grew out of my control and present more or
+less chaotic nature of my thought flow. I've tried to concentrate the post
+around the following topics: general overview, things I liked, things I disliked,
+what would I do in next project, other options on the table...
+Hopefully you can make sense out of it.
+
+Given the length, here's a helpful table of contents.
+
+ - [Showcase](#showcase)
+ - [Brief acquaintance with Play Framework](#brief-acquaintance-with-play-framework)
+ - [The things I liked most about Play Framework](#the-things-i-liked-most-about-play-framework)
+ - [The things I dislike about Play Framework](#the-things-i-dislike-about-play-framework)
+ - [Would I choose Play for my next project](#would-i-choose-play-for-my-next-project)
+ - [Other frameworks in my consideration list](#other-frameworks-in-my-consideration-list)
+
+## Showcase ##
+
 For the disclosure, the application I developed with Play Framework consists from around 142 Java files (647 Kb),
 106 Scala Html templates (416 Kb), 3 Scala files (28 Kb), 14 SQL files (478 Kb), css, js, etc...
 
@@ -286,7 +303,7 @@ example, let take the same Online Bank system - Play Framework would not be eith
 I am Ok to recommend Play to develop small replace-able non-critical application /  micro-service / set of Akka actors
 or whatever small and requiring high-throughput and low-latency.
 
-## Other frameworks in my consideration list
+## Other frameworks in my consideration list ##
 
 Here is the list of frameworks I might consider to develop my next small experimental project (the list is in the
 order of appeal):
