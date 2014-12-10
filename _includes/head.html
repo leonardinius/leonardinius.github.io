@@ -8,9 +8,9 @@
 
   <title>
     {% if page.title == "Home" %}
-    {% if site.env %}[{{ site.env }}] {% endif %}{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.tagline }}
+    {% if site.env %}[{{ site.env }}] {% endif %}{% if site.title %}{{ site.title }} &middot; {% endif %}{{ site.tagline }}
     {% else %}
-      {% if site.env %}[{{ site.env }}] {% endif %}{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}
+    {% if site.env %}[{{ site.env }}] {% endif %}{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}
     {% endif %}
   </title>
 
@@ -27,12 +27,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-{% if site.analytics.provider <> null %}
-<!-- Start of {{ site.analytics.provider }} analytics -->
-{% case site.analytics.provider %}
-{% when "google" %}
-{% include google_analytics.html %}
-{% endcase %}
-<!-- End of {{ site.analytics.provider }} analytics -->
-{% endif %}
+  {% if site.analytics.provider <> null %}
+  <!-- Start of {{ site.analytics.provider }} analytics -->
+  {% case site.analytics.provider %}
+  {% when "google" %}
+  {% include google_analytics.html %}
+  {% endcase %}
+  <!-- End of {{ site.analytics.provider }} analytics -->
+  {% endif %}
 </head>
