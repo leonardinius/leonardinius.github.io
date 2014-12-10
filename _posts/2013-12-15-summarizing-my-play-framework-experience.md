@@ -19,7 +19,7 @@ Given the length, here's a helpful table of contents.
  - [Showcase](#showcase)
  - [Brief acquaintance with Play Framework](#brief-acquaintance-with-play-framework)
  - [The things I liked most about Play Framework](#the-things-i-liked-most-about-play-framework)
- - [The things I dislike about Play Framework](#the-things-i-dislike-about-play-framework)
+ - [The things I disliked about Play Framework](#the-things-i-dislike-about-play-framework)
  - [Would I choose Play for my next project](#would-i-choose-play-for-my-next-project)
  - [Other frameworks in my consideration list](#other-frameworks-in-my-consideration-list)
 
@@ -230,7 +230,7 @@ of his doors ;)
   using right URL or using right HTTP method etc ... I even still reference it using statically typed and
   compile-time checked helper methods. What can I say? Convenient.
 
-## The things I dislike about Play Framework ##
+## The things I disliked about Play Framework ##
 
 The list in the order of dislike:
 
