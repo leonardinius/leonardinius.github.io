@@ -18,15 +18,14 @@ layout: default
 
 <div class="pagination">
   {% if page.previous %}
-  <a class="pagination-item older" href="{{ page.previous.url }}">
-    <sup>{{ page.previous.date | date_to_string }} &middot; {{ page.previous.title }}</sup>
-   </a>
+  <a class="pagination-item older" href="{{ page.previous.url }}"
+     title="{{ page.previous.date | date_to_string }} &middot; {{ page.previous.title }}">Older</a>
   {% else %}
   <span class="pagination-item older">Older</span>
   {% endif %}
   {% if page.next %}
   <a class="pagination-item newer" href="{{ page.next.url }}">
-    <sup>{{ page.next.date | date_to_string }} &middot; {{ page.next.title }}<sup>
+    title="{{ page.next.date | date_to_string }} &middot; {{ page.next.title }}">Newer</a>
   </a>
   {% else %}
   <span class="pagination-item newer">Newer</span>
