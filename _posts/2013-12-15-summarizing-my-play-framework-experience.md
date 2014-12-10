@@ -11,6 +11,7 @@ the form of blog entry.
 less chaotic nature of my thought flow. I've tried to concentrate the post
 around the following topics: general overview, things I liked, things I disliked,
 what would I do in next project, other options on the table...
+
 Hopefully you can make sense out of it.
 
 Given the length, here's a helpful table of contents.
