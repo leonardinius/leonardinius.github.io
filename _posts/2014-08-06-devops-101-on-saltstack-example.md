@@ -6,7 +6,7 @@ layout: post
 I by all means am not a system administrator or SCM guy or DBA guy or whatever.
 I call myself _Developer vulgaris_. Still, I'm used to find myself in position
 I have locally working solution and little or no clue how the heck to get it
-out in window.  Should I just throw it to support guys and let let them handle
+out in window.  Should I just throw it to support guys and let them handle
 that?
 ![Throwing code at admins](/img/posts/devops101_over_the_fence.jpg)
 Image source
