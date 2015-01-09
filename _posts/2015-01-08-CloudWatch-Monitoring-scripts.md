@@ -1,11 +1,11 @@
 ---
-title: "AWS How to - CloudWatch monitoring scripts over HTTPS proxy on Ubuntu Linux (12.10 LTS)"
+title: "AWS How to - CloudWatch monitoring scripts over HTTPS proxy on Ubuntu Linux (12.04 LTS)"
 layout: post
 ---
 
 The subject says it all: small intro into WTF? is Amazon CloudWatch and
 small how to setup and use Amazon CloudWatch monitoring scripts over HTTPS
-proxy on Ubuntu Linux 12.10 LTS.
+proxy on Ubuntu Linux 12.04 LTS.
 
 ## tl; dr; ##
 
@@ -57,7 +57,7 @@ scripts to access CloudWatch API through HTTP/HTTPS proxy.
 
 As it appears, Perl `https` module (or whatever is the correct name for
 this) does not handle that case well by default, at least not on Ubuntu
-12.10 LTS. And [Amazon CloudWatch Monitoring Scripts for Linux][6] is
+12.04 LTS. And [Amazon CloudWatch Monitoring Scripts for Linux][6] is
 implemented using Perl. Damn!
 
 I actually discovered that during that during the roll out deployment
