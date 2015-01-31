@@ -5,6 +5,9 @@ layout: post
 
 ## Rust ##
 
+http://doc.rust-lang.org/std/marker/trait.Copy.html
+closures wo curly brackets
+
 Rustaceans
 Rust stickers
 
