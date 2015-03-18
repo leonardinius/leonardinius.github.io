@@ -27,6 +27,8 @@ so I don't have one.
 
 [https://leonardinius.github.io/sweet-slides.rs](https://leonardinius.github.io/sweet-slides.rs) - better, online version, with slide notes (enabled by pressing `p`).
 
+Also, see [discussion](https://www.reddit.com/r/rust/comments/2zc7kc/the_sweet_flavour_of_rust_introduction_ppt/) at `/r/rust` (corrections, comments,..).
+
 <script async class="speakerdeck-embed" 
   data-id="0b27dfc80cb641acb54291bcde6f7786" 
   data-ratio="1.33159947984395" 
