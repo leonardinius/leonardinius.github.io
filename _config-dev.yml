@@ -6,6 +6,7 @@ tagline: "all my opinions are belong to me"
 description: "Personal blog and opinions by Leonids Maslovs"
 author:
   name: "Leonids Maslovs"
+  twitter: "leonardinius"
   email: "leonids.maslovs@galeoconsulting.com"
 baseurl: '/'
 url: http://leonardinius.galeoconsulting.com/
@@ -20,8 +21,7 @@ exclude:
   - CNAME
   - LICENSE
   - README.md
-  - local.sh
-  - Vagrantfile
+  - run.sh
 
 gems:
   - jekyll-sitemap
