@@ -1,6 +1,7 @@
 ---
 title: "Summarizing My Play Framework experience"
 layout: post
+tags: [java, "play!"]
 ---
 
 [Play Framework 2x] [1] is getting a lot of attention lately. Since I had recent first hand experience using Play

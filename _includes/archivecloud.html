@@ -1,0 +1,17 @@
+<div style="padding-left: 1.5rem; padding-right: 1.5rem;">
+{% assign counter = 0 %}
+{% for post in site.posts %}
+    {% assign currentyear = post.date | date: "%Y" %}
+    {% capture counter %}{{ counter | plus: '1' }}{% endcapture %}
+    {% if forloop.last or currentyear != year %}
+        {% unless forloop.first %}
+            <a href="{{ site.baseurl }}archive/#{%if year%}{{year}}{%else%}{{currentyear }}{%endif%}">
+                {%if year%}{{year}}{%else%}{{currentyear }}{%endif%}[{{ counter}}]
+            </a>
+            {% unless forloop.last %}<br /> {% endunless %}
+        {% endunless %}
+        {% assign year = currentyear %}
+        {% assign counter = 0 %}
+    {% endif %}
+{% endfor %}
+</div>

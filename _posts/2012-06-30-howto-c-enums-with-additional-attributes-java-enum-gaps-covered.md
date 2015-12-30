@@ -3,6 +3,7 @@ title: Howto - C# enums with additional attributes (Java enum gaps covered)
 date: 2012-06-30
 permalink: 2012/06/howto-c-enums-with-additional-attributes-java-enum-gaps-covered.html
 layout: post
+tags: [".net"]
 ---
 
 Disclaimer: This post isn't going to be complete apple-to-apple and even apple-to-oranges comparison. It's going to be

@@ -4,6 +4,7 @@ title: Maven Assembly Error on Ubuntu 11.10 (oneiric)
 date: 2012-01-20
 comments: false
 permalink: 2012/01/maven-assembly-error-on-ubuntu-1110.html
+tags: [java, maven]
 ---
 
 I don't get it. I always expect OSS tools/utils to work correctly on Linux (especially on ubuntu). 

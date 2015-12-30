@@ -1,6 +1,7 @@
 ---
 title: "The SWEET flavour of Rust (presentation)"
 layout: post
+tags: [rust, ppt]
 ---
 
 I accidentally ended up presenting about Rust at [Latcraft][1]'s

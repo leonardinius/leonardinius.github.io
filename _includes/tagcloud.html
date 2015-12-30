@@ -1,0 +1,11 @@
+<div style="padding-left: 1.5rem; padding-right: 1.5rem;">
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+    <span style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 90 }}%;">
+        <a href="{{ site.baseurl }}tags/#{{ tag | first | slugize }}">
+            {{ tag | first }}[{{tag | last | size}}]
+        </a>
+    </span>
+    {% unless forloop.last %},{% endunless %}
+{% endfor %}
+</div>

@@ -3,6 +3,7 @@ title: "Python Playground Part 2: Deploying Flask app on Ubuntu (nginx, uwsgi, s
 date: 2012-09-14
 permalink: 2012/09/python-playground-part-2-deploying-flask-app-on-ubuntu-nginx-uwsgi-supervisor-git.html
 layout: post
+tags: [python, mvp, devops]
 ---
 
 > This is a followup on my [previous post](/2012/09/python-playground-part-1-noimageyet-com-placeholder-image-service-experience/ "previous post") on building and getting up and running small online image placeholder generator service - [https://noimageyet.com](https://noimageyet.com "https://noimageyet.com").

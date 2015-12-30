@@ -4,6 +4,7 @@ title: SSL through MSCAPI nightmare
 date: 2007-09-21
 comments: false
 permalink: 2007/09/ssl-through-mscapi-nightmare.html
+tags: [java, ssl]
 
 ---
 

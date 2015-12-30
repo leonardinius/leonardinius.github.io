@@ -4,7 +4,7 @@ title: OpenJDK 7 - Developer Preview on Mac OS X
 date: 2011-03-12
 comments: false
 permalink: 2011/03/openjdk-7-developer-preview-on-mac-os-x.html
-
+tags: [java]
 ---
 
 All the glory to &nbsp;<a href="http://blogs.sun.com/theaquarium/entry/oracle_now_ready_with_jdk">Oracle now ready with JDK 7 Developer Preview</a>&nbsp;article. Thanks guys for sharing this
