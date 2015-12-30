@@ -1,0 +1,11 @@
+<span style="position: absolute; right: 14rem; padding-right: 2em;">
+  Tags:
+  {% if post %}
+    {% assign tags = post.tags %}
+  {% else %}
+    {% assign tags = page.tags %}
+  {% endif %}
+  {% for tag in tags %}
+      <a href="/tags/#{{tag|slugize}}"><code>{{tag}}</code></a>{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+</span>
