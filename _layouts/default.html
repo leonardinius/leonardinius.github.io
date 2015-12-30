@@ -29,11 +29,15 @@
   </body>
 
   <hr/>
-  <footer class="muted" style="text-align: center;">
-    <p>
-      &copy; {{ site.posts.last.date | date: '%Y'}}-{{ site.time | date: '%Y'}}
-      all rights reserved by
-      <a href="{{ site.baseurl }}about.html">{{ site.author.name }}</a>
-    </p>
+  <footer style="text-align: right;">
+    <a href="{{ site.baseurl }}about.html" style="color: rgba(22,54,79,0.3); font-style: italic;">
+      <p>
+        <u>
+        &copy; {{ site.posts.last.date | date: '%Y'}}-{{ site.time | date: '%Y'}}
+        all rights reserved by
+        {{ site.author.name }}
+        </u>
+      </p>
+    </a>
   </footer>
 </html>
