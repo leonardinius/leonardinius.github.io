@@ -27,4 +27,13 @@
     {% include sidebar-toggle.html %}
 
   </body>
+
+  <hr/>
+  <footer class="muted" style="text-align: center;">
+    <p>
+      &copy; {{ site.posts.last.date | date: '%Y'}}-{{ site.time | date: '%Y'}}
+      all rights reserved by
+      <a href="{{ site.baseurl }}about.html">{{ site.author.name }}</a>
+    </p>
+  </footer>
 </html>
