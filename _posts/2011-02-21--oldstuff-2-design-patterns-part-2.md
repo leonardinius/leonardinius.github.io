@@ -2,6 +2,7 @@
 layout: post
 title: "#oldstuff - 2. Design patterns. part #2"
 date: 2011-02-21
+tag: [ ppt ]
 comments: false
 permalink: 2011/02/oldstuff-2-design-patterns-part-2.html
 ---
