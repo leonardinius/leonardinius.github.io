@@ -5,7 +5,6 @@
 #$POLLING - Force polling with --force_polling.
 #$VERBOSE -  Enable jekyll --verbose.
 
-
 docker run --rm \
   --label=jekyll \
   --volume=$(pwd):/srv/jekyll \
