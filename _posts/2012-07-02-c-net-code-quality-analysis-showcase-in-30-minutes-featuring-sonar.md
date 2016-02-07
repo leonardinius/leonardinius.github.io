@@ -71,7 +71,7 @@ version available there (it's 3.1.1 on the moment of writing).
 - Execute `c:\sonar-3.1.1\bin\windows-x86-32\StartSonar.bat`
   The expected output should look like
 
-```console
+{% highlight console %}
 $ C:\sonar-3.1.1\bin\windows-x86-32\StartSonar.bat
 wrapper  | --> Wrapper Started as Console
 wrapper  | Launching a JVM...
@@ -84,7 +84,7 @@ jvm 1    | 2012-07-03 01:21:24.725:INFO::NO JSP Support for /, did not find org.
 jvm 1    | JRuby limited openssl loaded. http://jruby.org/openssl
 jvm 1    | gem install jruby-openssl for full support.
 jvm 1    | 2012-07-03 01:21:54.571:INFO::Started SelectChannelConnector@0.0.0.0:9000
-```
+{% endhighlight %}
   NB - in my case it's Win7, 32. Please see sibling folders for other options, such as Win 64x. The bin folder contains
   much more useful scripts, such as `InstallNTService.bat` etc.. Please see Sonar documentation for more info.
 
@@ -97,13 +97,13 @@ Vuala, you are all set. You have minimal working instance under your belt. Of co
 and download latest (1.3 at the moment of writing) CSharpPluginsEcosystem plugin zip.
 - Unzip CSharpPluginsEcosystem-1.3.zip and copy the following jars to `/extensions/plugins` folder of Sonar
 
-```
+{% highlight text %}
 sonar-csharp-core-plugin-1.3.jar
 sonar-csharp-ndeps-plugin-1.3.jar
 sonar-csharp-squid-plugin-1.1.1.jar
 sonar-csharp-gendarme-plugin-1.3.jar
 sonar-csharp-stylecop-plugin-1.3.jar
-```
+{% endhighlight %}
 
 You might want to copy all the jars, however some of the plugins require additionals tools to be installed, which
 definitely won't fit in our 30 min time-box (See [install page](http://docs.codehaus.org/display/SONAR/1.+Install) for
@@ -117,7 +117,7 @@ more info).
 (1.3 at the moment of writing)
 - Create file `sonar-project.properties` with the following content:
 
-```properties
+{% highlight properties %}
 # Project identification
 sonar.projectKey=com.mycompany:myApp
 sonar.projectVersion=1.0-SNAPSHOT
@@ -125,11 +125,11 @@ sonar.projectName=My C# Application
 # Info required for Sonar
 sources=<<Your source folder>>
 sonar.language=cs
-```
+{% endhighlight %}
 - Place `sonar-project.properties` to you project/solution root folder
 - Change you working directory  to you project/solution root folder and execute `sonar-runner.bat`
 
-```
+{% highlight console %}
 $ Your_project_root>c:\sonar-runner-1.3\bin\sonar-runner.bat
 c:\sonar-runner-1.3\bin\..
 Runner configuration file: c:\sonar-runner-1.3\bin\..\conf\sonar-runner.properties
@@ -225,7 +225,7 @@ Work directory: Your_project_root\.sonar
 Total time: 46.733s
 Final Memory: 6M/44M
 Your_project_root>
-```
+{% endhighlight %}
 
 NB: It warns us about built-in database usage again. It's something should re-configured indeed in production use.
 

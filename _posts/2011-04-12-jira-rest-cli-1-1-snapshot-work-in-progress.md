@@ -13,7 +13,7 @@ Done already
 ---
 <ul><li>console client improved (groovy): understands a whole set of command line options. See client help message below:
 
-```console
+{% highlight console %}
 $ rest-cli-groovy --help
 usage: rest-cli-groovy -h <host> -u <user> -w <password> [options]
  -c,--context <context>               application context (e.g.: jira)
@@ -32,17 +32,18 @@ usage: rest-cli-groovy -h <host> -u <user> -w <password> [options]
  -s,--session <cli-session-id>        cli session id to connect to
  -u,--user <user>                     admin user name to connect with
  -w,--password <password>             password to authenticate with
-```
+{% endhighlight %}
+
 </li>
 <li>class loader problem fixed, now it's possible to use import and reference Jira classes from the scripts. See example below:
 
-```groovy
+{% highlight groovy %}
 import com.atlassian.jira.project.ProjectManager;
 import com.atlassian.jira.ComponentManager;
 
 ProjectManager manager = ComponentManager.getInstance().getProjectManager();
 manager.projectObjects.collect { it.name }
-```
+{% endhighlight %}
 </li>
 <li>Work on automated configuration deployment (mini-framework started). If you are interested - please track&nbsp;<a href="https://github.com/leonardinius/jira-rest-cli/issues/1">https://github.com/leonardinius/jira-rest-cli/issues/1</a>&nbsp;and submit comments/u
 

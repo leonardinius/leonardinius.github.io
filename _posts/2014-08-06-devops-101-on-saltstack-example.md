@@ -33,7 +33,7 @@ Given the length, here's a helpful table of contents.
  - [The Evaluation](#the-evaluation) ([Chef](#chef), [Puppet](#puppet),
    [Ansible](#ansible), [Salt](#salt))
  - [The Final Choice](#the-final-choice)
- - [Things I wish I'd known before I start](#things-i-wish-i'd-known-before-i-start)
+ - [Things I wish I'd known before I start](#things-i-wish-id-known-before-i-start)
  - [What worked well](#what-worked-well)
  - [Personal takeout](#personal-takeout)
 
@@ -464,7 +464,7 @@ templates). We don't auto generate top files, instead we define that each
 particular role means in THIS particular environment (single node LDAP in STAGE
 might become Active-Active LDAP SyncReplica in PROD), e.g.
 
-```yaml
+{% highlight yaml %}
 ...
   'roles:www-frontend':
     - match: grain
@@ -472,7 +472,7 @@ might become Active-Active LDAP SyncReplica in PROD), e.g.
     - www.site1
     - www.site2
 ...
-```
+{% endhighlight %}
 
 This approach allowed us to concentrate on functionality and common
 denominators, with differences kept in role definitions in top files.
@@ -505,7 +505,7 @@ Plus, we had experienced certain annoyances, bugs and glitches with SalStack
 GitFS implementation. Having said that we have come to the following general
 approach how to layout things in our SaltStack based configuration.
 
-```text
+{% highlight text %}
 /srv/salt
 ├── base
 │   ├── sanity.sls             # shared
@@ -529,7 +529,7 @@ approach how to layout things in our SaltStack based configuration.
 │   └── init.sls
 ├── stage-top.sls              # STAGE top file
 └── prod-top.sls               # PROD top file
-```
+{% endhighlight %}
 
 I'm not sure it's the best layout out there, but it works for us. Bear in mind
 that our salt universe might be considered small and simple enough. We

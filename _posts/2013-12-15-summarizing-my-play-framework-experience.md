@@ -19,7 +19,7 @@ Given the length, here's a helpful table of contents.
  - [Showcase intro](#showcase-intro)
  - [Brief acquaintance with Play Framework](#brief-acquaintance-with-play-framework)
  - [The things I liked most about Play Framework](#the-things-i-liked-most-about-play-framework)
- - [The things I disliked about Play Framework](#the-things-i-dislike-about-play-framework)
+ - [The things I disliked about Play Framework](#the-things-i-disliked-about-play-framework)
  - [Would I choose Play for my next project](#would-i-choose-play-for-my-next-project)
  - [Other frameworks in my consideration list](#other-frameworks-in-my-consideration-list)
 

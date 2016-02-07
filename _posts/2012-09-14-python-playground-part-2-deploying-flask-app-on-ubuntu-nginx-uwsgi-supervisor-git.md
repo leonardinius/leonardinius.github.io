@@ -24,45 +24,45 @@ This post (and service deployement in live) would not be possible without these 
 
 ## Installing Python stack ##
 
-```console
+{% highlight console %}
 $ sudo apt-get install -y python-software-properties python-dev python-pip
 $ sudo pip install virtualenv
-```
+{% endhighlight  %}
 
 NoImageYet also requires [Python Imaging Library](http://www.pythonware.com/library/pil/handbook/index.htm "Python Imaging Library"), which depends on certain native libs. Here it goes:
 
-```console 
+{% highlight console %} 
 $ sudo apt-get install -y libfreetype6-dev libjpeg62-dev libpng12-dev
 
  # PIL PIP package fails to install, since it expects libs located in /usr/lib/
  # So, will reset /usr/lib/ *.so references
 $ sudo rm -rf /usr/lib/{libfreetype.so,libz.so,libjpeg.so}
 $ sudo ln -s /usr/lib/*-linux-gnu/{libfreetype.so,libz.so,libjpeg.so} /usr/lib/
-```
+{% endhighlight  %}
 
 ## Installing NGINX ##
 
-```console
+{% highlight console %}
 $ sudo apt-get install -y nginx
  # Nginx-related: Move the default nginx config name so that it doesn't take
  # priority over our other configurations.
 $ sudo mv /etc/nginx/sites-enabled/{default,99_default}
-```
+{% endhighlight  %}
 
 ## Installing Git, Supervisord and uWSGI ##
 
-```console
+{% highlight console %}
 $ sudo apt-get install -y build-essential git-core
 
 $ sudo apt-get install -y supervisor
 $ sudo apt-get install -y uwsgi uwsgi-plugin-python python-uwsgidecorators
-```
+{% endhighlight  %}
 
 ## Creating Deploy / App user ##
 
 You might want to change password from `password` to something more applicable ;)
 
-```console
+{% highlight console %}
 $ sudo adduser --disabled-password --gecos "" deploy
 
 $ sudo passwd deploy <<EOF
@@ -74,7 +74,7 @@ echo "Adding deploy user to sudoers"
 sudo tee -a /etc/sudoers <<EOF
 deploy  ALL=(ALL) NOPASSWD:ALL
 EOF
-```
+{% endhighlight  %}
 
 ## Auto-magic deploy script ##
 
@@ -89,17 +89,17 @@ Script summary: scipt creates folder layout, configures NGINX site, updates supe
 
 * Get the script.
 
-```console
+{% highlight console %}
 $ cd /home/deploy
 $ sudo -u deploy wget "https://raw.github.com/gist/3667663/create_project.sh"
 $ sudo -u deploy chmod +x create_project.sh
-```
+{% endhighlight  %}
 
 * Login as deploy user, e.g. `su - deploy`
 * Executing the script.
 Parameters: app name (`theservice`) and service domain name (`yourdomain.com`)
 
-```console
+{% highlight console %}
 $ ./create_project.sh theservice yourdomain.com
  This script is intended to be run on a remote server, not on a local development environment. It will create a bunch of directories and change a bunch of configurations.
  Are you sure you want to continue? [y/N] y
@@ -125,19 +125,19 @@ $ ./create_project.sh theservice yourdomain.com
      git deploy live
  
  Happy pushing!
-```
+{% endhighlight  %}
 Please follow the script instructions. When pushing please note: the script assumes folder layout is `theservice/theservice.py` and `theservice.py` exports Flask application as `app`. E.g.
 
-```python
+{% highlight python %}
 # theservice.py file 
 #...
 app = flask.Flask(__name__)
 #...
-```
+{% endhighlight %}
 
 * When application code has been pushed to server (following script recomendations) you should resolce app's dependecies and do proper app's configuration (db connections, etc ..)
 
-```console
+{% highlight console %}
  # this will install app dependencies
 $ source ~/env/noimageyet/local/bin/activate
  # usual way to provide/install dependencies
@@ -149,7 +149,7 @@ $ sudo service nginx restart
 $ sudo service supervisor stop
 $ sleep 3
 $ sudo service supervisor start
-``` 
+{% endhighlight %}
 
 ## Vuala part ##
 
@@ -157,7 +157,7 @@ We are done. Your service should be available at [http://youdomain.com](http://y
 
 Deploy part should be as easy as sample below
 
-```console
+{% highlight console %}
 $ git add noimageyet.py && git commit -m 'the change'
  [master df78831] the change
   1 file changed, 1 insertion(+)
@@ -180,7 +180,7 @@ $ git deploy live
     c76aa28..cd59843  live -> live
  Switched to branch 'master'
  Your branch is ahead of 'origin/master' by 1 commit.
-```
+{% endhighlight  %}
 
 ## Profit ##
 
