@@ -46,6 +46,7 @@ about overall structure and decided to simply go with the natural flow of my tho
 ## Brief acquaintance with Play Framework ##
 
 [Play Framework] [1] team describes the framework as
+
 > The High Velocity Web Framework For Java and Scala
 
 Play is acknowledged to be full-stack family framework, which means it comes with (at least) following layers:
