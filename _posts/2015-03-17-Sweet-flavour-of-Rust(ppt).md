@@ -19,6 +19,7 @@ so I don't have one.
 ## tl; dr; ###
 
 **Agenda**
+
 > Every chef now and then uses pinch of his secret spices to make a dish
 > somewhat special and exquisite. This talk will provide introduction into
 > nature of Rust sweetness and will answer to most important questions: Why and
