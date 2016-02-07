@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Clamour and stir around Servlet 3.0 Draft
-date: 2008-06-03
+date: 2008-05-03
 comments: false
-permalink: 2008/06/clamour-and-stir-around-servlet-30.html
+permalink: 2008/05/clamour-and-stir-around-servlet-30.html
 tags: [jsp, "servlet-3.0"]
 ---
 

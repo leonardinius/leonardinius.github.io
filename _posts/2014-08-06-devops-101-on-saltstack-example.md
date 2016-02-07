@@ -2,6 +2,7 @@
 title: "DevOps101 with SaltStack: Because salt goes EVERYWHERE"
 layout: post
 tags: [devops, saltstack, aws]
+permalink: 2014/08/devops-101-on-saltstack-example/
 ---
 
 I by all means am not a system administrator or SCM guy or DBA guy or whatever.

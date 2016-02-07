@@ -2,6 +2,7 @@
 title: "AWS How to - CloudWatch monitoring scripts over HTTPS proxy on Ubuntu Linux (12.04 LTS)"
 layout: post
 tags: [cloudwatch, aws]
+permalink: 2015/01/CloudWatch-Monitoring-scripts/
 ---
 
 The subject says it all: small intro into WTF? is Amazon CloudWatch and
