@@ -11,10 +11,7 @@ author:
 baseurl: '/'
 url: http://leonardinius.galeoconsulting.com/
 permalink: /:year/:month/:title
-markdown: redcarpet
-redcarpet:
-    extensions: [with_toc_data]
-highlighter: pygments
+markdown: kramdown
 paginate: 5
 
 exclude:
@@ -25,6 +22,7 @@ exclude:
 
 gems:
   - jekyll-sitemap
+#  - rouge
 
 github:
   repo: "https://github.com/leonardinius/leonardinius.github.io"
