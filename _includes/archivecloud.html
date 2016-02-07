@@ -4,12 +4,19 @@
     {% assign currentyear = post.date | date: "%Y" %}
     {% capture counter %}{{ counter | plus: '1' }}{% endcapture %}
     {% if forloop.last or currentyear != year %}
-        {% unless forloop.first %}
+        {% if forloop.first == false %}
             <a href="{{ site.baseurl }}archive/#{%if year%}{{year}}{%else%}{{currentyear }}{%endif%}">
                 {%if year%}{{year}}{%else%}{{currentyear }}{%endif%}[{{ counter}}]
             </a>
-            {% unless forloop.last %}<br /> {% endunless %}
-        {% endunless %}
+            <br />
+        {% endif %}
+        {% if forloop.last %}
+            {% if currentyear != year %}{% assign counter = 0 %}{% endif %}
+            {% capture counter %}{{ counter | plus: '1' }}{% endcapture %}
+            <a href="{{ site.baseurl }}archive/#{{currentyear }}">
+                {{currentyear }}[{{ counter}}]
+            </a>
+        {% endif %}
         {% assign year = currentyear %}
         {% assign counter = 0 %}
     {% endif %}
