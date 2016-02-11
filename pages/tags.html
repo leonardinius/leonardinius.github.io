@@ -14,7 +14,7 @@ weight: 90
         <a name="{{ tag_name | slugize }}"></a>
         {% for post in site.tags[tag_name] %}
         <article class="archive-item">
-            <h4>{{ post.date | date_to_string }} &middot; <a href="{{ post.url }}">{{post.title}}</a></h4>
+          <h4><span style="color: #9a9a9a;">{{ post.date | date_to_string }}</span> &middot; <a href="{{ post.url }}">{{post.title}}</a></h4>
         </article>
         {% endfor %}
     </div>
