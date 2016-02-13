@@ -29,7 +29,7 @@ As we all (or some) know, Mac already comes with python and ruby. So, I decided 
 
 Stackoverflow pointed me out [twisted](http://twistedmatrix.com/trac/) toolkit. Few minutes spent with [twisted-web sample](http://twistedmatrix.com/documents/current/web/examples/) page and the following script has born (PS> as it turned out - Mac already comes with twisted toolkit shipped).
 
-```python
+{% highlight python %}
 from twisted.internet import reactor
 from twisted.web import static, proxy, server
 
@@ -44,7 +44,7 @@ root.putChild('svc', proxy.ReverseProxyResource('test.company.com', 80, ''))
 site = server.Site(root)
 reactor.listenTCP(8080, site)
 reactor.run()
-```
+{% endhighlight %}
 
 Vuala part
 ---
