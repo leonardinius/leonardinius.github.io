@@ -77,7 +77,7 @@ to Linux Monitoring script.
 
 ### Perl HTTPS package fix ###
 
-{% highlight console %}
+```console
 # installs CloudWatch Monitoring Scripts for Linux prerequisites, 
 # as per documentation
 sudo apt-get install -y \
@@ -96,13 +96,13 @@ sudo apt-get install -y \
 # Make and re-install LWP::Protocol::https package
 # PERL_MM_USE_DEFAULT=1 - install all dependencies, assume yes ...
 sudo env PERL_MM_USE_DEFAULT=1 cpan install LWP::Protocol::https
-{% endhighlight %}
+```
 
 ### Launching Amazon CloudWatch Monitoring Scripts for Linux (ENV variables) ###
 
 See the sample below
 
-{% highlight console %}
+```console
 # forces a version 3 SSL connection first, SSL2 after
 export HTTPS_VERSION=3 
 
@@ -127,7 +127,7 @@ export PERL_LWP_SSL_VERIFY_HOSTNAME=0
     ;
 
 # >> Successfully reported metrics to CloudWatch. Reference Id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
-{% endhighlight %}
+```
 
 **Vuala**
 

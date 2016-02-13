@@ -21,7 +21,7 @@ concept.
 
 For example, please take a look to this Java code snippet
 
-{% highlight java %}
+```java
 public enum Colors {
             Red("ff0000", new Rgb(255,0,0)),
             Blue("3600ff", new Rgb(0,0, 255));
@@ -63,11 +63,11 @@ public enum Colors {
         }
     }
 }
-{% endhighlight %}
+```
 
 And usage sample:
 
-{% highlight java %}
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -80,7 +80,7 @@ public class Main {
         }
     }
 }
-{% endhighlight %}
+```
 
 Let's take another look into code snippets above and let's write down some key points about Java enums.
 - Enums inherit from `java.lang.Enum` class (not seen here, implicit thing)
@@ -102,7 +102,7 @@ With a little (ok, won't be so humble; with quite a lot actually) web-search hel
 annotations to provide additional attributes/semantics to C# code elements. Some reading, small experiments and vuala
 the following code has been born.
 
-{% highlight csharp %}
+```csharp
 public static class EnumExtensions
 {
     public static TAttribute AttributeOf<TAttribute>(this Enum @enum)
@@ -125,11 +125,11 @@ public static class EnumExtensions
         return array == null || array.Count <= 0 ? null : array[0];
     }
 }
-{% endhighlight %}
+```
 
 Let's also provide sample usage code snippet.
 
-{% highlight csharp %}
+```csharp
 public enum Colors
 {
     [HtmlValue("ff0000")]
@@ -187,7 +187,7 @@ public class EnumTest
                           blue.AttributeOf<RgbValue>().AsString()));
     }
 }
-{% endhighlight %}
+```
 
 To recap with C#/.Net enum solution.
 - With a little coding help - it's possible to provide additional attributes/semantics to enum values.

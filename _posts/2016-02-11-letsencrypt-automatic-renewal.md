@@ -5,7 +5,7 @@ tags: [ssl, letsencrypt, nginx]
 permalink: 2016/02/letsencrypt-automatic-renewal/
 ---
 
-Today I learned how to use [Let's encrypt certificate program][1] to
+Q Today I learned how to use [Let's encrypt certificate program][1] to
 automatically and periodically renew HTTPS/SSL certificates at @Galeoconsultig.
 I hear you loudly wondering "Why?". The reason is the Let's encrypt initiative
 provides you free of charge certificates with limited lifespan. At the moment
@@ -37,7 +37,7 @@ well-known verification locations from webserver directory.
 If/when succeed - we will gracefully reload the server configuration with
 updates SSL certificates.
 
-{% highlight nginx %}
+```nginx
 server {
   listen      80;     server_name imaginary-domain imaginary-domain.galeoconsulting.com;
 
@@ -52,7 +52,7 @@ server {
   access_log /var/log/nginx/imaginary-domain_access.log combined buffer=32k flush=5m;
   error_log /var/log/nginx/imaginary-domain_error.log warn;
 }
-{% endhighlight %}
+```
 
 **What's happened? What did you do?**
 
@@ -64,7 +64,7 @@ from Let's encrypt managed webroot directory `/var/www/letsencrypt/`.
 ## Create automatic renewal script
 **File:** `/var/lib/letsencrypt/renew-site.sh`
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 
 set -e
@@ -79,7 +79,7 @@ set -o pipefail
   --webroot-path /var/www/letsencrypt/ \
   -m 'hostmaster@galeoconsulting.com' \
   certonly -d "${1}"
-{% endhighlight %}
+```
 
 **What does it do?**
 
@@ -111,7 +111,7 @@ Ok. It was easy.
 
 ## Let's encrypt it then (Pun intended)
 
-{% highlight nginx %}
+```nginx
 server {
   listen      443 ssl;
   server_name imaginary-domain imaginary-domain.galeoconsulting.com;
@@ -128,15 +128,15 @@ server {
   # ssl_dhparam /etc/nginx/certs/imaginary-domain.galeoconsulting.com_ssl_dhparam.pem;
   ssl_prefer_server_ciphers on;
 }
-{% endhighlight %}
+```
 
 ## Let's put it all together
 The easiest way to perform the auto-renewal is to put it in cronjob (which also
 will notify us with email if something went wrong)
 
-{% highlight bash %}
+```bash
 7    2 _ _   root    cd /tmp/ && /var/lib/letsencrypt/renew-site.sh imaginary-domain.galeoconsulting.com && service nginx reload
-{% endhighlight %}
+```
 
 Try it. Enjoy it. _Vuala._
 
