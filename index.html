@@ -3,8 +3,13 @@ layout: default
 title: Home
 ---
 
-
 {% include about.html %}
+
+<h2 style="text-align: center;">
+  <a href="/archive/">&laquo;Archive&raquo;</a>
+  &middot; 
+  <a href="/tags/">&laquo;Tags&raquo;</a> 
+</h2>
 
 <div class="posts">
   {% for post in paginator.posts %}
