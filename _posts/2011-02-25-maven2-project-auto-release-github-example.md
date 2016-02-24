@@ -4,7 +4,7 @@ title: Maven2 project auto-release [@GitHub] example
 date: 2011-02-25
 comments: false
 permalink: 2011/02/maven2-project-license-check-and-auto.html
-
+tags: [maven, git, release-mgt]
 ---
 
 What's about?
