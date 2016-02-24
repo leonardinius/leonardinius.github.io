@@ -14,10 +14,12 @@ weight: 100
             <h1 id={{ post.date | date:"%Y" }}>{{ currentyear }}</h1>
         {% assign year = currentyear %}
     {% endif %}
-
-    <article class="archive-item">
-      <h4><span style="color: #9a9a9a";>{{ post.date | date_to_string }}</span> &middot; <a href="{{ post.url }}">{{post.title}}</a></h4>
-    </article>
+            <article class="archive-item">
+              <h4>
+                  <span style="color: #9a9a9a";>{{ post.date | date_to_string }}</span> &middot; <a href="{{ post.url }}">{{post.title}}</a>
+                  {% include tags-list.html %}
+              </h4>
+            </article>
     {% if forloop.last %}</div>{% endif %}
 {% endfor %}
 </div>

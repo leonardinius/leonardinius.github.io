@@ -1,11 +1,1 @@
-<span style="padding-left: 1rem; padding-right: 1rem;">
-  Tags:
-  {% if post %}
-    {% assign tags = post.tags %}
-  {% else %}
-    {% assign tags = page.tags %}
-  {% endif %}
-  {% for tag in tags %}
-      <a href="/tags/#{{tag|slugize}}"><code>{{tag}}</code></a>{% unless forloop.last %},{% endunless %}
-  {% endfor %}
-</span>
+<span style="padding-left: 1rem; padding-right: 1rem;">Tags: {% include tags-list.html %}</span>
