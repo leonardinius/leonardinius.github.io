@@ -22,7 +22,7 @@
   <meta property="og:site_name" content="{{ site.name }}">
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{page.title}} / {{ site.description }}{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.title }} / {{ site.description }}{% endif %}">
-  <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', '}}, {% endif %}{% if page.keywords %}{{ page.keywords }}, {% else %}{{ site.keywords }}, {% endif %}" />
+  <meta name="keywords" content="{% if page.tags or page.keywords %}{% if page.tags %}{{ page.tags | join: ', '}}, {% endif %}{% if page.keywords %}{{ page.keywords }}, {% endif %}{% else %}{{ site.keywords }}, {% endif %}" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
