@@ -1,0 +1,18 @@
+---
+---
+
+/* TEAM */
+
+Me: Leonids Maslovs
+Mail: leonidms@mail.com
+Twitter: leonardinius
+Location: Latvia, Riga
+
+/* THANKS */
+Thanks to my wife Anzelika and my kids. 
+
+/* SITE */
+Last update: {{ site.time | date: '%Y/%M/%D'}}
+Standards: HTML5, CSS3,..
+Software: http://jekyllrb.com/ (engine), https://github.com/poole/lanyon (theme)
+
