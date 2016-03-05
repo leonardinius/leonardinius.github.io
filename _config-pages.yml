@@ -12,6 +12,10 @@ permalink: /:year/:month/:title
 markdown: kramdown
 paginate: 5
 
+gems:
+  - jekyll-sitemap
+
+
 exclude:
   - CNAME
   - LICENSE

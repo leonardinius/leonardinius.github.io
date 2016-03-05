@@ -14,15 +14,14 @@ permalink: /:year/:month/:title
 markdown: kramdown
 paginate: 5
 
+gems:
+  - jekyll-sitemap
+
 exclude:
   - CNAME
   - LICENSE
   - README.md
   - run.sh
-
-gems:
-  - jekyll-sitemap
-#  - rouge
 
 github:
   repo: "https://github.com/leonardinius/leonardinius.github.io"
