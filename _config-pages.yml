@@ -14,7 +14,7 @@ paginate: 5
 
 gems:
   - jekyll-sitemap
-
+  - jekyll-feed
 
 exclude:
   - CNAME
