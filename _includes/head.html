@@ -8,11 +8,21 @@
 
   <title>
     {% if page.title == "Home" %}
-    {% if site.env %}[{{ site.env }}] {% endif %}{% if site.title %}{{ site.title }} &middot; {% endif %}{{ site.tagline }}
+      {% if site.env %}[{{ site.env }}] {% endif %}{% if site.title %}{{ site.title }} &middot; {% endif %}{{ site.tagline }}
+      {% assign meta_title = site.title %}
     {% else %}
-    {% if site.env %}[{{ site.env }}] {% endif %}{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}
+      {% if site.env %}[{{ site.env }}] {% endif %}{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}
+      {% assign meta_title = page.title %}
     {% endif %}
   </title>
+  <meta property="og:title" content="{{ meta_title }}" />
+  <meta property="twitter:title" content="{{ meta_title }}" />
+
+  <meta name="author" content="{{ site.author.name }}" />
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{page.title}} / {{ site.description }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.title }} / {{ site.description }}{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}, {% endif %}{% if page.tags %}{{ page.tags | join: ', '}}, {% endif %}{{ site.keywords }}" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
