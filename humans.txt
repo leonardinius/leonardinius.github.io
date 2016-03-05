@@ -12,7 +12,7 @@ Location: Latvia, Riga
 Thanks to my wife Anzelika and my kids. 
 
 /* SITE */
-Last update: {{ site.time | date: '%Y/%M/%D'}}
+Last update: {{ site.time | date: '%Y/%m/%d'}}
 Standards: HTML5, CSS3,..
 Software: http://jekyllrb.com/ (engine), https://github.com/poole/lanyon (theme)
 
