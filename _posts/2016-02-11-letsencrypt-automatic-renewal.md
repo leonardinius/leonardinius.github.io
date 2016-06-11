@@ -34,8 +34,8 @@ In course of our work we don't want to restart web-server just to be able to
 serve ACME challenge; so we will use webroot method to serve particular
 well-known verification locations from webserver directory.
 
-If/when succeed - we will gracefully reload the server configuration with
-updates SSL certificates.
+When succeed - we will gracefully reload the server configuration with
+updated SSL certificates.
 
 {% highlight nginx %}
 server {
@@ -57,7 +57,7 @@ server {
 **What's happened? What did you do?**
 
 We instructed HTTP:80 website (which we use to perform `HTTP 301 Permanent
-redirect` to HTTPS/SSL version) to treat a special and "wel-known"
+redirect` to HTTPS/SSL version) to treat a special and "well-known"
 `/.well-known/acme-challenge` location specially and to serve static content
 from Let's encrypt managed webroot directory `/var/www/letsencrypt/`.
 
