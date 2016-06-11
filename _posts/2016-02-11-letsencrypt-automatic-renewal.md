@@ -84,7 +84,7 @@ set -o pipefail
 **What does it do?**
 
 - `--text` specifies we want the script to interact to us using text interface
-  (not curse dialogs).
+  (not ncurses dialogs).
 - `--agree-tos` we agree to
   [Let's Encrypt Subscriber Agreement][letsencrypt-subscriber-agreement].
   Please find the actual version at [https://letsencrypt.org/repository/](https://letsencrypt.org/repository/)
