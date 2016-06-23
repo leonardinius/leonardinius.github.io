@@ -1,5 +1,5 @@
 ---
-title: "Let's encrypt automatic renewal procedure"
+title: "Let's encrypt: automated renewal procedure"
 layout: post
 tags: [ssl, letsencrypt, nginx]
 permalink: 2016/02/letsencrypt-automatic-renewal/
