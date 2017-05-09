@@ -558,3 +558,11 @@ a.pagination-item:hover {
 .post.post-index_page {
   margin-bottom: 3em;
 }
+
+img.contact {
+  vertical-align: middle;
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+}
