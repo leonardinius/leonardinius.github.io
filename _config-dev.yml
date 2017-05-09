@@ -19,6 +19,7 @@ gems:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-paginate
 
 exclude:
   - CNAME
