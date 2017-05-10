@@ -559,6 +559,10 @@ a.pagination-item:hover {
   margin-bottom: 3em;
 }
 
+#about_images {
+  text-align: center;
+}
+
 img.contact {
   vertical-align: middle;
   display: inline;
