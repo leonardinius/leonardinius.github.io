@@ -4,7 +4,7 @@ title: jira-rest-cli-1.1-SNAPSHOT work in progress
 date: 2011-04-12
 comments: false
 permalink: 2011/04/jira-erst-cli-11-snapshot-work-in.html
-tags: [atlassian, rest-cli, pdk]
+tags: [atlassian, rest-cli, pdk, java]
 ---
 
 At the moment working on <a href="https://github.com/leonardinius/jira-rest-cli/tree/release/1.1">jira-rest-cli-1.1 release</a>.
