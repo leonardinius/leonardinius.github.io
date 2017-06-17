@@ -4,12 +4,12 @@ title: Jira - How to Include JSS and CSS resources on every page
 date: 2010-12-07
 comments: false
 permalink: 2010/12/jira-how-to-include-jss-and-css.html
-tags: [atlassian, jira, pdk]
+tags: [atlassian, jira, pdk, java]
 ---
 
 Hi all,
 
-<blockquote>Disclaimer 1: The post and approach is 99% based on <a href="https://studio.plugins.atlassian.com/wiki/display/JBHV/JIRA+Behaviours+Plugin">Jira&nbsp;Behaviors&nbsp;Plugin</a>&nbsp;source code.</blockquote><blockquote>Disclaimer 2: The approach described here should be considered a hack/workaround and does not inline with Atlassian Jira Plugin structture and maintainability.&nbsp;</blockquote><blockquote><b>Update: </b>See the comments section. I would recommend better approach using Servlet Filter.&nbsp;</blockquote>You may find yourself requiring to either show/hide some part of Jira UI elements, or extend JIRA built-in edit/search capabilities. If it's custom field we are talking about - you might consider to implement Jira Custom Field (See <a href="http://confluence.atlassian.com/display/JIRA/How+to+create+a+new+Custom+Field+Type#HowtocreateanewCustomFieldType-AQuickCustomFieldTypesPrimer">Quick Custom Field Types Primer</a>&nbsp;on render options and capabilities).
+<blockquote>Disclaimer 1: The post and approach is 99% based on <a href="https://studio.plugins.atlassian.com/wiki/display/JBHV/JIRA+Behaviours+Plugin">Jira&nbsp;Behaviors&nbsp;Plugin</a>&nbsp;source code.</blockquote><blockquote>Disclaimer 2: The approach described here should be considered a hack/workaround and does not inline with Atlassian Jira Plugin structure and maintainability.&nbsp;</blockquote><blockquote><b>Update: </b>See the comments section. I would recommend better approach using Servlet Filter.&nbsp;</blockquote>You may find yourself requiring to either show/hide some part of Jira UI elements, or extend JIRA built-in edit/search capabilities. If it's custom field we are talking about - you might consider to implement Jira Custom Field (See <a href="http://confluence.atlassian.com/display/JIRA/How+to+create+a+new+Custom+Field+Type#HowtocreateanewCustomFieldType-AQuickCustomFieldTypesPrimer">Quick Custom Field Types Primer</a>&nbsp;on render options and capabilities).
 
 For some other cases - like <a href="http://blogs.onresolve.com/?author=3">Jamie Eclin</a>&nbsp;awesome Behaviors Plugin, or like in my example - hiding some always visible JIRA UI built-in &nbsp;elements - you might consider different approach to implement. Your options basically are:
 
