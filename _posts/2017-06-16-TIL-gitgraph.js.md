@@ -5,7 +5,7 @@ tags: [til, git, graph]
 permalink: 2017/06/today-i-learned-2017-06_1-gitgraphjs
 ---
 
-Today I learned a useful release process drawing trick. The best way to ensure I don't forget it about it tomorrow is post-it blog. 
+Today I learned a useful release process drawing trick. The best way to ensure I don't forget about it tomorrow is post-it blog post. 
 ![gitgraph.js render example](/img/posts/2017-06-gitgraphjs.png) 
 
 ## Contents 
