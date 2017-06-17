@@ -1,9 +1,17 @@
 ---
-layout: page
+layout: default
 permalink: /tags/
 title: Tags
 weight: 90
 ---
+
+<div class="page">
+
+<h1 style="text-align: center;">
+  <a href="/archive/">&laquo;Archive&raquo;</a>
+  &middot; 
+  &laquo;Tags&raquo;
+</h1>
 
 <div id="tags">
     {% assign tags = site.tags | sort %}
@@ -22,4 +30,6 @@ weight: 90
         {% endfor %}
     </div>
     {% endfor %}
+</div>
+
 </div>

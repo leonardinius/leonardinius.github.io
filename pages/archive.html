@@ -1,9 +1,18 @@
 ---
-layout: page
+layout: default
 title: Archive
 permalink: /archive/
 weight: 100
 ---
+
+<div class="page">
+
+<h1 style="text-align: center;">
+  &laquo;Archive&raquo;
+  &middot; 
+  <a href="/tags/">&laquo;Tags&raquo;</a> 
+</h1>
+
 
 <div id="archives">
 {% for post in site.posts %}
@@ -22,4 +31,5 @@ weight: 100
             </article>
     {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+</div>
 </div>
