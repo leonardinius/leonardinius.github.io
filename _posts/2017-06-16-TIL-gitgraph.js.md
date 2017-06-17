@@ -1,7 +1,7 @@
 ---
 title: "Gitgraph.js: <strike>draw</strike>code your release processes"
 layout: post
-tags: [til, git, graph, release-mgt]
+tags: [til, git, graph, release-mgt, javascript]
 permalink: 2017/06/today-i-learned-2017-06_1-gitgraphjs
 ---
 
