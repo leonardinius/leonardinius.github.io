@@ -4,7 +4,7 @@ title: Clamour and stir around Servlet 3.0 Draft
 date: 2008-05-03
 comments: false
 permalink: 2008/05/clamour-and-stir-around-servlet-30.html
-tags: [jsp, "servlet-3.0"]
+tags: [jsp, "servlet-3.0", java]
 ---
 
 So, Servlet 3.0 Specification ([JSR-315](http://jcp.org/en/jsr/detail?id=315)) is now being in discussion topic.
