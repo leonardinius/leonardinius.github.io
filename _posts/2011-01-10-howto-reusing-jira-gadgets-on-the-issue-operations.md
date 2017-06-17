@@ -4,7 +4,7 @@ title: "HowTo: Reusing JIRA gadgets on the issue operations"
 date: "2011-01-10"
 comments: false
 permalink: 2011/01/howto-reusing-jira-gadgets-on-issue_10.html
-tags: [atlassian, jira]
+tags: [atlassian, jira, java]
 ---
 
 Hi everybody,
