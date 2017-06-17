@@ -4,7 +4,7 @@ title: Jira - let's code update, edit issue operations (CRUD)
 date: 2010-12-19
 comments: false
 permalink: 2010/12/jira-lets-code-update-edit-issue.html
-tags: [atlassian, jira]
+tags: [atlassian, jira, java]
 ---
 
 If you are familiar with JIRA and it's API then you might agree, that some easy operations become a little difficult when it comes to coding  (all the workflows, overall JIRA stack understanding, configuration items, integration with other systems etc).
