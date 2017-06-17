@@ -79,6 +79,6 @@ release.merge(master, { dotStrokeWidth: 10, message: mkLoremIpsum("2.0.0.0-SNAPS
 
 ![Example Sketch](/img/posts/2017-06-example-sketch.png)
 
-The sketch source code could is found at [https://gist.github.com/leonardinius/128fa84a13c35e9b0dae1b74ac677815](https://gist.github.com/leonardinius/128fa84a13c35e9b0dae1b74ac677815).
+The sketch source code is found at [https://gist.github.com/leonardinius/128fa84a13c35e9b0dae1b74ac677815](https://gist.github.com/leonardinius/128fa84a13c35e9b0dae1b74ac677815).
 
 **Voilà**
