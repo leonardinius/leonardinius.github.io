@@ -4,7 +4,7 @@ title: Atlassian Plugin SDK - how to provide optional selenium tests
 date: 2011-02-21
 comments: false
 permalink: 2011/02/atlassian-plugin-sdk-how-to-provide.html
-tags: [atlassian, tdd, pdk]
+tags: [atlassian, tdd, pdk, java]
 ---
 
 You probably are familiar with one of the most popular web UI testing tool - <a href="http://seleniumhq.org/">Selenium</a> and it's most famous tool <a href="http://seleniumhq.org/projects/ide/">Selenium IDE</a>.
