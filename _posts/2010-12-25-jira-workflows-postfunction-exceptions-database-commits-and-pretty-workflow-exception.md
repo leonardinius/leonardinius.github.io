@@ -4,7 +4,7 @@ title: JIRA workflows -Postfunction exceptions, database commits and Pretty work
 date: 2010-12-25
 comments: false
 permalink: 2010/12/jira-workflows-postfunction-exceptions.html
-tags: [atlassian, jira]
+tags: [atlassian, jira, java]
 ---
 
 <a href="http://images.zaazu.com/img/Hohoho--merry-christmas-xmas-christmas-smiley-emoticon-000364-large.gif" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://images.zaazu.com/img/Hohoho--merry-christmas-xmas-christmas-smiley-emoticon-000364-large.gif" /></a>
