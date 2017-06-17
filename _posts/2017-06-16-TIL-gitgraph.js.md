@@ -1,5 +1,5 @@
 ---
-title: "TIL gitgraph.js"
+title: "Gitgraph.js: <strike>draw</strike>code your release processes"
 layout: post
 tags: [til, git, graph]
 permalink: 2017/06/today-i-learned-2017-06_1-gitgraphjs
