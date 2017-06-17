@@ -4,7 +4,7 @@ title: Jira - How to Include JSS and CSS resources on every page
 date: 2010-12-07
 comments: false
 permalink: 2010/12/jira-how-to-include-jss-and-css.html
-tags: [atlassian, jira, pdk, java]
+tags: [atlassian, jira, pdk, java, javascript, css]
 ---
 
 Hi all,
