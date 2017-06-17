@@ -4,7 +4,7 @@ title: "HOW-TO: propertyset-storage-toolkit - Jira configuration data storage ma
 date: 2010-12-12
 comments: false
 permalink: 2010/12/how-to-propertyset-storage-toolkit-jira.html
-tags: [atlassian, jira, pdk]
+tags: [atlassian, jira, pdk, java]
 ---
 
 <b>Q:</b> What is your favorite type of job? Atlassian Plugin SDK? <b>A:</b> Sure!
