@@ -5,18 +5,20 @@ tags: [til, git, graph]
 permalink: 2017/06/today-i-learned-2017-06_1-gitgraphjs
 ---
 
-Today I learned a useful release process drawing trick. The best way to ensure I don't forget it about it tomorrow is post-it blog. ![gitgraph.js render example](/img/posts/2017-06-gitgraphjs.png) 
+Today I learned a useful release process drawing trick. The best way to ensure I don't forget it about it tomorrow is post-it blog. 
+![gitgraph.js render example](/img/posts/2017-06-gitgraphjs.png) 
+
+## Contents 
 
 Given the length, here's a helpful table of contents.
 
- - [gitgraph.js](#gitgraphjs)
+ - [Intent](#intent)
  - [Example: Draw line with process steps](#example-draw-line-with-process-steps)
  - [Example: Detour (split) the process](#example-detour-split-the-process)
  - [Example: Process junction](#example-process-junction)
  - [Full Sketch & Source code](#full-sketch--source-code)
  
-
-## gitgraph.js
+## Intent
 
 Today I had the exercise to draw the diagram of release process. Puzzled by this task I searched around that is the best way to draw the thing.
 I remembered `git-flow` [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) diagram, which I find visually appealing.
