@@ -4,7 +4,7 @@ title: "Release announcement: jira-rest-cli-1.0 (jsr223 powered interactive jira
 date: 2011-03-29
 comments: false
 permalink: 2011/03/release-announcement-jira-rest-cli-05.html
-tags: [atlassian, rest-cli, pdk]
+tags: [atlassian, rest-cli, pdk, java]
 ---
 
 **Check it out**
