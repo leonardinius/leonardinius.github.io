@@ -11,8 +11,8 @@
       {% if site.env %}[{{ site.env }}] {% endif %}{% if site.title %}{{ site.title }} &middot; {% endif %}{{ site.tagline }}
       {% assign meta_title = site.title %}
     {% else %}
-      {% if site.env %}[{{ site.env }}] {% endif %}{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}
-      {% assign meta_title = page.title %}
+      {% if site.env %}[{{ site.env }}] {% endif %}{% if page.title %}{{ page.title | strip_html }} &middot; {% endif %}{{ site.title }}
+      {% assign meta_title = page.title | strip_html %}
     {% endif %}
   </title>
   <meta property="og:title" content="{{ meta_title }}" />
@@ -25,28 +25,28 @@
   <meta name="keywords" content="{% if page.tags or page.keywords %}{% if page.tags %}{{ page.tags | join: ', '}}, {% endif %}{% if page.keywords %}{{ page.keywords }}, {% endif %}{% else %}{{ site.keywords }}, {% endif %}" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/lanyon.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/lanyon.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
-  <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="{{ site.baseurl }}public/icons/favicon.ico"/>
+  <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="{{ site.baseurl }}/public/icons/favicon.ico"/>
   <!--[if IE]>
-  <link rel="shortcut icon" href="{{ site.baseurl }}public/icons/favicon.ico"/>
+  <link rel="shortcut icon" href="{{ site.baseurl }}/public/icons/favicon.ico"/>
   <![endif]-->
   <!-- Optional: Android & iPhone-->
-  <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}public/icons/favicon-152.png"/>
+  <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/public/icons/favicon-152.png"/>
   <!-- Optional: IE10 Tile.-->
   <meta name="msapplication-TileColor" content="#FFFFFF"/>
-  <meta name="msapplication-TileImage" content="{{ site.baseurl }}public/icons/favicon-144.png"/>
+  <meta name="msapplication-TileImage" content="{{ site.baseurl }}/public/icons/favicon-144.png"/>
   <!-- Optional: ipads, androids, iphones, ...-->
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site.baseurl }}public/icons/favicon-152.png"/>
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}public/icons/favicon-144.png"/>
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site.baseurl }}public/icons/favicon-120.png"/>
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}public/icons/favicon-114.png"/>
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}public/icons/favicon-72.png"/>
-  <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}public/icons/favicon-57.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site.baseurl }}/public/icons/favicon-152.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/icons/favicon-144.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site.baseurl }}/public/icons/favicon-120.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}/public/icons/favicon-114.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}/public/icons/favicon-72.png"/>
+  <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/public/icons/favicon-57.png"/>
 
   <!-- RSS -->
   {% feed_meta %}

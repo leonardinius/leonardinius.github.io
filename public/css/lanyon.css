@@ -570,3 +570,7 @@ img.contact {
   padding-right: 10px;
   margin: 0px;
 }
+
+.sidebar-nav-item.active {
+  font-weight: bolder;
+}
