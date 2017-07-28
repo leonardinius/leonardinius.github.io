@@ -8,7 +8,7 @@ author:
   twitter: "leonardinius"
   email: "leonids.maslovs@galeoconsulting.com"
 baseurl: '/'
-url: http://leonardinius.galeoconsulting.com
+url: http://blog.it101.org
 permalink: /:year/:month/:title
 markdown: kramdown
 paginate: 5
