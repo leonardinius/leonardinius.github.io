@@ -6,7 +6,7 @@ permalink: 2016/02/letsencrypt-automatic-renewal/
 ---
 
 Today I learned how to use [Let's encrypt certificate program][1] to
-automatically and periodically renew HTTPS/SSL certificates at @Galeoconsultig.
+automatically and periodically renew HTTPS/SSL certificates at @Galeoconsulting.
 I hear you loudly wondering "Why?". The reason is the Let's encrypt initiative
 provides you free of charge certificates with limited lifespan. At the moment
 of writing the certificates are valid for 3 months. Manual update procedure 
