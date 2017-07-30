@@ -9,7 +9,7 @@ author:
   name: "Leonids Maslovs"
   twitter: "leonardinius"
   email: "leonids.maslovs@galeoconsulting.com"
-baseurl: "/"
+baseurl: ""
 url: http://blog.it101.org
 permalink: /:year/:month/:title
 markdown: kramdown
