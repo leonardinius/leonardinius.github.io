@@ -12,6 +12,7 @@ url: http://blog.it101.org
 permalink: /:year/:month/:title
 markdown: kramdown
 paginate: 5
+timezone: "Europe/Riga"
 
 gems:
   - jekyll-sitemap
