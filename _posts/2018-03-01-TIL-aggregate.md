@@ -95,8 +95,8 @@ Now the test maintenance process is fewer tears and more joy. Retrospectively, m
   Fix - add localhost to /etc/hosts. Refer to [https://github.com/docker/compose/issues/3419](https://github.com/docker/compose/issues/3419) for more details.
 
 * MacOS X - autohide menu  (status bar) + dock == eternal && fast fullscreen
-** `General`- `Automatically hide and show menu bar`
-** `Dock` - `Automatically hide and show the Dock`
+  * `General`- `Automatically hide and show menu bar`
+  * `Dock` - `Automatically hide and show the Dock`
 
 ## Python
 
