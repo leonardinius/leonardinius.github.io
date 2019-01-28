@@ -9,6 +9,8 @@ permalink: 2013/12/summarizing-my-play-framework-experience/
 framework for java developers to develop small web application, I decided to summarize my thoughts and concerns in
 the form of blog entry.
 
+![Play! logo](/img/posts/BDDFBCA0-E3E7-4393-9A6D-C1F0B6266D6A.png)
+
 **Update** The post topic and layout grew out of my control and present more or
 less chaotic nature of my thought flow. I've tried to concentrate the post
 around the following topics: general overview, things I liked, things I disliked,
