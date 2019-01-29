@@ -1,5 +1,5 @@
 ---
-name: Feature request
+name: Pull request template
 about: Suggest an idea for this project
 title: ''
 labels: ''
