@@ -43,3 +43,4 @@ node_modules
 
 
 .vagrant/
+/blog/package.json
