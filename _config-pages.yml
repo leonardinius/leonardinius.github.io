@@ -28,6 +28,9 @@ exclude:
   - LANYON_README.md
   - run.sh
 
+include:
+  - resume.pdf
+
 github:
   repo: "https://github.com/leonardinius/leonardinius.github.io"
   branch: "master"

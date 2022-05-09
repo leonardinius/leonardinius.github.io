@@ -11,7 +11,6 @@ docker run --rm \
   -it \
   \
   --env BUNDLE_CACHE=1 \
-  --env POLLING=1 \
   --env VERBOSE=1 \
   \
   -p 127.0.0.1:4000:4000 \
