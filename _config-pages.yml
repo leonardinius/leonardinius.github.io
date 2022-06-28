@@ -38,7 +38,8 @@ github:
 analytics:
   provider: "google"
   google:
-    code: "UA-3088662-1"
+    # code: "UA-3088662-1"
+    code: "G-GPB19FRQC3"
 
 comments:
   provider: "disqus"
