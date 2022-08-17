@@ -13,8 +13,9 @@ permalink: /:year/:month/:title
 markdown: kramdown
 paginate: 5
 timezone: "Europe/Riga"
+repository: leonardinius/leonardinius.github.io.git
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-redirect-from
