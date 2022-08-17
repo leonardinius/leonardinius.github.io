@@ -7,6 +7,7 @@
 
 docker run --rm \
   --label=jekyll \
+  --name=jekyll \
   --volume=$(pwd):/srv/jekyll \
   -it \
   \
@@ -16,5 +17,5 @@ docker run --rm \
   \
   -p 127.0.0.1:4000:4000 \
   \
-  jekyll/jekyll:pages \
+  jekyll/jekyll:4.2.0 \
   jekyll ${@:-"serve"}
